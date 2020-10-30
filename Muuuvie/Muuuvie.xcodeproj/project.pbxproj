@@ -13,6 +13,7 @@
 		CF317670254B90DE00C877E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF31766F254B90DE00C877E3 /* Preview Assets.xcassets */; };
 		CF31767B254B90DE00C877E3 /* MuuuvieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31767A254B90DE00C877E3 /* MuuuvieTests.swift */; };
 		CF317686254B90DE00C877E3 /* MuuuvieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF317685254B90DE00C877E3 /* MuuuvieUITests.swift */; };
+		CF31769B254B91D500C877E3 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31769A254B91D500C877E3 /* Placeholder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,10 @@
 		CF317681254B90DE00C877E3 /* MuuuvieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuuuvieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF317685254B90DE00C877E3 /* MuuuvieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuuuvieUITests.swift; sourceTree = "<group>"; };
 		CF317687254B90DE00C877E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF31769A254B91D500C877E3 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		CF3176A2254B91E100C877E3 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		CF3176A3254B91E300C877E3 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		CF3176A4254B91E500C877E3 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +142,7 @@
 		CF317696254B913900C877E3 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				CF3176A4254B91E500C877E3 /* Placeholder.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -144,6 +150,7 @@
 		CF317697254B914100C877E3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CF3176A3254B91E300C877E3 /* Placeholder.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -151,6 +158,7 @@
 		CF317698254B914B00C877E3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CF3176A2254B91E100C877E3 /* Placeholder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 		CF317699254B915800C877E3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CF31769A254B91D500C877E3 /* Placeholder.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -293,6 +302,7 @@
 			files = (
 				CF31766B254B90DC00C877E3 /* ContentView.swift in Sources */,
 				CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */,
+				CF31769B254B91D500C877E3 /* Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
