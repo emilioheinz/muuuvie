@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IconButtonView: View {
+    var theme: IconButtonTheme
     var image: String
     var label: String?
     var action: () -> Void
@@ -16,11 +17,11 @@ struct IconButtonView: View {
         VStack {
             Button(action: action) {
                 Image(systemName: image)
-                    .foregroundColor(.white)
+                    .foregroundColor(theme.iconColor)
             }.frame(width: 54, height: 54)
             .background(Circle()
-                            .foregroundColor(.mainOrange)
-                            .shadow(color: .shadowGray, radius: 2, x: 0, y: 5))
+                            .foregroundColor(theme.backgroundColor)
+                            .shadow(color: .shadowGray, radius: 5))
             
             if let label = label {
                 Text(label)
@@ -37,7 +38,7 @@ struct IconButtonView: View {
 
 struct IconButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        IconButtonView(image: "star.fill") {
+        IconButtonView(theme:.primary, image: "star.fill", label: "222K") {
             print("Ola")
         }
     }
