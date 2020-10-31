@@ -13,7 +13,6 @@ struct MovieDetailView: View {
     var body: some View {
         NavigationView {
             Text("Hello, World!")
-                
         }.onAppear {
             viewModel.fetchMovie(id: 550)
         }.alert(isPresented: $viewModel.hasError) {

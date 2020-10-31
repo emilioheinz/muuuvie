@@ -25,9 +25,7 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
         Api.instance.request(with: .movie(id: id)) { [weak self] (result: Result<MovieDetail, APIError>) in
             switch result {
             case .success(let movie):
-                print(movie)
                 DispatchQueue.main.async {
-                    print(movie)
                     self?.movie = movie
                     self?.isLoading = false
                 }
