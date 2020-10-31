@@ -112,7 +112,6 @@
 		CF317667254B90DC00C877E3 /* Muuuvie */ = {
 			isa = PBXGroup;
 			children = (
-				CF9FD3A3254CF7C60040E2CF /* Resources */,
 				CF9FD39A254CF5580040E2CF /* Protocols */,
 				CF9FD35A254CDB890040E2CF /* Models */,
 				CF317699254B915800C877E3 /* Components */,
@@ -211,13 +210,6 @@
 				CF9FD39B254CF58C0040E2CF /* ViewModelWithRequest.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		CF9FD3A3254CF7C60040E2CF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
