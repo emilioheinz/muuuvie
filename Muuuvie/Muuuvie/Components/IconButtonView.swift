@@ -39,7 +39,7 @@ struct IconButtonView: View {
 struct IconButtonView_Previews: PreviewProvider {
     static var previews: some View {
         IconButtonView(theme:.primary, image: "star.fill", label: "222K") {
-            print("Ola")
+            print("pressed")
         }
     }
 }
