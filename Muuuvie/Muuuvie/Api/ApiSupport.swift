@@ -13,6 +13,17 @@ public enum APIError: Error {
     case invalidResponse
     case noData
     case decodeError
+    
+    var message: String {
+        switch self {
+        case .malformedURL:
+            return "Opss, houve um erro. Parece que a URL requisitada não está correta!"
+        case .apiError, .invalidResponse, .decodeError:
+            return "Opss, houve um erro. Parece não foi possível processar a requisição!"
+        case .noData:
+            return "Opss, houve um erro. Parece que a resposta que recebemos está vazia!"
+        }
+    }
 }
 
 extension URLSession {

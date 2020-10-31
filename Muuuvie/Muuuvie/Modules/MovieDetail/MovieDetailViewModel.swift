@@ -5,24 +5,36 @@
 //  Created by Emilio Heinzmann on 30/10/20.
 //
 
-import Foundation
+import SwiftUI
 
-class MovieDetailViewModel: ObservableObject {
+class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
 
     @Published var movie: MovieDetail?
+    @Published var isLoading: Bool
+    @Published var hasError: Bool
+    var message: String
+    
+    init() {
+        self.isLoading = false
+        self.hasError = false
+        self.message = ""
+    }
 
     func fetchMovie(id: Int) {
+        self.isLoading = true
         Api.instance.request(with: .movie(id: id)) { [weak self] (result: Result<MovieDetail, APIError>) in
             switch result {
             case .success(let movie):
+                print(movie)
                 DispatchQueue.main.async {
                     print(movie)
                     self?.movie = movie
+                    self?.isLoading = false
                 }
             case .failure(let error):
-                // TODO emilioheinz 30.10.2020: Create toast handling
-                
-                print(error)
+                self?.hasError = true
+                self?.isLoading = false
+                self?.message = error.message
             }
         }
     }

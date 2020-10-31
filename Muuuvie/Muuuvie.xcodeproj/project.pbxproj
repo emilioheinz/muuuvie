@@ -19,6 +19,7 @@
 		CF9FD351254CDB4E0040E2CF /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD350254CDB4E0040E2CF /* MovieDetailView.swift */; };
 		CF9FD356254CDB690040E2CF /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD355254CDB690040E2CF /* MovieDetailViewModel.swift */; };
 		CF9FD35C254CDBA00040E2CF /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD35B254CDBA00040E2CF /* MovieDetail.swift */; };
+		CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD39B254CF58C0040E2CF /* ViewModelWithRequest.swift */; };
 		CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDE95A0254CCCEA005C0E19 /* Enpoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		CF9FD350254CDB4E0040E2CF /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		CF9FD355254CDB690040E2CF /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		CF9FD35B254CDBA00040E2CF /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		CF9FD39B254CF58C0040E2CF /* ViewModelWithRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelWithRequest.swift; sourceTree = "<group>"; };
 		CFDE95A0254CCCEA005C0E19 /* Enpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 		CF317667254B90DC00C877E3 /* Muuuvie */ = {
 			isa = PBXGroup;
 			children = (
+				CF9FD39A254CF5580040E2CF /* Protocols */,
 				CF9FD35A254CDB890040E2CF /* Models */,
 				CF317699254B915800C877E3 /* Components */,
 				CF317698254B914B00C877E3 /* Extensions */,
@@ -199,6 +202,14 @@
 				CF9FD35B254CDBA00040E2CF /* MovieDetail.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CF9FD39A254CF5580040E2CF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CF9FD39B254CF58C0040E2CF /* ViewModelWithRequest.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 			files = (
 				CF31766B254B90DC00C877E3 /* ContentView.swift in Sources */,
 				CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */,
+				CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */,
 				CF9FD35C254CDBA00040E2CF /* MovieDetail.swift in Sources */,
 				CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */,
 				CF9FD343254CD19A0040E2CF /* Api.swift in Sources */,

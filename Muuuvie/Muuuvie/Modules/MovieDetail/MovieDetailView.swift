@@ -11,10 +11,14 @@ struct MovieDetailView: View {
     @ObservedObject var viewModel = MovieDetailViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .onAppear {
-                viewModel.fetchMovie(id: 550)
-            }
+        NavigationView {
+            Text("Hello, World!")
+                
+        }.onAppear {
+            viewModel.fetchMovie(id: 550)
+        }.alert(isPresented: $viewModel.hasError) {
+            Alert(title: Text(viewModel.message))
+        }
     }
 }
 
