@@ -11,7 +11,8 @@ typealias RequestCallback<T> = (Result<T, APIError>) -> Void
 
 struct Api {
     static let instance = Api()
-        
+    
+    let imagesBaseUrl: String = "https://image.tmdb.org/t/p/w500"
     let baseUrl: String = "https://api.themoviedb.org/3/"
     let apiKey: String = "37186ddc43254f76799f9204ff25251c"
     
@@ -46,6 +47,10 @@ struct Api {
                 completion(.failure(.apiError))
             }
         }.resume()
+    }
+    
+    func imageUrl(from path: String) -> String {
+        "\(imagesBaseUrl)\(path)"
     }
 }
 
