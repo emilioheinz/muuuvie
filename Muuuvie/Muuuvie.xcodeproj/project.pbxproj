@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70DF9FE1254DDBBE00143BCF /* ReviewListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF9FE0254DDBBE00143BCF /* ReviewListItemView.swift */; };
 		CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF317668254B90DC00C877E3 /* MuuuvieApp.swift */; };
 		CF31766B254B90DC00C877E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31766A254B90DC00C877E3 /* ContentView.swift */; };
 		CF31766D254B90DE00C877E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF31766C254B90DE00C877E3 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70DF9FE0254DDBBE00143BCF /* ReviewListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListItemView.swift; sourceTree = "<group>"; };
 		CF317665254B90DC00C877E3 /* Muuuvie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muuuvie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF317668254B90DC00C877E3 /* MuuuvieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuuuvieApp.swift; sourceTree = "<group>"; };
 		CF31766A254B90DC00C877E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70DF9FDF254DDBA100143BCF /* ReviewListitem */ = {
+			isa = PBXGroup;
+			children = (
+				70DF9FE0254DDBBE00143BCF /* ReviewListItemView.swift */,
+			);
+			path = ReviewListitem;
+			sourceTree = "<group>";
+		};
 		CF31765C254B90DC00C877E3 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +192,7 @@
 		CF317699254B915800C877E3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				70DF9FDF254DDBA100143BCF /* ReviewListitem */,
 				CF31769A254B91D500C877E3 /* Placeholder.swift */,
 			);
 			path = Components;
@@ -343,6 +354,7 @@
 			files = (
 				CF31766B254B90DC00C877E3 /* ContentView.swift in Sources */,
 				CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */,
+				70DF9FE1254DDBBE00143BCF /* ReviewListItemView.swift in Sources */,
 				CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */,
 				CF9FD35C254CDBA00040E2CF /* MovieDetail.swift in Sources */,
 				CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */,
