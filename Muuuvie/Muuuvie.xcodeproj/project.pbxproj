@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		70DF9FE1254DDBBE00143BCF /* ReviewListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF9FE0254DDBBE00143BCF /* ReviewListItemView.swift */; };
+		70DFCE1C254DED6400ABA6F4 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DFCE1B254DED6400ABA6F4 /* Review.swift */; };
 		CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF317668254B90DC00C877E3 /* MuuuvieApp.swift */; };
 		CF31766B254B90DC00C877E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31766A254B90DC00C877E3 /* ContentView.swift */; };
 		CF31766D254B90DE00C877E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF31766C254B90DE00C877E3 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		70DF9FE0254DDBBE00143BCF /* ReviewListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListItemView.swift; sourceTree = "<group>"; };
+		70DFCE1B254DED6400ABA6F4 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		CF317665254B90DC00C877E3 /* Muuuvie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muuuvie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF317668254B90DC00C877E3 /* MuuuvieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuuuvieApp.swift; sourceTree = "<group>"; };
 		CF31766A254B90DC00C877E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			children = (
 				CF9FD35B254CDBA00040E2CF /* MovieDetail.swift */,
 				CF36884B254DC019002A1374 /* Movie.swift */,
+				70DFCE1B254DED6400ABA6F4 /* Review.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				70DF9FE1254DDBBE00143BCF /* ReviewListItemView.swift in Sources */,
 				CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */,
 				CF9FD35C254CDBA00040E2CF /* MovieDetail.swift in Sources */,
+				70DFCE1C254DED6400ABA6F4 /* Review.swift in Sources */,
 				CF368867254DC79A002A1374 /* MuCardType.swift in Sources */,
 				CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */,
 				CF9FD343254CD19A0040E2CF /* Api.swift in Sources */,
