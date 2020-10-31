@@ -11,7 +11,20 @@ import SwiftUI
 struct MuuuvieApp: App {
     var body: some Scene {
         WindowGroup {
-            MovieDetailView()
+            MuCard(
+                imagePath: Movie.mocked.posterImagePath,
+                title: Movie.mocked.title
+            ).onTapGesture {
+                print("I was pressed")
+            }
+            
+            MuCard(
+                imagePath: Movie.mocked.posterImagePath,
+                title: Movie.mocked.title,
+                cardType: .small
+            ).onTapGesture {
+                print("I was pressed 2")
+            }
         }
     }
 }

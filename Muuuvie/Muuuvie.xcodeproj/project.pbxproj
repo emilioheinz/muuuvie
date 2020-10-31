@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,11 @@
 		CF317670254B90DE00C877E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF31766F254B90DE00C877E3 /* Preview Assets.xcassets */; };
 		CF31767B254B90DE00C877E3 /* MuuuvieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31767A254B90DE00C877E3 /* MuuuvieTests.swift */; };
 		CF317686254B90DE00C877E3 /* MuuuvieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF317685254B90DE00C877E3 /* MuuuvieUITests.swift */; };
-		CF31769B254B91D500C877E3 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31769A254B91D500C877E3 /* Placeholder.swift */; };
+		CF368837254D9C77002A1374 /* MuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF368836254D9C77002A1374 /* MuCard.swift */; };
+		CF36883D254D9D72002A1374 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CF36883C254D9D72002A1374 /* Nuke */; };
+		CF368843254D9D95002A1374 /* FetchImage in Frameworks */ = {isa = PBXBuildFile; productRef = CF368842254D9D95002A1374 /* FetchImage */; };
+		CF36884C254DC019002A1374 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36884B254DC019002A1374 /* Movie.swift */; };
+		CF368867254DC79A002A1374 /* MuCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF368866254DC79A002A1374 /* MuCardType.swift */; };
 		CF9FD343254CD19A0040E2CF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3176A4254B91E500C877E3 /* Api.swift */; };
 		CF9FD348254CD1EA0040E2CF /* ApiSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD347254CD1EA0040E2CF /* ApiSupport.swift */; };
 		CF9FD351254CDB4E0040E2CF /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD350254CDB4E0040E2CF /* MovieDetailView.swift */; };
@@ -56,9 +60,11 @@
 		CF317681254B90DE00C877E3 /* MuuuvieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuuuvieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF317685254B90DE00C877E3 /* MuuuvieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuuuvieUITests.swift; sourceTree = "<group>"; };
 		CF317687254B90DE00C877E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF31769A254B91D500C877E3 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		CF3176A2254B91E100C877E3 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		CF3176A4254B91E500C877E3 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		CF368836254D9C77002A1374 /* MuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuCard.swift; sourceTree = "<group>"; };
+		CF36884B254DC019002A1374 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		CF368866254DC79A002A1374 /* MuCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuCardType.swift; sourceTree = "<group>"; };
 		CF9FD347254CD1EA0040E2CF /* ApiSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSupport.swift; sourceTree = "<group>"; };
 		CF9FD350254CDB4E0040E2CF /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		CF9FD355254CDB690040E2CF /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
@@ -73,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF36883D254D9D72002A1374 /* Nuke in Frameworks */,
+				CF368843254D9D95002A1374 /* FetchImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +124,7 @@
 		CF317667254B90DC00C877E3 /* Muuuvie */ = {
 			isa = PBXGroup;
 			children = (
+				CF368865254DC779002A1374 /* Enums */,
 				CF9FD39A254CF5580040E2CF /* Protocols */,
 				CF9FD35A254CDB890040E2CF /* Models */,
 				CF317699254B915800C877E3 /* Components */,
@@ -189,8 +198,17 @@
 			children = (
 				CF31769A254B91D500C877E3 /* Placeholder.swift */,
 				A7492C09254DE574009E9BCD /* IconButtonView.swift */,
+				CF368836254D9C77002A1374 /* MuCard.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		CF368865254DC779002A1374 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				CF368866254DC79A002A1374 /* MuCardType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		CF9FD34F254CDADF0040E2CF /* MovieDetail */ = {
@@ -206,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				CF9FD35B254CDBA00040E2CF /* MovieDetail.swift */,
+				CF36884B254DC019002A1374 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +253,10 @@
 			dependencies = (
 			);
 			name = Muuuvie;
+			packageProductDependencies = (
+				CF36883C254D9D72002A1374 /* Nuke */,
+				CF368842254D9D95002A1374 /* FetchImage */,
+			);
 			productName = Muuuvie;
 			productReference = CF317665254B90DC00C877E3 /* Muuuvie.app */;
 			productType = "com.apple.product-type.application";
@@ -305,6 +328,10 @@
 				Base,
 			);
 			mainGroup = CF31765C254B90DC00C877E3;
+			packageReferences = (
+				CF36883B254D9D72002A1374 /* XCRemoteSwiftPackageReference "Nuke" */,
+				CF368841254D9D95002A1374 /* XCRemoteSwiftPackageReference "FetchImage" */,
+			);
 			productRefGroup = CF317666254B90DC00C877E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -351,14 +378,16 @@
 				CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */,
 				CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */,
 				CF9FD35C254CDBA00040E2CF /* MovieDetail.swift in Sources */,
+				CF368867254DC79A002A1374 /* MuCardType.swift in Sources */,
 				CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */,
 				CF9FD343254CD19A0040E2CF /* Api.swift in Sources */,
 				CF9FD356254CDB690040E2CF /* MovieDetailViewModel.swift in Sources */,
 				CF9FD348254CD1EA0040E2CF /* ApiSupport.swift in Sources */,
+				CF36884C254DC019002A1374 /* Movie.swift in Sources */,
 				CF9FD3BE254CFBA90040E2CF /* Color+Pallete.swift in Sources */,
-				CF31769B254B91D500C877E3 /* Placeholder.swift in Sources */,
 				CF9FD351254CDB4E0040E2CF /* MovieDetailView.swift in Sources */,
 				A7492C0A254DE574009E9BCD /* IconButtonView.swift in Sources */,
+				CF368837254D9C77002A1374 /* MuCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +707,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF36883B254D9D72002A1374 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.2;
+			};
+		};
+		CF368841254D9D95002A1374 /* XCRemoteSwiftPackageReference "FetchImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/FetchImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF36883C254D9D72002A1374 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF36883B254D9D72002A1374 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		CF368842254D9D95002A1374 /* FetchImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF368841254D9D95002A1374 /* XCRemoteSwiftPackageReference "FetchImage" */;
+			productName = FetchImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF31765D254B90DC00C877E3 /* Project object */;
 }
