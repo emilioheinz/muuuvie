@@ -10,7 +10,7 @@ import Foundation
 enum Endpoint {
     case popularMovies
     case movieDetail(id: Int)
-    case moviesInCategory(category: String)
+    case moviesInCategory(category: MovieCategoryEnum)
     
     var url: String {
         switch self {

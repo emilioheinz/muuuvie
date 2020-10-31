@@ -7,27 +7,24 @@
 
 import SwiftUI
 
-struct MoviesCategoriesListView: View {
-    let categories: [MovieCategoryModel]
+struct MovieCategoryListView: View {
+    @ObservedObject var viewModel = MovieCategoryListViewModel()
     
     var body: some View {
         ScrollView( showsIndicators: false) {
             VStack(spacing: 30) {
-                ForEach(categories) { category in
+                ForEach(viewModel.categories) { category in
                     MoviesCategoryView(category: category)
                 }
             }
+        }.onAppear {
+            viewModel.fetchMovieCategoryList()
         }
     }
 }
 
 struct MoviesCategoriesListView_Previews: PreviewProvider {
     static var previews: some View {
-        MoviesCategoriesListView(categories: [
-            MovieCategoryModel.mocked,
-            MovieCategoryModel.mocked,
-            MovieCategoryModel.mocked,
-            MovieCategoryModel.mocked
-        ])
+        MovieCategoryListView()
     }
 }

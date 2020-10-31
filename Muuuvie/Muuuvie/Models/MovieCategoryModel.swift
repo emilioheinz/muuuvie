@@ -8,20 +8,17 @@
 import Foundation
 
 struct MovieCategoryModel: Decodable, Identifiable {
-    let id: String
-    let title: String
+    let id: Int
     let movies: [MovieModel]
 
     enum CodingKeys: String, CodingKey {
-        case id
-        case title
+        case id = "total_results"
         case movies = "results"
     }
     
     static var mocked: MovieCategoryModel {
         MovieCategoryModel(
-          id: "pop",
-          title: "Popular",
+          id: 0,
           movies: [
             MovieModel(
                 id: 724989,

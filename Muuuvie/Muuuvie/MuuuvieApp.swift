@@ -11,12 +11,7 @@ import SwiftUI
 struct MuuuvieApp: App {
     var body: some Scene {
         WindowGroup {
-            MoviesCategoriesListView(categories: [
-                MovieCategoryModel.mocked,
-                MovieCategoryModel.mocked,
-                MovieCategoryModel.mocked,
-                MovieCategoryModel.mocked
-            ])
+            MovieCategoryListView()
         }
     }
 }
