@@ -10,10 +10,10 @@ import FetchImage
 
 struct MuCardView: View {
     let title: String
-    let cardType: MuCardType
+    let cardType: MuCardTypeEnum
     @ObservedObject var image: FetchImage
     
-    init(imagePath: String, title: String, cardType: MuCardType = .large) {
+    init(imagePath: String, title: String, cardType: MuCardTypeEnum = .large) {
         self.title = title
         self.cardType = cardType
         self.image = FetchImage(url: URL(string: Api.instance.imageUrl(from: imagePath))!)
@@ -39,8 +39,8 @@ struct MuCardView: View {
 struct MuCardView_Previews: PreviewProvider {
     static var previews: some View {
         MuCardView(
-            imagePath: Movie.mocked.posterImagePath,
-            title: Movie.mocked.title
+            imagePath: MovieModel.mocked.posterImagePath,
+            title: MovieModel.mocked.title
         )
     }
 }

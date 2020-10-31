@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MoviesCategoriesListView: View {
-    let categories: [MovieCategory]
+    let categories: [MovieCategoryModel]
     
     var body: some View {
         ScrollView( showsIndicators: false) {
@@ -24,10 +24,10 @@ struct MoviesCategoriesListView: View {
 struct MoviesCategoriesListView_Previews: PreviewProvider {
     static var previews: some View {
         MoviesCategoriesListView(categories: [
-                                    MovieCategory.mocked,
-                                    MovieCategory.mocked,
-                                    MovieCategory.mocked,
-                                    MovieCategory.mocked
+            MovieCategoryModel.mocked,
+            MovieCategoryModel.mocked,
+            MovieCategoryModel.mocked,
+            MovieCategoryModel.mocked
         ])
     }
 }

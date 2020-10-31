@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MoviesCategoryView: View {
-    let category: MovieCategory
+    let category: MovieCategoryModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -40,6 +40,6 @@ struct MoviesCategoryView: View {
 
 struct MoviesCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        MoviesCategoryView(category: MovieCategory.mocked)
+        MoviesCategoryView(category: MovieCategoryModel.mocked)
     }
 }

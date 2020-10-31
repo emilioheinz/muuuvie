@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Decodable, Identifiable {
+struct MovieModel: Decodable, Identifiable {
     let id: Int
     let title: String
     let posterImagePath: String
@@ -18,7 +18,7 @@ struct Movie: Decodable, Identifiable {
         case posterImagePath = "poster_path"
     }
     
-    static var mocked: Movie {
-        Movie(id: 724989, title: "Hard Kill And Hard Something else", posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg")
+    static var mocked: MovieModel {
+        MovieModel(id: 724989, title: "Hard Kill And Hard Something else", posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg")
     }
 }

@@ -12,10 +12,10 @@ struct MuuuvieApp: App {
     var body: some Scene {
         WindowGroup {
             MoviesCategoriesListView(categories: [
-                MovieCategory.mocked,
-                MovieCategory.mocked,
-                MovieCategory.mocked,
-                MovieCategory.mocked
+                MovieCategoryModel.mocked,
+                MovieCategoryModel.mocked,
+                MovieCategoryModel.mocked,
+                MovieCategoryModel.mocked
             ])
         }
     }

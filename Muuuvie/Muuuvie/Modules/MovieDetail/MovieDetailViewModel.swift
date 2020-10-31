@@ -5,11 +5,11 @@
 //  Created by Emilio Heinzmann on 30/10/20.
 //
 
-import SwiftUI
+import Foundation
 
 class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
 
-    @Published var movie: MovieDetail?
+    @Published var movie: MovieDetailModel?
     @Published var isLoading: Bool
     @Published var hasError: Bool
     var message: String
@@ -22,7 +22,7 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
 
     func fetchMovie(id: Int) {
         self.isLoading = true
-        Api.instance.request(with: .movie(id: id)) { [weak self] (result: Result<MovieDetail, APIError>) in
+        Api.instance.request(with: .movieDetail(id: id)) { [weak self] (result: Result<MovieDetailModel, APIError>) in
             switch result {
             case .success(let movie):
                 DispatchQueue.main.async {

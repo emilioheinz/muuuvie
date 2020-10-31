@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct MovieCategory: Decodable, Identifiable {
+struct MovieCategoryModel: Decodable, Identifiable {
     let id: String
     let title: String
-    let movies: [Movie]
+    let movies: [MovieModel]
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -18,32 +18,32 @@ struct MovieCategory: Decodable, Identifiable {
         case movies = "results"
     }
     
-    static var mocked: MovieCategory {
-        MovieCategory(
+    static var mocked: MovieCategoryModel {
+        MovieCategoryModel(
           id: "pop",
           title: "Popular",
           movies: [
-            Movie(
+            MovieModel(
                 id: 724989,
                 title: "Hard Kill And Hard Something else",
                 posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
             ),
-            Movie(
+            MovieModel(
                 id: 724989,
                 title: "Hard Kill And Hard Something else",
                 posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
             ),
-            Movie(
+            MovieModel(
                 id: 724989,
                 title: "Hard Kill And Hard Something else",
                 posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
             ),
-            Movie(
+            MovieModel(
                 id: 724989,
                 title: "Hard Kill And Hard Something else",
                 posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
             ),
-            Movie(
+            MovieModel (
                 id: 724989,
                 title: "Hard Kill And Hard Something else",
                 posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
