@@ -8,7 +8,7 @@
 import SwiftUI
 import FetchImage
 
-struct MuCard: View {
+struct MuCardView: View {
     let title: String
     let cardType: MuCardType
     @ObservedObject var image: FetchImage
@@ -25,20 +25,20 @@ struct MuCard: View {
                 .view?
                 .resizable()
                 .frame(width: cardType.width, height: cardType.height)
-                .cornerRadius(5)
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                .cornerRadius(10)
+                .shadow(radius: 4)
             Text(title)
                 .fontWeight(cardType.fontWeight)
                 .font(cardType.font)
                 .frame(width: cardType.width)
-                .lineLimit(1)
-        }
+                .lineLimit(2)
+        }.padding(10)
     }
 }
 
-struct MuCard_Previews: PreviewProvider {
+struct MuCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MuCard(
+        MuCardView(
             imagePath: Movie.mocked.posterImagePath,
             title: Movie.mocked.title
         )
