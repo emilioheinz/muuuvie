@@ -10,6 +10,7 @@
 		A7006B8A254DFEF500E1342F /* ArtistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B89254DFEF500E1342F /* ArtistDetailView.swift */; };
 		A7006B92254DFF0500E1342F /* ArtistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B91254DFF0500E1342F /* ArtistDetailViewModel.swift */; };
 		A7006B97254DFFDE00E1342F /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B96254DFFDE00E1342F /* ArtistModel.swift */; };
+		A7006B9C254E0C9F00E1342F /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B9B254E0C9F00E1342F /* Date+Formatter.swift */; };
 		CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF317668254B90DC00C877E3 /* MuuuvieApp.swift */; };
 		CF31766B254B90DC00C877E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31766A254B90DC00C877E3 /* ContentView.swift */; };
 		CF31766D254B90DE00C877E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF31766C254B90DE00C877E3 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		A7006B89254DFEF500E1342F /* ArtistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailView.swift; sourceTree = "<group>"; };
 		A7006B91254DFF0500E1342F /* ArtistDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewModel.swift; sourceTree = "<group>"; };
 		A7006B96254DFFDE00E1342F /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
+		A7006B9B254E0C9F00E1342F /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
 		CF317665254B90DC00C877E3 /* Muuuvie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muuuvie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF317668254B90DC00C877E3 /* MuuuvieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuuuvieApp.swift; sourceTree = "<group>"; };
 		CF31766A254B90DC00C877E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				CF9FD3BD254CFBA90040E2CF /* Color+Pallete.swift */,
+				A7006B9B254E0C9F00E1342F /* Date+Formatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				CF9FD343254CD19A0040E2CF /* Api.swift in Sources */,
 				CF9FD356254CDB690040E2CF /* MovieDetailViewModel.swift in Sources */,
 				CF9FD348254CD1EA0040E2CF /* ApiSupport.swift in Sources */,
+				A7006B9C254E0C9F00E1342F /* Date+Formatter.swift in Sources */,
 				A7006B92254DFF0500E1342F /* ArtistDetailViewModel.swift in Sources */,
 				CF36889E254DE1BA002A1374 /* MovieCategoryEnum.swift in Sources */,
 				A7006B8A254DFEF500E1342F /* ArtistDetailView.swift in Sources */,

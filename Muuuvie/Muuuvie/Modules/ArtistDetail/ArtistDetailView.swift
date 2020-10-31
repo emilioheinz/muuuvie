@@ -12,12 +12,21 @@ struct ArtistDetailView: View {
     let artist: ArtistModel
     
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            ArtistImage(profileImagePath: artist.profileImagePath)
+        VStack(alignment: .leading) {
+            ZStack(alignment: .bottomLeading) {
+                ArtistImage(profileImagePath: artist.profileImagePath)
 
-            ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday)
+                ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday)
+            }
+            .frame(width: .infinity, height: 400)
+            
+            SummaryHeader()
+            
+            Text(artist.biography)
+                .font(.body)
+                .foregroundColor(.grayText)
+                .padding(25)
         }
-        .frame(width: .infinity, height: 400)
     }
 }
 
@@ -30,7 +39,7 @@ struct ArtistDetailView_Previews: PreviewProvider {
 struct ArtistInfo: View {
     let name: String
     let department: String
-    let birthday: String?
+    let birthday: Date?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -44,10 +53,10 @@ struct ArtistInfo: View {
 
                 
                 if let birthday = birthday {
-                    Text(" | ")
+                    Text("|")
                         .font(.subheadline)
                     
-                    Text(birthday)
+                    Text(birthday.formatted)
                         .font(.subheadline)
                 } else {
                     EmptyView()
@@ -78,6 +87,20 @@ struct ArtistImage: View {
             Rectangle()
                 .foregroundColor(.clear)
                 .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
+        }
+    }
+}
+
+struct SummaryHeader: View {
+    var body: some View {
+        Group {
+            Text("Summary")
+                .padding(6)
+                .padding(.leading, 18)
+            
+            Rectangle()
+                .frame(width: .infinity, height: 5)
+                .foregroundColor(.mainOrange)
         }
     }
 }
