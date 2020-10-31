@@ -9,6 +9,8 @@ import Foundation
 
 typealias RequestCallback<T> = (Result<T, APIError>) -> Void
 
+
+// https://api.themoviedb.org/3/movie/popular?api_key=37186ddc43254f76799f9204ff25251c
 struct Api {
     static let instance = Api()
     
@@ -40,7 +42,8 @@ struct Api {
                 do {
                     let values = try decoder.decode(T.self, from: data)
                     completion(.success(values))
-                } catch {
+                } catch let error {
+                    print(error)
                     completion(.failure(.decodeError))
                 }
             case .failure(_):

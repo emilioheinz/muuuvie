@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum MuCardType {
+enum MuCardTypeEnum {
     case large
     case small
     
