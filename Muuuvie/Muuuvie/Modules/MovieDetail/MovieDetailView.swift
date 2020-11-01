@@ -9,10 +9,21 @@ import SwiftUI
 
 struct MovieDetailView: View {
     @ObservedObject var viewModel = MovieDetailViewModel()
+    @State private var artistDetailPresented: Bool = false
     
     var body: some View {
         NavigationView {
-            Text("Hello, World!")
+            VStack {
+                Text("Hello, World!")
+                Button(action: {artistDetailPresented = true}){
+                    Text("Open artist detail")
+                }.sheet(isPresented: $artistDetailPresented) {
+                    ArtistDetailView(id: 287)
+                }
+                
+                    
+            }
+            
         }.onAppear {
             viewModel.fetchMovie(id: 550)
         }.alert(isPresented: $viewModel.hasError) {

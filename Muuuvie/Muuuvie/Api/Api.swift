@@ -37,7 +37,7 @@ struct Api {
                 }
                 
                 let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
+                decoder.dateDecodingStrategy = .deferredToDate
                 
                 do {
                     let values = try decoder.decode(T.self, from: data)

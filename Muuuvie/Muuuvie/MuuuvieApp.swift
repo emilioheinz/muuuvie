@@ -11,7 +11,7 @@ import SwiftUI
 struct MuuuvieApp: App {
     var body: some Scene {
         WindowGroup {
-            MovieCategoryListView()
+            MovieDetailView()
         }
     }
 }

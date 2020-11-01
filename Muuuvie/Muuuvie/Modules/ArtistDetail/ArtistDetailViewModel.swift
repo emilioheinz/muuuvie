@@ -12,14 +12,16 @@ class ArtistDetailViewModel: ObservableObject, ViewModelWithRequest {
     @Published var isLoading: Bool
     @Published var hasError: Bool
     var message: String
+    private let id: Int
     
-    init() {
+    init(id: Int) {
+        self.id = id
         self.isLoading = false
         self.hasError = false
         self.message = ""
     }
     
-    func fetchArtist(id: Int) {
+    func fetchArtist() {
         self.isLoading = true
         Api.instance.request(with: .artistDetail(id: id)) { [weak self] (result: Result<ArtistModel, APIError>) in
             switch result {

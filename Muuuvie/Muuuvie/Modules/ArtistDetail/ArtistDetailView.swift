@@ -9,30 +9,43 @@ import SwiftUI
 import FetchImage
 
 struct ArtistDetailView: View {
-    let artist: ArtistModel
+    @ObservedObject var viewModel: ArtistDetailViewModel
+    
+    var artist: ArtistModel! { viewModel.artist! }
+    
+    init(id: Int) {
+        viewModel = ArtistDetailViewModel(id: id)
+    }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            ZStack(alignment: .bottomLeading) {
-                ArtistImage(profileImagePath: artist.profileImagePath)
-
-                ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday)
+        NavigationView {
+            Group {
+                if viewModel.artist != nil {
+                    ArtistDetailBodyView(artist: artist)
+                } else {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .mainOrange))
+                }
             }
-            .frame(width: .infinity, height: 400)
-            
-            SummaryHeader()
-            
-            Text(artist.biography)
-                .font(.body)
-                .foregroundColor(.grayText)
-                .padding(25)
+            .navigationBarTitle("")
+            .navigationBarItems(trailing: Button(action: {
+                print("vai fechar")
+            }, label: {
+                Image(systemName: "xmark")
+                    .foregroundColor(.white)
+            }))
+            .onAppear {
+                viewModel.fetchArtist()
+            }
         }
     }
 }
 
 struct ArtistDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ArtistDetailView(artist: .mocked)
+        let view = ArtistDetailView(id: 287)
+        view.viewModel.artist = .mocked
+        return view
     }
 }
 
@@ -101,6 +114,28 @@ struct SummaryHeader: View {
             Rectangle()
                 .frame(width: .infinity, height: 5)
                 .foregroundColor(.mainOrange)
+        }
+    }
+}
+
+struct ArtistDetailBodyView: View {
+    var artist: ArtistModel
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            ZStack(alignment: .bottomLeading) {
+                ArtistImage(profileImagePath: artist.profileImagePath)
+
+                ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday)
+            }
+            .frame(width: .infinity, height: 400)
+            
+            SummaryHeader()
+            
+            Text(artist.biography)
+                .font(.body)
+                .foregroundColor(.grayText)
+                .padding(25)
         }
     }
 }
