@@ -22,7 +22,7 @@ struct Api {
     
     func request<T: Decodable>(with endpoint: Endpoint, completion: @escaping RequestCallback<T>) {
         let fullUrlString = "\(baseUrl)\(endpoint.url)?api_key=\(apiKey)"
-        print(fullUrlString)
+
         guard let fullUrl = URL(string: fullUrlString) else {
             completion(.failure(.malformedURL))
             return
