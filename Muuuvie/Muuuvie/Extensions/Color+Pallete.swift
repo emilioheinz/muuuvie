@@ -13,8 +13,9 @@ extension UIColor {
     
     static var shadowGray: UIColor { UIColor(named: "shadowGray")! }
     
-    static var iconGray: UIColor {
-        UIColor(named: "iconGray")! }
+    static var iconGray: UIColor { UIColor(named: "iconGray")! }
+    
+    static var grayText: UIColor { UIColor(named: "grayText")! }
 
 }
 
@@ -24,6 +25,8 @@ extension Color {
 
     static var shadowGray: Color { Color("shadowGray") }
     
-    static var iconGray: Color {
-        Color("iconGray") }
+    static var iconGray: Color { Color("iconGray") }
+
+    static var grayText: Color { Color("grayText") }
+    
 }
