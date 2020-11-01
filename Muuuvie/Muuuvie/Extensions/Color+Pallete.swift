@@ -10,6 +10,11 @@ import SwiftUI
 extension UIColor {
 
     static var mainOrange: UIColor { UIColor(named: "mainOrange")! }
+    
+    static var shadowGray: UIColor { UIColor(named: "shadowGray")! }
+    
+    static var iconGray: UIColor { UIColor(named: "iconGray")! }
+    
     static var grayText: UIColor { UIColor(named: "grayText")! }
 
 }
@@ -17,6 +22,11 @@ extension UIColor {
 extension Color {
 
     static var mainOrange: Color { Color("mainOrange") }
+
+    static var shadowGray: Color { Color("shadowGray") }
+    
+    static var iconGray: Color { Color("iconGray") }
+
     static var grayText: Color { Color("grayText") }
     
 }
