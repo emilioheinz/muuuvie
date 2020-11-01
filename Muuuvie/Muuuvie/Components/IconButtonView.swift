@@ -19,9 +19,10 @@ struct IconButtonView: View {
                 Image(systemName: image)
                     .foregroundColor(theme.iconColor)
             }.frame(width: 54, height: 54)
-            .background(Circle()
-                            .foregroundColor(theme.backgroundColor)
-                            .shadow(color: .shadowGray, radius: 5))
+            .background(
+                Circle()
+                    .foregroundColor(theme.backgroundColor)
+                    .shadow(color: .shadowGray, radius: 5))
             
             if let label = label {
                 Text(label)
