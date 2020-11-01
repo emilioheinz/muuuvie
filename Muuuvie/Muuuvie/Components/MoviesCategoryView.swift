@@ -14,7 +14,7 @@ struct MoviesCategoryView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Spacer().frame(width: 10)
-                Text("TESTE")
+                Text(category.categoryType.title)
                     .font(.title3)
                     .foregroundColor(.grayText)
                     .fontWeight(.bold)

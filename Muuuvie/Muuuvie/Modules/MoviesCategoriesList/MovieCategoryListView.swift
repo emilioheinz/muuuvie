@@ -19,7 +19,9 @@ struct MovieCategoryListView: View {
             }
         }.onAppear {
             viewModel.fetchMovieCategoryList()
-        }
+        }.alert(isPresented: $viewModel.hasError) {
+            Alert(title: Text(viewModel.message))
+        }.overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
     }
 }
 
