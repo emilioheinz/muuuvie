@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7006B7E254DEF9600E1342F /* IconButtonThemeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */; };
+		A7006BAD254F3CB600E1342F /* Image+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006BAC254F3CB600E1342F /* Image+Icons.swift */; };
 		A7492C0A254DE574009E9BCD /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7492C09254DE574009E9BCD /* IconButtonView.swift */; };
 		CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF317668254B90DC00C877E3 /* MuuuvieApp.swift */; };
 		CF31766B254B90DC00C877E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31766A254B90DC00C877E3 /* ContentView.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonThemeEnum.swift; sourceTree = "<group>"; };
+		A7006BAC254F3CB600E1342F /* Image+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Icons.swift"; sourceTree = "<group>"; };
 		A7492C09254DE574009E9BCD /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
 		CF317665254B90DC00C877E3 /* Muuuvie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muuuvie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF317668254B90DC00C877E3 /* MuuuvieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuuuvieApp.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				CF3176A2254B91E100C877E3 /* Placeholder.swift */,
 				CF9FD3BD254CFBA90040E2CF /* Color+Pallete.swift */,
+				A7006BAC254F3CB600E1342F /* Image+Icons.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				CF9FD35C254CDBA00040E2CF /* MovieDetail.swift in Sources */,
 				CF368867254DC79A002A1374 /* MuCardType.swift in Sources */,
 				CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */,
+				A7006BAD254F3CB600E1342F /* Image+Icons.swift in Sources */,
 				CF9FD343254CD19A0040E2CF /* Api.swift in Sources */,
 				CF9FD356254CDB690040E2CF /* MovieDetailViewModel.swift in Sources */,
 				CF9FD348254CD1EA0040E2CF /* ApiSupport.swift in Sources */,

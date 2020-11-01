@@ -9,14 +9,14 @@ import SwiftUI
 
 struct IconButtonView: View {
     var theme: IconButtonThemeEnum
-    var image: String
+    var image: Image
     var label: String?
     var action: () -> Void
 
     var body: some View {
         VStack {
             Button(action: action) {
-                Image(systemName: image)
+                image
                     .foregroundColor(theme.iconColor)
             }.frame(width: 54, height: 54)
             .background(
@@ -39,7 +39,7 @@ struct IconButtonView: View {
 
 struct IconButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        IconButtonView(theme:.primary, image: "star.fill", label: "222K") {
+        IconButtonView(theme:.primary, image: .favoriteIconFill, label: "222K") {
             print("pressed")
         }
     }
