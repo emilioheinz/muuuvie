@@ -38,9 +38,6 @@ class MovieCategoryListViewModel: ObservableObject, ViewModelWithRequest {
                         let categoriesWithErrorResponse = self?.categoriesWithErrorResponse ?? 0
                         let requestedCategories = loadedCategories + categoriesWithErrorResponse
                         
-                        print(requestedCategories)
-                        print(numberOfAvailableCategories)
-                        
                         if requestedCategories == numberOfAvailableCategories {
                             self?.isLoading = false
                         }
