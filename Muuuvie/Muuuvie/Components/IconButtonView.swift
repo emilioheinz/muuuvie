@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IconButtonView: View {
-    var theme: IconButtonTheme
+    var theme: IconButtonThemeEnum
     var image: String
     var label: String?
     var action: () -> Void

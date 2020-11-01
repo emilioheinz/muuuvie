@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum IconButtonTheme {
+enum IconButtonThemeEnum {
     case primary
     case secondary
     
