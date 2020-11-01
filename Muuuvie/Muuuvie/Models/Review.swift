@@ -14,7 +14,7 @@ struct Review: Decodable {
     func getAvatar() -> String {
         let randomNumber: Int = Int.random(in: 1...100)
         
-        return "https://avatars.dicebear.com/api/human/\(randomNumber).svg"
+        return "https://robohash.org/\(randomNumber).png"
     }
     
     static var mocked: Review {

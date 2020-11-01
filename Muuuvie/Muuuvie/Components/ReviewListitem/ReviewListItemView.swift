@@ -15,20 +15,22 @@ struct ReviewListItemView: View {
     
     init(review: Review) {
         self.review = review
-        self.image = FetchImage(url: URL(string: Api.instance.imageUrl(from: review.getAvatar()))!)
+        self.image = FetchImage(url: URL(string: review.getAvatar())!)
     }
     
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(alignment: .top, spacing: 12) {
             image
                 .view?
                 .resizable()
-                .frame(width: 32, height: 32)
+                .frame(width: 40, height: 40)
                 .clipShape(Circle())
+                .padding(.top, 10)
             VStack(alignment: .leading, spacing: 10) {
                 Text(review.author)
                     .font(.title2)
                     .fontWeight(.semibold)
+                    .foregroundColor(.grayText)
                 Text(review.review)
                     .font(.subheadline)
                     .foregroundColor(.gray)
@@ -38,7 +40,6 @@ struct ReviewListItemView: View {
         .padding(.horizontal, 20)
         .padding(.top, 15)
         .padding(.bottom, 15)
-        .frame(height: .infinity)
     }
 }
 
