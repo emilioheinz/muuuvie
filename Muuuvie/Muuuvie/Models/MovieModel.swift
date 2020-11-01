@@ -10,7 +10,7 @@ import Foundation
 struct MovieModel: Decodable, Identifiable {
     let id: Int
     let title: String
-    let posterImagePath: String
+    let posterImagePath: String?
 
     enum CodingKeys: String, CodingKey {
         case id

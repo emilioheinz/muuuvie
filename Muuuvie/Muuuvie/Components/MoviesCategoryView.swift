@@ -14,7 +14,7 @@ struct MoviesCategoryView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Spacer().frame(width: 10)
-                Text("TESTE")
+                Text(category.categoryType.title)
                     .font(.title3)
                     .foregroundColor(.grayText)
                     .fontWeight(.bold)
@@ -30,7 +30,7 @@ struct MoviesCategoryView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top) {
                     ForEach(category.movies) { movie in
-                        MuCardView(imagePath: movie.posterImagePath, title: movie.title)
+                        MuCardView(imagePath: movie.posterImagePath ?? "", title: movie.title)
                     }
                 }
             }
