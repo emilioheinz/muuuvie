@@ -30,7 +30,7 @@ struct MoviesCategoryView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top) {
                     ForEach(category.movies) { movie in
-                        MuCardView(imagePath: movie.posterImagePath, title: movie.title)
+                        MuCardView(imagePath: movie.posterImagePath ?? "", title: movie.title)
                     }
                 }
             }
