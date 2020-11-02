@@ -10,7 +10,7 @@ import SwiftUI
 extension Image {
 
     static var favoriteIconFill: Image { Image(systemName: "star.fill") }
-    
+
     static var favoriteIcon: Image { Image(systemName: "star") }
     
     static var thumbsupIconFill: Image { Image(systemName: "hand.thumbsup.fill") }
@@ -25,4 +25,5 @@ extension Image {
     
     static var reviewIcon: Image { Image(systemName: "quote.bubble") }
 
+    static var houseFill: Image { Image(systemName: "house.fill") }
 }
