@@ -8,30 +8,52 @@
 import SwiftUI
 
 struct MovieDetailView: View {
-    @Binding var movieId: Int?
-    @Binding var isPresented: Bool
+    let movieId: Int
     
     @ObservedObject var viewModel = MovieDetailViewModel()
     
+    init(movieId: Int) {
+        self.movieId = movieId
+    }
+    
     var body: some View {
-        NavigationView {
-            if let movieId = movieId {
-                Text("\(movieId)")
-                    .onAppear {
-                        viewModel.fetchMovie(id: movieId)
+        ScrollView {
+            VStack() {
+                ZStack() {
+                    ImageView(imageUrl: URL(string: Api.instance.imageUrl(from: viewModel.movie?.backdropImage ?? ""))!)
+                        .frame(width: 0, height: 425, alignment: .center)
+                    VStack() {
+                        Text(viewModel.movie?.title ?? "")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
                     }
+                }
+                VStack(alignment: .leading) {
+                    Text("Full Cast & Crew")
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(alignment: .top) {
+//                            ForEach(movie.movies) { actor in
+//                                MuCardView(imagePath: movie.posterImagePath ?? "", title: movie.title)
+//                            }
+                        }
+                    }
+                }
             }
-            
-            Text("Filme não encontrado")
-        }.alert(isPresented: $viewModel.hasError) {
+        }
+        .onAppear {
+            viewModel.fetchMovie(id: movieId)
+        }
+        .alert(isPresented: $viewModel.hasError) {
             Alert(title: Text(viewModel.message))
-        }.overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
-        
+        }
+        .overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
+        .navigationBarTitle("", displayMode: .inline)
     }
 }
 
 struct MovieDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(movieId: .constant(550), isPresented: .constant(true))
+        MovieDetailView(movieId: 550)
     }
 }

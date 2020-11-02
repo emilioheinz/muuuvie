@@ -30,6 +30,7 @@ struct MuCardView: View {
                 .font(cardType.font)
                 .frame(width: cardType.width)
                 .lineLimit(2)
+                .foregroundColor(Color.black)
         }.padding(10)
     }
 }

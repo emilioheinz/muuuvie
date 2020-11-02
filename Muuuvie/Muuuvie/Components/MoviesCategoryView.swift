@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MoviesCategoryView: View {
     let category: MovieCategoryModel
-    let onMovieTap: (_ id: Int) -> Void
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -31,10 +30,9 @@ struct MoviesCategoryView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top) {
                     ForEach(category.movies) { movie in
-                        MuCardView(imagePath: movie.posterImagePath ?? "", title: movie.title)
-                            .onTapGesture {
-                                onMovieTap(movie.id)
-                            }
+                        NavigationLink(destination: MovieDetailView(movieId: movie.id)) {
+                            MuCardView(imagePath: movie.posterImagePath ?? "", title: movie.title)
+                        }
                     }
                 }
             }
@@ -44,8 +42,6 @@ struct MoviesCategoryView: View {
 
 struct MoviesCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        MoviesCategoryView(category: MovieCategoryModel.mocked) { id in
-            print(id)
-        }
+        MoviesCategoryView(category: MovieCategoryModel.mocked)
     }
 }
