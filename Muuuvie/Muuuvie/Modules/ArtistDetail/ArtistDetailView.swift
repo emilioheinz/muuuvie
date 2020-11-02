@@ -10,30 +10,28 @@ import FetchImage
 
 struct ArtistDetailView: View {
     @ObservedObject var viewModel: ArtistDetailViewModel
+    @Binding var isPresented: Bool
     
     var artist: ArtistModel! { viewModel.artist! }
     
-    init(id: Int) {
+    init(id: Int, isPresented: Binding<Bool>) {
         viewModel = ArtistDetailViewModel(id: id)
+        self._isPresented = isPresented
     }
     
     var body: some View {
         NavigationView {
             Group {
                 if viewModel.artist != nil {
-                    ArtistDetailBodyView(artist: artist)
+                    ArtistDetailBodyView(artist: artist){
+                        isPresented = false
+                    }
                 } else {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .mainOrange))
                 }
             }
-            .navigationBarTitle("")
-            .navigationBarItems(trailing: Button(action: {
-                print("vai fechar")
-            }, label: {
-                Image(systemName: "xmark")
-                    .foregroundColor(.white)
-            }))
+            .navigationBarHidden(true)
             .onAppear {
                 viewModel.fetchArtist()
             }
@@ -43,7 +41,7 @@ struct ArtistDetailView: View {
 
 struct ArtistDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let view = ArtistDetailView(id: 287)
+        let view = ArtistDetailView(id: 287, isPresented: .constant(true))
         view.viewModel.artist = .mocked
         return view
     }
@@ -118,15 +116,39 @@ struct SummaryHeader: View {
     }
 }
 
+struct CloseViewButton: View {
+    var action: () -> Void
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            Button(action: action){
+                Image(systemName: "xmark")
+                    .foregroundColor(.white)
+                    .padding(15)
+                    .font(Font.title2)
+            }
+            
+        }
+    }
+}
+
 struct ArtistDetailBodyView: View {
     var artist: ArtistModel
+    var closeButtonAction: () -> Void
     
     var body: some View {
         VStack(alignment: .leading) {
-            ZStack(alignment: .bottomLeading) {
+            ZStack(alignment: .leading) {
                 ArtistImage(profileImagePath: artist.profileImagePath)
+                
+                VStack(alignment: .leading) {
+                    CloseViewButton(action: closeButtonAction)
+                    Spacer()
 
-                ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday)
+                    ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             }
             .frame(width: .infinity, height: 400)
             
@@ -135,7 +157,7 @@ struct ArtistDetailBodyView: View {
             Text(artist.biography)
                 .font(.body)
                 .foregroundColor(.grayText)
-                .padding(25)
+                .padding(20)
         }
     }
 }

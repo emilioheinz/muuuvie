@@ -18,7 +18,7 @@ struct MovieDetailView: View {
                 Button(action: {artistDetailPresented = true}){
                     Text("Open artist detail")
                 }.sheet(isPresented: $artistDetailPresented) {
-                    ArtistDetailView(id: 287)
+                    ArtistDetailView(id: 287, isPresented: $artistDetailPresented)
                 }
                 
                     
