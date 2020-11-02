@@ -19,15 +19,26 @@ struct MovieDetailView: View {
     var body: some View {
         ScrollView {
             VStack() {
-                ZStack() {
+                ZStack(alignment: .bottom) {
                     ImageView(imageUrl: URL(string: Api.instance.imageUrl(from: viewModel.movie?.backdropImage ?? ""))!)
                         .frame(width: 0, height: 425, alignment: .center)
-                    VStack() {
+                    VStack(alignment: .leading) {
                         Text(viewModel.movie?.title ?? "")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color.white)
+                        Text("Status: \(viewModel.movie?.status ?? "")" )
+                            .font(.subheadline)
+                            .fontWeight(.light)
+                            .foregroundColor(Color.white)
+                        RatingStars(voteAvarage: viewModel.movie?.voteAvarage ?? 0.0)
+                        Text(viewModel.movie?.overview ?? "")
+                            .font(.title3)
+                            .fontWeight(.regular)
+                            .foregroundColor(Color.white)
+                            .lineLimit(6)
                     }
+                    .padding(30)
                 }
                 VStack(alignment: .leading) {
                     Text("Full Cast & Crew")
@@ -55,5 +66,15 @@ struct MovieDetailView: View {
 struct MovieDetailView_Previews: PreviewProvider {
     static var previews: some View {
         MovieDetailView(movieId: 550)
+    }
+}
+
+struct RatingStars: View {
+    let voteAvarage: Double
+    
+    var body: some View {
+        HStack {
+            Text("\(voteAvarage)").foregroundColor(.white)
+        }
     }
 }
