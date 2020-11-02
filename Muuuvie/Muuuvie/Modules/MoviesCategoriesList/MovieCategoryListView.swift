@@ -13,27 +13,31 @@ struct MovieCategoryListView: View {
     @State private var tappedMovieId: Int?
     
     var body: some View {
-        ScrollView( showsIndicators: false) {
-            VStack(spacing: 30) {
-                ForEach(viewModel.categories) { category in
-                    MoviesCategoryView(category: category) { id in
-                        tappedMovieId = id
-                        isMovieDetailPresented = true
+        NavigationView {
+            ScrollView( showsIndicators: false) {
+                VStack(spacing: 30) {
+                    ForEach(viewModel.categories) { category in
+                        MoviesCategoryView(category: category) { id in
+                            tappedMovieId = id
+                            isMovieDetailPresented = true
+                        }
                     }
                 }
             }
+            .onAppear {
+                viewModel.fetchMovieCategoryList()
+            }
+            .alert(isPresented: $viewModel.hasError) {
+                Alert(title: Text(viewModel.message))
+            }
+            .overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
+            .fullScreenCover(isPresented: $isMovieDetailPresented) {
+                MovieDetailView(movieId: $tappedMovieId, isPresented: $isMovieDetailPresented)
+            }
+            .navigationBarTitle("Movies", displayMode: .large)
         }
-        .onAppear {
-            viewModel.fetchMovieCategoryList()
-        }
-        .alert(isPresented: $viewModel.hasError) {
-            Alert(title: Text(viewModel.message))
-        }
-        .overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
-        .fullScreenCover(isPresented: $isMovieDetailPresented) {
-            MovieDetailView(movieId: $tappedMovieId, isPresented: $isMovieDetailPresented)
-        }
-        
+        .accentColor(.black)
+        .background(Color.white)
     }
 }
 
