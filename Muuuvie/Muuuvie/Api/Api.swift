@@ -43,7 +43,6 @@ struct Api {
                     let values = try decoder.decode(T.self, from: data)
                     completion(.success(values))
                 } catch let error {
-                    print(error)
                     completion(.failure(.decodeError))
                 }
             case .failure(_):
