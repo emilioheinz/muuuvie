@@ -19,13 +19,19 @@ struct ArtistDetailView: View {
         self._isPresented = isPresented
     }
     
+    func closeButtonAction() {
+        isPresented = false
+    }
+    
+    func favoriteButtonAction() {
+        // TODO: add favoriteButtonAction
+    }
+    
     var body: some View {
         NavigationView {
             Group {
                 if viewModel.artist != nil {
-                    ArtistDetailBodyView(artist: artist){
-                        isPresented = false
-                    }
+                    ArtistDetailBodyView(artist: artist, closeButtonAction: closeButtonAction, favoriteButtonAction: favoriteButtonAction)
                 } else {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .mainOrange))
@@ -51,30 +57,37 @@ struct ArtistInfo: View {
     let name: String
     let department: String
     let birthday: Date?
+    var action: () -> Void
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(name)
-                .font(.title)
-                .padding(.bottom, 1)
-            
-            HStack {
-                Text(department)
-                    .font(.subheadline)
-
+        HStack {
+            VStack(alignment: .leading) {
+                Text(name)
+                    .font(.title)
+                    .padding(.bottom, 1)
                 
-                if let birthday = birthday {
-                    Text("|")
+                HStack {
+                    Text(department)
                         .font(.subheadline)
-                    
-                    Text(birthday.formatted)
-                        .font(.subheadline)
-                } else {
-                    EmptyView()
-                }
 
+                    
+                    if let birthday = birthday {
+                        Text("|")
+                            .font(.subheadline)
+                        
+                        Text(birthday.formatted)
+                            .font(.subheadline)
+                    } else {
+                        EmptyView()
+                    }
+
+                }
             }
-        }.foregroundColor(.white)
+            Spacer()
+            IconButtonView(theme: .secondary, image: .favoriteIcon, action: action)
+            
+        }
+        .foregroundColor(.white)
         .padding(18)
     }
 }
@@ -136,6 +149,7 @@ struct CloseViewButton: View {
 struct ArtistDetailBodyView: View {
     var artist: ArtistModel
     var closeButtonAction: () -> Void
+    var favoriteButtonAction: () -> Void
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -146,7 +160,7 @@ struct ArtistDetailBodyView: View {
                     CloseViewButton(action: closeButtonAction)
                     Spacer()
 
-                    ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday)
+                    ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday, action: favoriteButtonAction)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             }
