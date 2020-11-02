@@ -11,19 +11,17 @@ import FetchImage
 struct MuCardView: View {
     let title: String
     let cardType: MuCardTypeEnum
-    @ObservedObject var image: FetchImage
+    let imageUrl: URL
     
     init(imagePath: String, title: String, cardType: MuCardTypeEnum = .large) {
         self.title = title
         self.cardType = cardType
-        self.image = FetchImage(url: URL(string: Api.instance.imageUrl(from: imagePath))!)
+        self.imageUrl = URL(string: Api.instance.imageUrl(from: imagePath))!
     }
     
     var body: some View {
         VStack {
-            image
-                .view?
-                .resizable()
+            ImageView(imageUrl: imageUrl)
                 .frame(width: cardType.width, height: cardType.height)
                 .cornerRadius(10)
                 .shadow(radius: 4)
@@ -39,7 +37,7 @@ struct MuCardView: View {
 struct MuCardView_Previews: PreviewProvider {
     static var previews: some View {
         MuCardView(
-            imagePath: MovieModel.mocked.posterImagePath,
+            imagePath: MovieModel.mocked.posterImagePath ?? "",
             title: MovieModel.mocked.title
         )
     }

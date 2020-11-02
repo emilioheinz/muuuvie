@@ -7,18 +7,28 @@
 
 import Foundation
 
-struct MovieCategoryModel: Decodable, Identifiable {
-    let id: Int
+struct MovieCategoryApiReturnModel: Decodable {
     let movies: [MovieModel]
-
+    
     enum CodingKeys: String, CodingKey {
-        case id = "total_results"
         case movies = "results"
+    }
+}
+
+struct MovieCategoryModel: Identifiable {
+    let id: Int
+    let categoryType: MovieCategoryEnum
+    let movies: [MovieModel]
+    
+    init(categoryType: MovieCategoryEnum, movies: [MovieModel]) {
+        self.id = Int.random(in: 1...100)
+        self.categoryType = categoryType
+        self.movies = movies
     }
     
     static var mocked: MovieCategoryModel {
         MovieCategoryModel(
-          id: 0,
+          categoryType: .popular,
           movies: [
             MovieModel(
                 id: 724989,

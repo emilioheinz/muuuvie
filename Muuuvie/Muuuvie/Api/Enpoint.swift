@@ -20,7 +20,7 @@ enum Endpoint {
         case .movieDetail(let id):
             return "movie/\(id)"
         case .moviesInCategory(let category):
-            return "movie/\(category)"
+            return "movie/\(category.rawValue)"
         case .artistDetail(let id):
             return "person/\(id)"
 //        default:

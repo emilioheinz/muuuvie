@@ -30,9 +30,11 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
                     self?.isLoading = false
                 }
             case .failure(let error):
-                self?.hasError = true
-                self?.isLoading = false
-                self?.message = error.message
+                DispatchQueue.main.async {
+                    self?.hasError = true
+                    self?.isLoading = false
+                    self?.message = error.message
+                }
             }
         }
     }
