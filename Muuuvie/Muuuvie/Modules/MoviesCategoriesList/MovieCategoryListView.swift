@@ -8,20 +8,32 @@
 import SwiftUI
 
 struct MovieCategoryListView: View {
-    @ObservedObject var viewModel = MovieCategoryListViewModel()
+    @ObservedObject private var viewModel = MovieCategoryListViewModel()
+    @State private var isMovieDetailPresented: Bool = false
+    @State private var tappedMovieId: Int?
     
     var body: some View {
         ScrollView( showsIndicators: false) {
             VStack(spacing: 30) {
                 ForEach(viewModel.categories) { category in
-                    MoviesCategoryView(category: category)
+                    MoviesCategoryView(category: category) { id in
+                        tappedMovieId = id
+                        isMovieDetailPresented = true
+                    }
                 }
             }
-        }.onAppear {
+        }
+        .onAppear {
             viewModel.fetchMovieCategoryList()
-        }.alert(isPresented: $viewModel.hasError) {
+        }
+        .alert(isPresented: $viewModel.hasError) {
             Alert(title: Text(viewModel.message))
-        }.overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
+        }
+        .overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
+        .fullScreenCover(isPresented: $isMovieDetailPresented) {
+            MovieDetailView(movieId: $tappedMovieId, isPresented: $isMovieDetailPresented)
+        }
+        
     }
 }
 
