@@ -30,7 +30,7 @@ struct ArtistDetailView: View {
     var body: some View {
         NavigationView {
             Group {
-                if viewModel.artist != nil {
+                if let artist = viewModel.artist {
                     ArtistDetailBodyView(artist: artist, closeButtonAction: closeButtonAction, favoriteButtonAction: favoriteButtonAction)
                 } else {
                     ProgressView()
