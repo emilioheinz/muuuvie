@@ -12,7 +12,7 @@ struct ArtistDetailView: View {
     @ObservedObject var viewModel: ArtistDetailViewModel
     @Binding var isPresented: Bool
     
-    var artist: ArtistModel! { viewModel.artist! }
+    var artist: ArtistDetailModel! { viewModel.artist! }
     
     init(id: Int, isPresented: Binding<Bool>) {
         viewModel = ArtistDetailViewModel(id: id)
@@ -147,7 +147,7 @@ struct CloseViewButton: View {
 }
 
 struct ArtistDetailBodyView: View {
-    var artist: ArtistModel
+    var artist: ArtistDetailModel
     var closeButtonAction: () -> Void
     var favoriteButtonAction: () -> Void
     

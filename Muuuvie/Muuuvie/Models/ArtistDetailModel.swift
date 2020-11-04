@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArtistModel: Decodable, Identifiable {
+struct ArtistDetailModel: Decodable, Identifiable {
     let id: Int
     let name: String
     let knownForDepartment: String
@@ -24,7 +24,7 @@ struct ArtistModel: Decodable, Identifiable {
         case profileImagePath = "profile_path"
     }
     
-    static var mocked: ArtistModel {
-        ArtistModel(id: 287, name: "Brad Pitt", knownForDepartment: "Acting", biography: "William Bradley \"Brad\" Pitt (born December 18, 1963) is an American actor and film producer.", birthday: Date(), profileImagePath: "/kU3B75TyRiCgE270EyZnHjfivoq.jpg")
+    static var mocked: ArtistDetailModel {
+        ArtistDetailModel(id: 287, name: "Brad Pitt", knownForDepartment: "Acting", biography: "William Bradley \"Brad\" Pitt (born December 18, 1963) is an American actor and film producer.", birthday: Date(), profileImagePath: "/kU3B75TyRiCgE270EyZnHjfivoq.jpg")
     }
 }

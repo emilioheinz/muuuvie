@@ -10,7 +10,7 @@
 		A7006B7E254DEF9600E1342F /* IconButtonThemeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */; };
 		A7006B8A254DFEF500E1342F /* ArtistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B89254DFEF500E1342F /* ArtistDetailView.swift */; };
 		A7006B92254DFF0500E1342F /* ArtistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B91254DFF0500E1342F /* ArtistDetailViewModel.swift */; };
-		A7006B97254DFFDE00E1342F /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B96254DFFDE00E1342F /* ArtistModel.swift */; };
+		A7006B97254DFFDE00E1342F /* ArtistDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B96254DFFDE00E1342F /* ArtistDetailModel.swift */; };
 		A7006B9C254E0C9F00E1342F /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B9B254E0C9F00E1342F /* Date+Formatter.swift */; };
 		A7006BAD254F3CB600E1342F /* Image+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006BAC254F3CB600E1342F /* Image+Icons.swift */; };
 		A7006BCB255065C800E1342F /* Decoder+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006BCA255065C800E1342F /* Decoder+Date.swift */; };
@@ -64,7 +64,7 @@
 		A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonThemeEnum.swift; sourceTree = "<group>"; };
 		A7006B89254DFEF500E1342F /* ArtistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailView.swift; sourceTree = "<group>"; };
 		A7006B91254DFF0500E1342F /* ArtistDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewModel.swift; sourceTree = "<group>"; };
-		A7006B96254DFFDE00E1342F /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
+		A7006B96254DFFDE00E1342F /* ArtistDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailModel.swift; sourceTree = "<group>"; };
 		A7006B9B254E0C9F00E1342F /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
 		A7006BAC254F3CB600E1342F /* Image+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Icons.swift"; sourceTree = "<group>"; };
 		A7006BCA255065C800E1342F /* Decoder+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decoder+Date.swift"; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 				CF9FD35B254CDBA00040E2CF /* MovieDetailModel.swift */,
 				CF36884B254DC019002A1374 /* MovieModel.swift */,
 				CF368884254DD24C002A1374 /* MovieCategoryModel.swift */,
-				A7006B96254DFFDE00E1342F /* ArtistModel.swift */,
+				A7006B96254DFFDE00E1342F /* ArtistDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -449,7 +449,7 @@
 				CF36889E254DE1BA002A1374 /* MovieCategoryEnum.swift in Sources */,
 				A7006B8A254DFEF500E1342F /* ArtistDetailView.swift in Sources */,
 				CF36884C254DC019002A1374 /* MovieModel.swift in Sources */,
-				A7006B97254DFFDE00E1342F /* ArtistModel.swift in Sources */,
+				A7006B97254DFFDE00E1342F /* ArtistDetailModel.swift in Sources */,
 				CF368885254DD24C002A1374 /* MovieCategoryModel.swift in Sources */,
 				CF9FD3BE254CFBA90040E2CF /* Color+Pallete.swift in Sources */,
 				A7006B7E254DEF9600E1342F /* IconButtonThemeEnum.swift in Sources */,

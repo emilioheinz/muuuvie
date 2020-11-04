@@ -8,7 +8,7 @@
 import Foundation
 
 class ArtistDetailViewModel: ObservableObject, ViewModelWithRequest {
-    @Published var artist: ArtistModel?
+    @Published var artist: ArtistDetailModel?
     @Published var isLoading: Bool
     @Published var hasError: Bool
     var message: String
@@ -23,7 +23,7 @@ class ArtistDetailViewModel: ObservableObject, ViewModelWithRequest {
     
     func fetchArtist() {
         self.isLoading = true
-        Api.instance.request(with: .artistDetail(id: id)) { [weak self] (result: Result<ArtistModel, APIError>) in
+        Api.instance.request(with: .artistDetail(id: id)) { [weak self] (result: Result<ArtistDetailModel, APIError>) in
             switch result {
             case .success(let artist):
                 DispatchQueue.main.async {
