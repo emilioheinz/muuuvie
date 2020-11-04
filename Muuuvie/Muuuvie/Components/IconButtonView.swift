@@ -18,6 +18,7 @@ struct IconButtonView: View {
             Button(action: action) {
                 image
                     .foregroundColor(theme.iconColor)
+                    .font(.title)
             }.frame(width: 54, height: 54)
             .background(
                 Circle()

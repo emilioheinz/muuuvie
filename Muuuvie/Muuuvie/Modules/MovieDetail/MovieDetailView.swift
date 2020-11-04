@@ -11,6 +11,7 @@ struct MovieDetailView: View {
     let movieId: Int
     
     @ObservedObject var viewModel = MovieDetailViewModel()
+    @State private var artistDetailPresented: Bool = false
     
     init(movieId: Int) {
         self.movieId = movieId
