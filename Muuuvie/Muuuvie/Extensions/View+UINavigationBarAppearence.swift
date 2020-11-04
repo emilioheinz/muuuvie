@@ -9,15 +9,12 @@ import SwiftUI
 
 extension View {
     func configureNavigationBarAppearence(isTranslucent: Bool = false) {
-//        UINavigationBar.appearance().largeTitleTextAttributes = [
-//            .foregroundColor: UIColor.black
-//        ]
-//        UINavigationBar.appearance().titleTextAttributes = [
-//            .foregroundColor: UIColor.black
-//        ]
-        UINavigationBar.appearance().backgroundColor = .clear
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().shadowImage =  UIImage()
-        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .foregroundColor: UIColor.black
+        ]
+        UINavigationBar.appearance().titleTextAttributes = [
+            .foregroundColor: UIColor.black
+        ]
+        UINavigationBar.appearance().backgroundColor = .white
     }
 }

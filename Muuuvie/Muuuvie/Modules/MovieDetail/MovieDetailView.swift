@@ -14,6 +14,7 @@ struct MovieDetailView: View {
     
     init(movieId: Int) {
         self.movieId = movieId
+        self.configureNavigationBarAppearence()
     }
     
     var body: some View {
@@ -50,7 +51,6 @@ struct MovieDetailView: View {
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .onAppear {
             viewModel.fetchMovie(id: movieId)
-            self.configureNavigationBarAppearence(isTranslucent: true)
         }
         .alert(isPresented: $viewModel.hasError) {
             Alert(title: Text(viewModel.message))
