@@ -16,8 +16,12 @@ extension UIColor {
     static var iconGray: UIColor { UIColor(named: "iconGray")! }
     
     static var grayText: UIColor { UIColor(named: "grayText")! }
+    
     static var loaderBackground: UIColor { UIColor(named: "loaderBackground")! }
+    
     static var imageGrayBackground: UIColor { UIColor(named: "imageGrayBackground")! }
+    
+    static var favoriteYellow: UIColor { UIColor(named: "favoriteYellow")! }
 
 }
 
@@ -30,7 +34,11 @@ extension Color {
     static var iconGray: Color { Color("iconGray") }
 
     static var grayText: Color { Color("grayText") }
+    
     static var loaderBackground: Color { Color("loaderBackground") }
+    
     static var imageGrayBackground: Color { Color("imageGrayBackground") }
+    
+    static var favoriteYellow: Color { Color("favoriteYellow") }
     
 }

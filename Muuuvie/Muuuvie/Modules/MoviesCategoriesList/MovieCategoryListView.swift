@@ -10,10 +10,6 @@ import SwiftUI
 struct MovieCategoryListView: View {
     @ObservedObject private var viewModel = MovieCategoryListViewModel()
     
-    init() {
-        self.configureNavigationBarAppearence()
-    }
-    
     var body: some View {
         
         NavigationView {
@@ -37,6 +33,7 @@ struct MovieCategoryListView: View {
         .accentColor(Color.black)
         .onAppear {
             viewModel.fetchMovieCategoryList()
+            self.configureNavigationBarAppearence()
         }
         .alert(isPresented: $viewModel.hasError) {
             Alert(title: Text(viewModel.message))

@@ -8,18 +8,16 @@
 import SwiftUI
 
 extension View {
-    func configureNavigationBarAppearence() {
-        let appearence = UINavigationBarAppearance()
-        
-        appearence.largeTitleTextAttributes = [
-            .foregroundColor: UIColor.black
-        ]
-        appearence.titleTextAttributes = [
-            .foregroundColor: UIColor.black
-        ]
-        appearence.backgroundColor = UIColor.white
-        
-        UINavigationBar.appearance().standardAppearance = appearence
-        UINavigationBar.appearance().compactAppearance = appearence
+    func configureNavigationBarAppearence(isTranslucent: Bool = false) {
+//        UINavigationBar.appearance().largeTitleTextAttributes = [
+//            .foregroundColor: UIColor.black
+//        ]
+//        UINavigationBar.appearance().titleTextAttributes = [
+//            .foregroundColor: UIColor.black
+//        ]
+        UINavigationBar.appearance().backgroundColor = .clear
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage =  UIImage()
+        UINavigationBar.appearance().isTranslucent = true
     }
 }
