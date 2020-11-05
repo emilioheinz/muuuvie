@@ -16,8 +16,12 @@ class MovieCategoryListViewModel: ObservableObject, ViewModelWithRequest {
     var categoriesWithErrorResponse: Int = 0
     var message: String = ""
 
+    // Código do qual não me orgulho, porém teve que ser para fazer mais de uma request no início da tela.
     func fetchMovieCategoryList() {
         self.isLoading = true
+        self.hasError = false
+        self.loadedCategories = 0
+        self.categoriesWithErrorResponse = 0
         
         let numberOfAvailableCategories = MovieCategoryEnum.allCases.count
         
