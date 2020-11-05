@@ -10,6 +10,7 @@ import Foundation
 class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
 
     @Published var movie: MovieDetailModel?
+    @Published var artists: [ArtistModel]?
     @Published var isLoading: Bool
     @Published var hasError: Bool
     var message: String
@@ -25,10 +26,23 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
         Api.instance.request(with: .movieDetail(id: id)) { [weak self] (result: Result<MovieDetailModel, APIError>) in
             switch result {
             case .success(let movie):
-                DispatchQueue.main.async {
-                    self?.movie = movie
-                    self?.isLoading = false
+                Api.instance.request(with: .movieCast(id: id)) { [weak self] (result2: Result<CastApiReturnModel, APIError>) in
+                    switch result2 {
+                    case .success(let castResp):
+                        DispatchQueue.main.async {
+                            self?.movie = movie
+                            self?.artists = castResp.cast
+                            self?.isLoading = false
+                        }
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            self?.hasError = true
+                            self?.isLoading = false
+                            self?.message = error.message
+                        }
+                    }
                 }
+                
             case .failure(let error):
                 DispatchQueue.main.async {
                     self?.hasError = true

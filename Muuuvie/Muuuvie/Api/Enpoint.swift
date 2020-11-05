@@ -10,6 +10,7 @@ import Foundation
 enum Endpoint {
     case popularMovies
     case movieDetail(id: Int)
+    case movieCast(id: Int)
     case moviesInCategory(category: MovieCategoryEnum)
     case artistDetail(id: Int)
     
@@ -19,6 +20,8 @@ enum Endpoint {
             return "movie/popular"
         case .movieDetail(let id):
             return "movie/\(id)"
+        case .movieCast(let id):
+            return "movie/\(id)/credits"
         case .moviesInCategory(let category):
             return "movie/\(category.rawValue)"
         case .artistDetail(let id):

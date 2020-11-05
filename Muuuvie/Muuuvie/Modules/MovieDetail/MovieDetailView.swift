@@ -30,13 +30,19 @@ struct MovieDetailView: View {
                         
                         MovieInfo(movie: movie)
                     }
-                    VStack(alignment: .leading) {
-                        Text("Full Cast & Crew")
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(alignment: .top) {
-    //                            ForEach(movie.movies) { actor in
-    //                                MuCardView(imagePath: movie.posterImagePath ?? "", title: movie.title)
-    //                            }
+                    if let artists = viewModel.artists {
+                        VStack(alignment: .leading) {
+                            Text("Full Cast")
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(alignment: .top) {
+                                    ForEach(artists) { artist in
+                                        MuCardView(
+                                            imagePath: artist.imagePath ?? "",
+                                            title: artist.name,
+                                            cardType: .small
+                                        )
+                                    }
+                                }
                             }
                         }
                     }

@@ -43,6 +43,7 @@
 		CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD39B254CF58C0040E2CF /* ViewModelWithRequest.swift */; };
 		CF9FD3BE254CFBA90040E2CF /* Color+Pallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD3BD254CFBA90040E2CF /* Color+Pallete.swift */; };
 		CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDE95A0254CCCEA005C0E19 /* Enpoint.swift */; };
+		CFF82AA0255376BE00F0BC3D /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		CF9FD39B254CF58C0040E2CF /* ViewModelWithRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelWithRequest.swift; sourceTree = "<group>"; };
 		CF9FD3BD254CFBA90040E2CF /* Color+Pallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Pallete.swift"; sourceTree = "<group>"; };
 		CFDE95A0254CCCEA005C0E19 /* Enpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enpoint.swift; sourceTree = "<group>"; };
+		CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 				CF36884B254DC019002A1374 /* MovieModel.swift */,
 				CF368884254DD24C002A1374 /* MovieCategoryModel.swift */,
 				A7006B96254DFFDE00E1342F /* ArtistDetailModel.swift */,
+				CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				A7006B8A254DFEF500E1342F /* ArtistDetailView.swift in Sources */,
 				CF36884C254DC019002A1374 /* MovieModel.swift in Sources */,
 				A7006B97254DFFDE00E1342F /* ArtistDetailModel.swift in Sources */,
+				CFF82AA0255376BE00F0BC3D /* ArtistModel.swift in Sources */,
 				CF368885254DD24C002A1374 /* MovieCategoryModel.swift in Sources */,
 				CF9FD3BE254CFBA90040E2CF /* Color+Pallete.swift in Sources */,
 				A7006B7E254DEF9600E1342F /* IconButtonThemeEnum.swift in Sources */,
