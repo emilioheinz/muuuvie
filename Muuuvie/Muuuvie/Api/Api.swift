@@ -22,7 +22,7 @@ struct Api {
     
     func request<T: Decodable>(with endpoint: Endpoint, completion: @escaping RequestCallback<T>) {
         let fullUrlString = "\(baseUrl)\(endpoint.url)?api_key=\(apiKey)"
-        
+
         guard let fullUrl = URL(string: fullUrlString) else {
             completion(.failure(.malformedURL))
             return
@@ -37,13 +37,14 @@ struct Api {
                 }
                 
                 let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
+                decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
+                    return try decoder.dateFormatterWithoutTime()
+                })
                 
                 do {
                     let values = try decoder.decode(T.self, from: data)
                     completion(.success(values))
                 } catch let error {
-                    print(error)
                     completion(.failure(.decodeError))
                 }
             case .failure(_):

@@ -1,32 +1,33 @@
 //
-//  MovieDetailViewModel.swift
+//  ArtistDetailViewModel.swift
 //  Muuuvie
 //
-//  Created by Emilio Heinzmann on 30/10/20.
+//  Created by Camille Grings on 31/10/20.
 //
 
 import Foundation
 
-class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
-
-    @Published var movie: MovieDetailModel?
+class ArtistDetailViewModel: ObservableObject, ViewModelWithRequest {
+    @Published var artist: ArtistDetailModel?
     @Published var isLoading: Bool
     @Published var hasError: Bool
     var message: String
+    private let id: Int
     
-    init() {
+    init(id: Int) {
+        self.id = id
         self.isLoading = false
         self.hasError = false
         self.message = ""
     }
-
-    func fetchMovie(id: Int) {
+    
+    func fetchArtist() {
         self.isLoading = true
-        Api.instance.request(with: .movieDetail(id: id)) { [weak self] (result: Result<MovieDetailModel, APIError>) in
+        Api.instance.request(with: .artistDetail(id: id)) { [weak self] (result: Result<ArtistDetailModel, APIError>) in
             switch result {
-            case .success(let movie):
+            case .success(let artist):
                 DispatchQueue.main.async {
-                    self?.movie = movie
+                    self?.artist = artist
                     self?.isLoading = false
                 }
             case .failure(let error):
@@ -38,5 +39,4 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
             }
         }
     }
-
 }
