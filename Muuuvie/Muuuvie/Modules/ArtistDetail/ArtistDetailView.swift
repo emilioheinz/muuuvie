@@ -32,16 +32,17 @@ struct ArtistDetailView: View {
             Group {
                 if let artist = viewModel.artist {
                     ArtistDetailBodyView(artist: artist, closeButtonAction: closeButtonAction, favoriteButtonAction: favoriteButtonAction)
-                } else {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .mainOrange))
                 }
             }
             .navigationBarHidden(true)
-            .onAppear {
-                viewModel.fetchArtist()
-            }
         }
+        .onAppear {
+            viewModel.fetchArtist()
+        }
+        .alert(isPresented: $viewModel.hasError) {
+            Alert(title: Text(viewModel.message))
+        }
+        .overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
     }
 }
 
@@ -92,29 +93,6 @@ struct ArtistInfo: View {
     }
 }
 
-struct ArtistImage: View {
-    @ObservedObject var image: FetchImage
-    
-    init(profileImagePath: String) {
-        self.image = FetchImage(url: URL(string: Api.instance.imageUrl(from: profileImagePath))!)
-    }
-    
-    var body: some View {
-        Group {
-            image
-                .view?
-                .resizable()
-                .scaledToFill()
-                .frame(width: .infinity, height: 400)
-                .clipped()
-            
-            Rectangle()
-                .foregroundColor(.clear)
-                .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
-        }
-    }
-}
-
 struct SummaryHeader: View {
     var body: some View {
         Group {
@@ -123,7 +101,7 @@ struct SummaryHeader: View {
                 .padding(.leading, 18)
             
             Rectangle()
-                .frame(width: .infinity, height: 5)
+                .frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity, minHeight: 5, idealHeight: 5, maxHeight: 5, alignment: .center)
                 .foregroundColor(.mainOrange)
         }
     }
@@ -152,9 +130,15 @@ struct ArtistDetailBodyView: View {
     var favoriteButtonAction: () -> Void
     
     var body: some View {
-        VStack(alignment: .leading) {
-            ZStack(alignment: .leading) {
-                ArtistImage(profileImagePath: artist.profileImagePath)
+        VStack {
+            ZStack(alignment: .bottom) {
+                ImageView(imageUrl: URL(string: Api.instance.imageUrl(from: artist.profileImagePath))!)
+                    .frame(width: .infinity, height: 425, alignment: .center)
+                    .clipped()
+                    
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
                 
                 VStack(alignment: .leading) {
                     CloseViewButton(action: closeButtonAction)
@@ -162,16 +146,16 @@ struct ArtistDetailBodyView: View {
 
                     ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday, action: favoriteButtonAction)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             }
-            .frame(width: .infinity, height: 400)
             
-            SummaryHeader()
-            
-            Text(artist.biography)
-                .font(.body)
-                .foregroundColor(.grayText)
-                .padding(20)
+            VStack(alignment: .leading) {
+                SummaryHeader()
+                
+                Text(artist.biography)
+                    .font(.body)
+                    .foregroundColor(.grayText)
+                    .padding(20)
+            }
         }
     }
 }
