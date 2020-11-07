@@ -15,6 +15,7 @@ struct ArtistDetailView: View {
     var artist: ArtistDetailModel! { viewModel.artist! }
     
     init(id: Int, isPresented: Binding<Bool>) {
+        print(id)
         viewModel = ArtistDetailViewModel(id: id)
         self._isPresented = isPresented
     }
@@ -131,11 +132,10 @@ struct ArtistDetailBodyView: View {
     
     var body: some View {
         VStack {
-            ZStack(alignment: .bottom) {
-                ImageView(imageUrl: URL(string: Api.instance.imageUrl(from: artist.profileImagePath))!)
-                    .frame(width: .infinity, height: 425, alignment: .center)
+            ZStack(alignment: .top) {
+                ImageView(imageUrl: URL(string: Api.instance.imageUrl(from: artist.profileImagePath ?? ""))!)
+                    .frame(width: UIScreen.main.bounds.width, height: 425, alignment: .center)
                     .clipped()
-                    
                 Rectangle()
                     .foregroundColor(.clear)
                     .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
@@ -155,6 +155,7 @@ struct ArtistDetailBodyView: View {
                     .font(.body)
                     .foregroundColor(.grayText)
                     .padding(20)
+                Spacer()
             }
         }
     }

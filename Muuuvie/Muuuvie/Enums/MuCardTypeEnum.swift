@@ -16,7 +16,7 @@ enum MuCardTypeEnum {
         case .large:
             return CGFloat(140)
         case .small:
-            return CGFloat(70)
+            return CGFloat(80)
         }
     }
     

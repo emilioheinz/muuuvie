@@ -256,9 +256,9 @@
 		CF368865254DC779002A1374 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */,
 				CF368866254DC79A002A1374 /* MuCardTypeEnum.swift */,
 				CF36889D254DE1BA002A1374 /* MovieCategoryEnum.swift */,
+				A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";

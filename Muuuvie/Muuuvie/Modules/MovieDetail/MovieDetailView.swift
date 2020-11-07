@@ -11,7 +11,6 @@ struct MovieDetailView: View {
     let movieId: Int
     
     @ObservedObject var viewModel = MovieDetailViewModel()
-    @State private var artistDetailPresented: Bool = false
     
     init(movieId: Int) {
         self.movieId = movieId
@@ -24,28 +23,21 @@ struct MovieDetailView: View {
                 VStack() {
                     ZStack(alignment: .bottom) {
                         ImageView(imageUrl: URL(string: Api.instance.imageUrl(from: viewModel.movie?.backdropImage ?? ""))!)
-                            .frame(width: 0, height: 425, alignment: .center)
+                            .frame(width: UIScreen.main.bounds.width, height: 425, alignment: .center)
+                            .clipped()
                         
                         GradientOverImage()
                         
                         MovieInfo(movie: movie)
                     }
+                    
                     if let artists = viewModel.artists {
-                        VStack(alignment: .leading) {
-                            Text("Full Cast")
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(alignment: .top) {
-                                    ForEach(artists) { artist in
-                                        MuCardView(
-                                            imagePath: artist.imagePath ?? "",
-                                            title: artist.name,
-                                            cardType: .small
-                                        )
-                                    }
-                                }
-                            }
-                        }
+                        FullCastList(artists: artists)
                     }
+                    
+                    Spacer().frame(height: 20)
+                    BottomActionButtons()
+                    Spacer().frame(height: 35)
                 }
             } else {
                 if viewModel.isLoading {
@@ -64,6 +56,7 @@ struct MovieDetailView: View {
         }
         .overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
         .navigationBarTitle("", displayMode: .inline)
+        .background(Color.appBrackground)
     }
 }
 
@@ -112,7 +105,7 @@ struct MovieInfo: View {
                 .foregroundColor(Color.white)
                 .lineLimit(6)
         }
-        .padding(30)
+        .padding(20)
     }
 }
 
@@ -127,5 +120,61 @@ struct GradientOverImage: View {
                     endPoint: .bottom
                 )
             )
+    }
+}
+
+struct ArtistCart: View {
+    let artist: ArtistModel
+    
+    @State private var artistDetailPresented: Bool = false
+    
+    var body: some View {
+        MuCardView(
+            imagePath: artist.imagePath ?? "",
+            title: artist.name,
+            cardType: .small
+        ).onTapGesture(count: 1) {
+            artistDetailPresented = true
+        }.sheet(isPresented: $artistDetailPresented) {
+            ArtistDetailView(id: artist.id, isPresented: $artistDetailPresented)
+        }
+    }
+}
+
+struct FullCastList: View {
+    let artists: [ArtistModel]
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Full Cast & Crew")
+                .font(.title2)
+                .bold()
+                .foregroundColor(.grayText)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(alignment: .top) {
+                    ForEach(artists) { artist in
+                        if artist.imagePath != nil {
+                            ArtistCart(artist: artist)
+                        } else {
+                            EmptyView()
+                        }
+                    }
+                }
+            }
+        }
+        .padding(EdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 0))
+    }
+}
+
+struct BottomActionButtons: View {
+    var body: some View {
+        HStack() {
+            IconButtonView(theme: .primary, image: .like) {}
+                .frame(maxWidth: .infinity)
+            IconButtonView(theme: .secondary, image: .favoriteIcon) {}
+                .frame(maxWidth: .infinity)
+            IconButtonView(theme: .secondary, image: .reviews) {}
+                .frame(maxWidth: .infinity)
+        }
     }
 }

@@ -13,7 +13,7 @@ struct ArtistDetailModel: Decodable, Identifiable {
     let knownForDepartment: String
     let biography: String
     let birthday: Date?
-    let profileImagePath: String
+    let profileImagePath: String?
 
     enum CodingKeys: String, CodingKey {
         case id

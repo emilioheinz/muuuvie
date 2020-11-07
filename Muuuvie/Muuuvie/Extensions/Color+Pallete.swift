@@ -22,6 +22,8 @@ extension UIColor {
     static var imageGrayBackground: UIColor { UIColor(named: "imageGrayBackground")! }
     
     static var favoriteYellow: UIColor { UIColor(named: "favoriteYellow")! }
+    
+    static var appBrackground: UIColor { UIColor(named: "appBrackground")! }
 
 }
 
@@ -40,5 +42,7 @@ extension Color {
     static var imageGrayBackground: Color { Color("imageGrayBackground") }
     
     static var favoriteYellow: Color { Color("favoriteYellow") }
+    
+    static var appBrackground: Color { Color("appBrackground") }
     
 }

@@ -19,14 +19,7 @@ struct MovieCategoryListView: View {
                         MoviesCategoryView(category: category)
                     }
                 }
-                .padding(
-                    EdgeInsets(
-                        top: 30,
-                        leading: 10,
-                        bottom: 30,
-                        trailing: 0
-                    )
-                )
+                .padding(EdgeInsets(top: 25, leading: 20, bottom: 0, trailing: 0))
                 .navigationBarTitle("Movies", displayMode: .large)
             }
         }
