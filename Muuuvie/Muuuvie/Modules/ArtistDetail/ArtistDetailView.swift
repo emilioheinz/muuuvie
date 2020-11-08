@@ -15,7 +15,6 @@ struct ArtistDetailView: View {
     var artist: ArtistDetailModel! { viewModel.artist! }
     
     init(id: Int, isPresented: Binding<Bool>) {
-        print(id)
         viewModel = ArtistDetailViewModel(id: id)
         self._isPresented = isPresented
     }
@@ -115,7 +114,7 @@ struct CloseViewButton: View {
         HStack {
             Spacer()
             Button(action: action){
-                Image(systemName: "xmark")
+                Image.close
                     .foregroundColor(.white)
                     .padding(15)
                     .font(Font.title2)
