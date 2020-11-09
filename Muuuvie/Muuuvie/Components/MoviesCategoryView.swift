@@ -30,7 +30,7 @@ struct MoviesCategoryView: View {
                 HStack(alignment: .top) {
                     ForEach(category.movies) { movie in
                         NavigationLink(destination: MovieDetailView(movieId: movie.id)) {
-                            MuCardView(imagePath: movie.posterImagePath ?? "", title: movie.title)
+                            MuCardView(imagePath: movie.imagePath ?? "", title: movie.name)
                         }
                     }
                 }

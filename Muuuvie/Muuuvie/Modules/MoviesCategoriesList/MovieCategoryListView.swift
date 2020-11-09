@@ -11,7 +11,6 @@ struct MovieCategoryListView: View {
     @ObservedObject private var viewModel = MovieCategoryListViewModel()
     
     var body: some View {
-        
         NavigationView {
             ScrollView( showsIndicators: false) {
                 VStack(spacing: 30) {
