@@ -11,6 +11,7 @@ enum Endpoint {
     case popularMovies
     case movieDetail(id: Int)
     case movieVideos(id: Int)
+    case movieCast(id: Int)
     case moviesInCategory(category: MovieCategoryEnum)
     case artistDetail(id: Int)
     
@@ -22,6 +23,8 @@ enum Endpoint {
             return "movie/\(id)"
         case .movieVideos(let id):
             return "movie/\(id)/videos"
+        case .movieCast(let id):
+            return "movie/\(id)/credits"
         case .moviesInCategory(let category):
             return "movie/\(category.rawValue)"
         case .artistDetail(let id):

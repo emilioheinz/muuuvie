@@ -15,7 +15,7 @@ struct FullScreenLoadingView: View {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
                 .scaleEffect(1.5)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .background(Color.loaderBackground)
                 .edgesIgnoringSafeArea(.all)
         } else {
