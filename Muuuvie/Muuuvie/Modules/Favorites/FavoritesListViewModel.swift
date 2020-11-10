@@ -8,8 +8,8 @@
 import Foundation
 
 class FavoritesListViewModel: ObservableObject {
-    @Published var favoritedMovies: [FavoritableItem] = []
-    @Published var favoritedArtists: [FavoritableItem] = []
+    @Published var favoritedMovies: [FavoriteModel] = []
+    @Published var favoritedArtists: [FavoriteModel] = []
     
     func getFavorittedItems() {        
         favoritedMovies = Favorites.instance.items.filter { item in

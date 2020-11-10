@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArtistDetailModel: Decodable, Identifiable, FavoritableItem {
+struct ArtistDetailModel: Decodable, Identifiable, Favoritable {
     let id: Int
     let name: String
     let knownForDepartment: String
@@ -24,7 +24,7 @@ struct ArtistDetailModel: Decodable, Identifiable, FavoritableItem {
         case imagePath = "profile_path"
     }
     
-    func getType() -> FavoritableItemType {
+    func getType() -> FavoritableType {
         .artist
     }
     

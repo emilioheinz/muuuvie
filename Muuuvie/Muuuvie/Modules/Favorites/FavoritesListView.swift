@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import QGrid
 
 struct FavoritesListView: View {
     @ObservedObject var viewModel = FavoritesListViewModel()
@@ -13,13 +14,35 @@ struct FavoritesListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ForEach(0..<viewModel.favoritedMovies.count / 2 + 1, id: \.self) { row in
-                    HStack {
-                        ForEach(0..<2, id: \.self) { column in
-                            Card(data: viewModel.favoritedMovies, row: row, column: column)
+                HStack(alignment: .bottom) {
+                    Spacer().frame(width: 25)
+                    Button(action: {}) {
+                        VStack {
+                            Text("Movies")
+                            Rectangle()
+                                .frame(width: 65, height: 4)
+                                .foregroundColor(.mainOrange)
+                        }
+                    }.accentColor(.black)
+                    Spacer().frame(width: 25)
+                    Button(action: {}) {
+                        VStack {
+                            Text("Artists")
+                            Rectangle()
+                                .frame(width: 65, height: 4)
+                                .foregroundColor(.clear)
+                        }
+                    }.accentColor(.black)
+                    Spacer()
+                }.frame(height: 50)
+                ScrollView {
+                    VStack {
+                        ForEach(viewModel.favoritedMovies, id: \.self) { movie in
+                            MuCardView(imagePath: movie.imagePath ?? "", title: movie.name)
                         }
                     }
                 }
+                .navigationBarTitle("Favorites", displayMode: .large)
             }
         }
         .onAppear {
@@ -35,21 +58,3 @@ struct FavoritesListView_Previews: PreviewProvider {
     }
 }
 
-struct Card: View {
-    var item: FavoritableItem?
-    
-    init(data: [FavoritableItem], row: Int, column: Int) {
-        let index = row + column + ( row * (2 - 1))
-        if index < data.count {
-            item = data[index]
-        }
-    }
-    
-    var body: some View {
-        if let item = item {
-            MuCardView(imagePath: item.imagePath ?? "", title: item.name)
-        } else {
-            EmptyView().frame(width: 140)
-        }
-    }
-}

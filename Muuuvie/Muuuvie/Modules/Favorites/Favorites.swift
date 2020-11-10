@@ -20,7 +20,7 @@ class Favorites {
         getFromLocalStorage()
     }
     
-    func toggle(item: FavoritableItem) -> Bool {
+    func toggle(item: Favoritable) -> Bool {
         defer {
             updateLocalStorage()
         }
@@ -36,7 +36,7 @@ class Favorites {
         }
     }
     
-    func isInFavoritesList(item: FavoritableItem) -> Bool {
+    func isInFavoritesList(item: Favoritable) -> Bool {
         items.contains(.init(item: item))
     }
 }

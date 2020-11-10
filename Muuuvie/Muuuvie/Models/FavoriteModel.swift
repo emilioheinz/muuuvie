@@ -5,26 +5,26 @@
 //  Created by Emilio Heinzmann on 08/11/20.
 //
 
-import Foundation
+import UIKit
 
-struct FavoriteModel: Codable, FavoritableItem, Equatable {
+struct FavoriteModel: Codable, Favoritable, Hashable, Equatable {
     let id: Int
     let name: String
     let imagePath: String?
-    let type: FavoritableItemType
+    let type: FavoritableType
     
     static func == (lhs: FavoriteModel, rhs: FavoriteModel) -> Bool {
         lhs.id == rhs.id && lhs.getType() == rhs.getType()
     }
 
-    internal init(item: FavoritableItem) {
+    internal init(item: Favoritable) {
         self.id = item.id
         self.name = item.name
         self.imagePath = item.imagePath
         self.type = item.getType()
     }
     
-    func getType() -> FavoritableItemType {
+    func getType() -> FavoritableType {
         self.type
     }
 }

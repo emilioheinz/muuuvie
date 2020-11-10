@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieDetailModel: Decodable, FavoritableItem {
+struct MovieDetailModel: Decodable, Favoritable {
     let id: Int
     let name: String
     let imagePath: String?
@@ -24,7 +24,7 @@ struct MovieDetailModel: Decodable, FavoritableItem {
         case imagePath = "backdrop_path"
     }
     
-    func getType() -> FavoritableItemType {
+    func getType() -> FavoritableType {
         .movie
     }
 }
