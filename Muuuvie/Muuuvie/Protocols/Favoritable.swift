@@ -10,6 +10,15 @@ import Foundation
 enum FavoritableType: String, Codable {
     case movie
     case artist
+    
+    var userFriendlyLabel: String {
+        switch self {
+        case .movie:
+            return "Movies"
+        case .artist:
+            return "Artists"
+        }
+    }
 }
 
 

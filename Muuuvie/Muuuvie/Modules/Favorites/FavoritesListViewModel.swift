@@ -10,6 +10,7 @@ import Foundation
 class FavoritesListViewModel: ObservableObject {
     @Published var favoritedMovies: [FavoriteModel] = []
     @Published var favoritedArtists: [FavoriteModel] = []
+    @Published var selectedFilter: FavoritableType = .movie
     
     func getFavorittedItems() {        
         favoritedMovies = Favorites.instance.items.filter { item in
@@ -19,5 +20,9 @@ class FavoritesListViewModel: ObservableObject {
         favoritedArtists = Favorites.instance.items.filter { item in
             item.getType() == .artist
         }
+    }
+    
+    func changeSelectedFilter(newFilter: FavoritableType) {
+        selectedFilter = newFilter
     }
 }
