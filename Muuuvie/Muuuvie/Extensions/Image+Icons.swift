@@ -26,4 +26,6 @@ extension Image {
     static var reviewIcon: Image { Image(systemName: "quote.bubble") }
 
     static var houseFill: Image { Image(systemName: "house.fill") }
+    
+    static var tvFill: Image { Image(systemName: "tv.fill") }
 }

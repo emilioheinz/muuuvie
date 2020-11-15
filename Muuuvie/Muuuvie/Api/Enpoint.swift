@@ -12,6 +12,7 @@ enum Endpoint {
     case movieDetail(id: Int)
     case moviesInCategory(category: MovieCategoryEnum)
     case artistDetail(id: Int)
+    case tvShowsInCategory(category: TVCategoryEnum)
     
     var url: String {
         switch self {
@@ -23,6 +24,8 @@ enum Endpoint {
             return "movie/\(category.rawValue)"
         case .artistDetail(let id):
             return "person/\(id)"
+        case .tvShowsInCategory(let category):
+            return "tv/\(category.rawValue)"
 //        default:
 //            return "\(self)"
         }

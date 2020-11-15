@@ -23,9 +23,9 @@ struct MuuuvieApp: App {
                         Image.houseFill
                         Text("MOVIES")
                     }
-                MovieDetailView()
+                TVCategoriesListView()
                     .tabItem {
-                        Image.playIconFill
+                        Image.tvFill
                         Text("TV")
                     }
             }
