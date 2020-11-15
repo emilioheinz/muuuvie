@@ -8,20 +8,15 @@ import SwiftUI
 import FetchImage
 
 struct ReviewListItemView: View {
-    @ObservedObject var image: FetchImage
-
-    let review: ReviewModel
+    let review: MovieReviewModel
     
-    init(review: ReviewModel) {
+    init(review: MovieReviewModel) {
         self.review = review
-        self.image = FetchImage(url: URL(string: review.getAvatar())!)
     }
     
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            image
-                .view?
-                .resizable()
+            ImageView(imageUrl: URL(string: review.getAvatar())!)
                 .frame(width: 40, height: 40)
                 .clipShape(Circle())
                 .padding(.top, 10)
@@ -30,7 +25,7 @@ struct ReviewListItemView: View {
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(.grayText)
-                Text(review.review)
+                Text(review.content)
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .lineLimit(5)

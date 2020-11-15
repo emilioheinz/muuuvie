@@ -36,7 +36,7 @@ struct MovieDetailView: View {
                     }
                     
                     Spacer().frame(height: 20)
-                    BottomActionButtons()
+                    BottomActionButtons(movie: movie)
                     Spacer().frame(height: 35)
                 }
             } else {
@@ -167,14 +167,24 @@ struct FullCastList: View {
 }
 
 struct BottomActionButtons: View {
+    
+    @State private var areReviewsPresented: Bool = false
+    
+    let movie: MovieDetailModel
+    
     var body: some View {
         HStack() {
             IconButtonView(theme: .primary, image: .like) {}
                 .frame(maxWidth: .infinity)
             IconButtonView(theme: .secondary, image: .favoriteIcon) {}
                 .frame(maxWidth: .infinity)
-            IconButtonView(theme: .secondary, image: .reviews) {}
-                .frame(maxWidth: .infinity)
+            IconButtonView(theme: .secondary, image: .reviews) {
+                areReviewsPresented = true
+            }
+            .frame(maxWidth: .infinity)
+            .sheet(isPresented: $areReviewsPresented) {
+                MovieReviewsView(movieId: movie.id, isPresented: $areReviewsPresented)
+            }
         }
     }
 }
