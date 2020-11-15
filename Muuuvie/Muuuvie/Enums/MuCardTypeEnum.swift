@@ -10,7 +10,6 @@ import SwiftUI
 enum MuCardTypeEnum {
     case large
     case small
-    case screenBased(factor: Float)
     
     var width: CGFloat {
         switch self {
@@ -18,14 +17,12 @@ enum MuCardTypeEnum {
             return CGFloat(140)
         case .small:
             return CGFloat(80)
-        case .screenBased(let factor):
-            return CGFloat(UIScreen.main.bounds.width / CGFloat(factor))
         }
     }
     
     var height: CGFloat {
         switch self {
-        case .large, .screenBased:
+        case .large:
             return CGFloat(210)
         case .small:
             return CGFloat(105)
@@ -34,7 +31,7 @@ enum MuCardTypeEnum {
     
     var font: Font {
         switch self {
-        case .large, .screenBased:
+        case .large:
             return .headline
         case .small:
             return .subheadline
@@ -43,7 +40,7 @@ enum MuCardTypeEnum {
     
     var fontWeight: Font.Weight {
         switch self {
-        case .large, .screenBased:
+        case .large:
             return .semibold
         case .small:
             return .regular
