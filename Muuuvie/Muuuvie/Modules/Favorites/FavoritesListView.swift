@@ -22,13 +22,14 @@ struct FavoritesListView: View {
                     LazyVGrid(columns: twoColumnGrid) {
                         if viewModel.selectedFilter == .movie {
                             ForEach(viewModel.favoritedMovies, id: \.self) { movie in
-                                NavigationLink(destination: MovieDetailView(movieId: movie.id)) {
+                                NavigationLink(destination: MovieDetailView(movieId: movie.id).onDisappear { viewModel.getFavorittedItems()
+                                }) {
                                     MuCardView(imagePath: movie.imagePath ?? "", title: movie.name)
                                 }
                             }
                         } else if viewModel.selectedFilter == .artist {
                             ForEach(viewModel.favoritedArtists, id: \.self) { artist in
-                                ArtistCard(artist: artist)
+                                ArtistCard(viewModel: viewModel, artist: artist)
                             }
                         }
                     }
@@ -36,10 +37,10 @@ struct FavoritesListView: View {
                 }
                 .navigationBarTitle("Favorites", displayMode: .large)
             }
-        }
-        .onAppear {
-            self.configureNavigationBarAppearence()
-            viewModel.getFavorittedItems()
+            .onAppear {
+                self.configureNavigationBarAppearence()
+                viewModel.getFavorittedItems()
+            }
         }
     }
 }
@@ -84,6 +85,7 @@ struct FilterButton: View {
 }
 
 struct ArtistCard: View {
+    let viewModel: FavoritesListViewModel
     let artist: Favoritable
     
     @State var isPresentingArtistDetails = false
@@ -95,6 +97,9 @@ struct ArtistCard: View {
             })
             .sheet(isPresented: $isPresentingArtistDetails, content: {
                 ArtistDetailView(id: artist.id, isPresented: $isPresentingArtistDetails)
+                    .onDisappear {
+                        viewModel.getFavorittedItems()
+                    }
             })
     }
 }
