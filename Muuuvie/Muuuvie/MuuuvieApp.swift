@@ -12,7 +12,6 @@ struct MuuuvieApp: App {
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor.white
-        UITabBar.appearance().isTranslucent = false
     }
     
     var body: some Scene {

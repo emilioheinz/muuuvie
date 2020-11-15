@@ -13,7 +13,6 @@ struct MoviesCategoryView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Spacer().frame(width: 10)
                 Text(category.categoryType.title)
                     .font(.title3)
                     .foregroundColor(.grayText)
@@ -24,13 +23,15 @@ struct MoviesCategoryView: View {
                     .foregroundColor(.grayText)
                     .fontWeight(.light)
                     .underline()
-                Spacer().frame(width: 10)
+                Spacer().frame(width: 15)
             }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top) {
                     ForEach(category.movies) { movie in
-                        MuCardView(imagePath: movie.posterImagePath ?? "", title: movie.title)
+                        NavigationLink(destination: MovieDetailView(movieId: movie.id)) {
+                            MuCardView(imagePath: movie.posterImagePath ?? "", title: movie.title)
+                        }
                     }
                 }
             }
