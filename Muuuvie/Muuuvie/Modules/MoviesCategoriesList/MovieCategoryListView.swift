@@ -8,20 +8,30 @@
 import SwiftUI
 
 struct MovieCategoryListView: View {
-    @ObservedObject var viewModel = MovieCategoryListViewModel()
+    @ObservedObject private var viewModel = MovieCategoryListViewModel()
     
     var body: some View {
-        ScrollView( showsIndicators: false) {
-            VStack(spacing: 30) {
-                ForEach(viewModel.categories) { category in
-                    MoviesCategoryView(category: category)
+        
+        NavigationView {
+            ScrollView( showsIndicators: false) {
+                VStack(spacing: 30) {
+                    ForEach(viewModel.categories) { category in
+                        MoviesCategoryView(category: category)
+                    }
                 }
+                .padding(EdgeInsets(top: 25, leading: 20, bottom: 0, trailing: 0))
+                .navigationBarTitle("Movies", displayMode: .large)
             }
-        }.onAppear {
+        }
+        .accentColor(Color.black)
+        .onAppear {
             viewModel.fetchMovieCategoryList()
-        }.alert(isPresented: $viewModel.hasError) {
+            self.configureNavigationBarAppearence()
+        }
+        .alert(isPresented: $viewModel.hasError) {
             Alert(title: Text(viewModel.message))
-        }.overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
+        }
+        .overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
     }
 }
 
