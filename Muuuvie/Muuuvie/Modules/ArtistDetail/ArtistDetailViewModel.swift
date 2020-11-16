@@ -9,16 +9,14 @@ import Foundation
 
 class ArtistDetailViewModel: ObservableObject, ViewModelWithRequest {
     @Published var artist: ArtistDetailModel?
-    @Published var isLoading: Bool
-    @Published var hasError: Bool
-    var message: String
+    @Published var isLoading: Bool = false
+    @Published var hasError: Bool = false
+    @Published var isFavorited: Bool = false
+    var message: String = ""
     private let id: Int
     
     init(id: Int) {
         self.id = id
-        self.isLoading = false
-        self.hasError = false
-        self.message = ""
     }
     
     func fetchArtist() {
@@ -29,6 +27,7 @@ class ArtistDetailViewModel: ObservableObject, ViewModelWithRequest {
                 DispatchQueue.main.async {
                     self?.artist = artist
                     self?.isLoading = false
+                    self?.isFavorited = Favorites.instance.isInFavoritesList(item: artist)
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -38,5 +37,9 @@ class ArtistDetailViewModel: ObservableObject, ViewModelWithRequest {
                 }
             }
         }
+    }
+    
+    func toggleFavorite() {
+        self.isFavorited = Favorites.instance.toggle(item: artist!)
     }
 }

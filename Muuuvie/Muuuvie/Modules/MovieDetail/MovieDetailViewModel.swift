@@ -11,15 +11,11 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
 
     @Published var movie: MovieDetailModel?
     @Published var artists: [ArtistModel]?
-    @Published var isLoading: Bool
-    @Published var hasError: Bool
-    var message: String
-    
-    init() {
-        self.isLoading = false
-        self.hasError = false
-        self.message = ""
-    }
+    @Published var isLoading: Bool = false
+    @Published var hasError: Bool = false
+    @Published var isFavorited: Bool = false
+    var message: String = ""
+
 
     func fetchMovie(id: Int) {
         self.isLoading = true
@@ -33,6 +29,7 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
                             self?.movie = movie
                             self?.artists = castResp.cast
                             self?.isLoading = false
+                            self?.isFavorited = Favorites.instance.isInFavoritesList(item: movie)
                         }
                     case .failure(let error):
                         DispatchQueue.main.async {
@@ -51,6 +48,10 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
                 }
             }
         }
+    }
+    
+    func toggleFavorite() {
+        self.isFavorited = Favorites.instance.toggle(item: movie!)
     }
 
 }

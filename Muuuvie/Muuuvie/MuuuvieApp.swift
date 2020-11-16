@@ -18,10 +18,16 @@ struct MuuuvieApp: App {
         WindowGroup {
             TabView {
                 MovieCategoryListView()
-                .tabItem {
-                    Image.houseFill
-                    Text("MOVIES")
-                }
+                    .tabItem {
+                        Image.houseFill
+                        Text("MOVIES")
+                    }
+                
+                FavoritesListView()
+                    .tabItem {
+                        Image.favoriteIconFill
+                        Text("FAVORITES")
+                    }
             }
             .accentColor(.mainOrange)
         }

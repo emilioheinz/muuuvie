@@ -10,8 +10,11 @@ import SwiftUI
 struct MovieCategoryListView: View {
     @ObservedObject private var viewModel = MovieCategoryListViewModel()
     
+    init() {
+        viewModel.fetchMovieCategoryList()
+    }
+    
     var body: some View {
-        
         NavigationView {
             ScrollView( showsIndicators: false) {
                 VStack(spacing: 30) {
@@ -25,7 +28,6 @@ struct MovieCategoryListView: View {
         }
         .accentColor(Color.black)
         .onAppear {
-            viewModel.fetchMovieCategoryList()
             self.configureNavigationBarAppearence()
         }
         .alert(isPresented: $viewModel.hasError) {
