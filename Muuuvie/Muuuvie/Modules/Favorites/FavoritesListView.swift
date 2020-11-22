@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import QGrid
 
 struct FavoritesListView: View {
     private var twoColumnGrid = [GridItem(.flexible(), alignment: .top), GridItem(.flexible(), alignment: .top)]

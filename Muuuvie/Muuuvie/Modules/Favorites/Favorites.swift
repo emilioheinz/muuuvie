@@ -8,13 +8,13 @@
 import UIKit
 
 class Favorites {
-    
     static let instance = Favorites()
+    
     let favoritesKey = "MuuuviesFavorits"
     
     var items: [FavoriteModel] = []
     
-    let standardUserDefaults = UserDefaults.standard
+    var userDefaults = UserDefaults.standard
     
     private init() {
         getFromLocalStorage()
@@ -42,19 +42,20 @@ class Favorites {
 }
 
 
-private extension Favorites {
+extension Favorites {
     func updateLocalStorage() {
         guard let jsonData =  try? JSONEncoder().encode(items) else { return }
 
-        standardUserDefaults.setValue(jsonData, forKey: favoritesKey)
+        userDefaults.setValue(jsonData, forKey: favoritesKey)
     }
     
     func getFromLocalStorage() {
-        guard let jsonData = standardUserDefaults.data(forKey: favoritesKey),
-              let dacodedFavorites = try? JSONDecoder().decode([FavoriteModel].self, from: jsonData) else { return }
+        guard let jsonData = userDefaults.data(forKey: favoritesKey),
+              let dacodedFavorites = try? JSONDecoder().decode([FavoriteModel].self, from: jsonData) else {
+            self.items = []
+            return
+        }
         
         self.items = dacodedFavorites
     }
 }
-
-
