@@ -15,15 +15,25 @@ struct TVCategoriesListView: View {
     }
     
     var body: some View {
-        ScrollView( showsIndicators: false) {
-            VStack(spacing: 30) {
-                ForEach(viewModel.categories) { category in
-                    TVCategoryView(category: category)
+        NavigationView {
+            ScrollView( showsIndicators: false) {
+                VStack(spacing: 30) {
+                    ForEach(viewModel.categories) { category in
+                        TVCategoryView(category: category)
+                    }
                 }
+                .padding(EdgeInsets(top: 25, leading: 20, bottom: 0, trailing: 0))
+                .navigationBarTitle("TV", displayMode: .large)
             }
-        }.alert(isPresented: $viewModel.hasError) {
+        }
+        .accentColor(Color.black)
+        .onAppear {
+            self.configureNavigationBarAppearence()
+        }
+        .alert(isPresented: $viewModel.hasError) {
             Alert(title: Text(viewModel.message))
-        }.overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
+        }
+        .overlay(FullScreenLoadingView(isLoading: $viewModel.isLoading))
     }
 }
 
