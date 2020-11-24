@@ -38,8 +38,8 @@ struct MuCardView: View {
 struct MuCardView_Previews: PreviewProvider {
     static var previews: some View {
         MuCardView(
-            imagePath: MovieModel.mocked.posterImagePath ?? "",
-            title: MovieModel.mocked.title
+            imagePath: MovieModel.mocked.imagePath ?? "",
+            title: MovieModel.mocked.name
         )
     }
 }

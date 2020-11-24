@@ -7,21 +7,36 @@
 
 import Foundation
 
-struct MovieDetailModel: Decodable {
+struct MovieDetailModel: Decodable, Favoritable {
     let id: Int
-    let title: String
-    let backdropImage: String
+    let name: String
+    let imagePath: String?
     let overview: String
     let status: String
     let voteAvarage: Double
-
+    
     enum CodingKeys: String, CodingKey {
         case id
-        case title
+        case name = "title"
         case overview
         case status
         case voteAvarage = "vote_average"
-        case backdropImage = "backdrop_path"
+        case imagePath = "backdrop_path"
+    }
+    
+    func getType() -> FavoritableType {
+        .movie
+    }
+    
+    static var mocked: MovieDetailModel {
+        MovieDetailModel(
+            id: 724989,
+            name: "Hard Kill",
+            imagePath: "/86L8wqGMDbwURPni2t7FQ0nDjsH.jpg",
+            overview: "The work of billionaire tech CEO Donovan Chalmers is so valuable that he hires mercenaries to protect it, and a terrorist group kidnaps his daughter just to get it.",
+            status: "Released",
+            voteAvarage: 5.0
+        )
     }
 }
 

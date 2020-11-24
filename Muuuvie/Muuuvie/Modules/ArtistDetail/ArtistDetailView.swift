@@ -15,7 +15,6 @@ struct ArtistDetailView: View {
     var artist: ArtistDetailModel! { viewModel.artist! }
     
     init(id: Int, isPresented: Binding<Bool>) {
-        print(id)
         viewModel = ArtistDetailViewModel(id: id)
         self._isPresented = isPresented
     }
@@ -25,14 +24,14 @@ struct ArtistDetailView: View {
     }
     
     func favoriteButtonAction() {
-        // TODO: add favoriteButtonAction
+        viewModel.toggleFavorite()
     }
     
     var body: some View {
         NavigationView {
             Group {
                 if let artist = viewModel.artist {
-                    ArtistDetailBodyView(artist: artist, closeButtonAction: closeButtonAction, favoriteButtonAction: favoriteButtonAction)
+                    ArtistDetailBodyView(artist: artist, isFavorited: viewModel.isFavorited, closeButtonAction: closeButtonAction, favoriteButtonAction: favoriteButtonAction)
                 }
             }
             .navigationBarHidden(true)
@@ -59,6 +58,7 @@ struct ArtistInfo: View {
     let name: String
     let department: String
     let birthday: Date?
+    let isFavorited: Bool
     var action: () -> Void
     
     var body: some View {
@@ -86,7 +86,7 @@ struct ArtistInfo: View {
                 }
             }
             Spacer()
-            IconButtonView(theme: .secondary, image: .favoriteIcon, action: action)
+            IconButtonView(theme: isFavorited ? .primary : .secondary, image: .favoriteIcon, action: action)
             
         }
         .foregroundColor(.white)
@@ -115,7 +115,7 @@ struct CloseViewButton: View {
         HStack {
             Spacer()
             Button(action: action){
-                Image(systemName: "xmark")
+                Image.close
                     .foregroundColor(.white)
                     .padding(15)
                     .font(Font.title2)
@@ -127,13 +127,14 @@ struct CloseViewButton: View {
 
 struct ArtistDetailBodyView: View {
     var artist: ArtistDetailModel
+    var isFavorited: Bool
     var closeButtonAction: () -> Void
     var favoriteButtonAction: () -> Void
     
     var body: some View {
         VStack {
             ZStack(alignment: .top) {
-                ImageView(imageUrl: URL(string: Api.instance.imageUrl(from: artist.profileImagePath ?? ""))!)
+                ImageView(imageUrl: URL(string: Api.instance.imageUrl(from: artist.imagePath ?? ""))!)
                     .frame(width: UIScreen.main.bounds.width, height: 425, alignment: .center)
                     .clipped()
                 Rectangle()
@@ -144,7 +145,7 @@ struct ArtistDetailBodyView: View {
                     CloseViewButton(action: closeButtonAction)
                     Spacer()
 
-                    ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday, action: favoriteButtonAction)
+                    ArtistInfo(name: artist.name, department: artist.knownForDepartment, birthday: artist.birthday, isFavorited: isFavorited, action: favoriteButtonAction)
                 }
             }
             

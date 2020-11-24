@@ -22,7 +22,7 @@ struct MovieDetailView: View {
             if let movie = viewModel.movie {
                 VStack() {
                     ZStack(alignment: .bottom) {
-                        ImageView(imageUrl: URL(string: Api.instance.imageUrl(from: viewModel.movie?.backdropImage ?? ""))!)
+                        ImageView(imageUrl: URL(string: Api.instance.imageUrl(from: viewModel.movie?.imagePath ?? ""))!)
                             .frame(width: UIScreen.main.bounds.width, height: 425, alignment: .center)
                             .clipped()
                         
@@ -36,7 +36,7 @@ struct MovieDetailView: View {
                     }
                     
                     Spacer().frame(height: 20)
-                    BottomActionButtons()
+                    BottomActionButtons(viewModel: viewModel)
                     Spacer().frame(height: 35)
                 }
             } else {
@@ -90,7 +90,7 @@ struct MovieInfo: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(movie.title)
+            Text(movie.name)
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color.white)
@@ -167,14 +167,37 @@ struct FullCastList: View {
 }
 
 struct BottomActionButtons: View {
+    
+    @State private var areReviewsPresented: Bool = false
+    @State private var isMovieFavorited: Bool = false
+    
+    @ObservedObject var viewModel: MovieDetailViewModel
+    
+    init(viewModel: MovieDetailViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
-        HStack() {
-            IconButtonView(theme: .primary, image: .like) {}
+        if let movie = viewModel.movie {
+            HStack() {
+                IconButtonView(theme: .secondary, image: .like) {}
+                    .frame(maxWidth: .infinity)
+                
+                IconButtonView(theme: viewModel.isFavorited ? .primary : .secondary, image: .favoriteIcon) {
+                    viewModel.toggleFavorite()
+                }
                 .frame(maxWidth: .infinity)
-            IconButtonView(theme: .secondary, image: .favoriteIcon) {}
+                
+                IconButtonView(theme: .secondary, image: .reviews) {
+                    areReviewsPresented = true
+                }
                 .frame(maxWidth: .infinity)
-            IconButtonView(theme: .secondary, image: .reviews) {}
-                .frame(maxWidth: .infinity)
+                .sheet(isPresented: $areReviewsPresented) {
+                    MovieReviewsView(movieId: movie.id, isPresented: $areReviewsPresented)
+                }
+            }
+        } else {
+            EmptyView()
         }
     }
 }

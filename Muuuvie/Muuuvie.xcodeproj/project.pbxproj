@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3136279964A4B0A09E09D9A9 /* Pods_Muuuvie_MuuuvieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F722921E0CD1B48728AEB9 /* Pods_Muuuvie_MuuuvieUITests.framework */; };
+		5C62AA9882FB4168C372AA2D /* Pods_MuuuvieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15D1B0DDE00D29226DFE857 /* Pods_MuuuvieTests.framework */; };
 		A7006B7E254DEF9600E1342F /* IconButtonThemeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */; };
 		A7006B8A254DFEF500E1342F /* ArtistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B89254DFEF500E1342F /* ArtistDetailView.swift */; };
 		A7006B92254DFF0500E1342F /* ArtistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B91254DFF0500E1342F /* ArtistDetailViewModel.swift */; };
@@ -21,12 +23,14 @@
 		A70E959A25571B1A00152D85 /* TVCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E959925571B1A00152D85 /* TVCategoryModel.swift */; };
 		A70E959F25571BE500152D85 /* TVCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E959E25571BE500152D85 /* TVCategoryEnum.swift */; };
 		A7492C0A254DE574009E9BCD /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7492C09254DE574009E9BCD /* IconButtonView.swift */; };
+		CF09A84425577E8A005C1FC2 /* MovieReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A84325577E8A005C1FC2 /* MovieReviewsView.swift */; };
+		CF09A84925577EB5005C1FC2 /* MovieReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A84825577EB5005C1FC2 /* MovieReviewsViewModel.swift */; };
 		CF30A455255218BF00D0BEA2 /* Double+TwoDecimalPlacesFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF30A454255218BF00D0BEA2 /* Double+TwoDecimalPlacesFormater.swift */; };
 		CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF317668254B90DC00C877E3 /* MuuuvieApp.swift */; };
 		CF31766B254B90DC00C877E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31766A254B90DC00C877E3 /* ContentView.swift */; };
 		CF31766D254B90DE00C877E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF31766C254B90DE00C877E3 /* Assets.xcassets */; };
 		CF317670254B90DE00C877E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF31766F254B90DE00C877E3 /* Preview Assets.xcassets */; };
-		CF31767B254B90DE00C877E3 /* MuuuvieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31767A254B90DE00C877E3 /* MuuuvieTests.swift */; };
+		CF31767B254B90DE00C877E3 /* FavoritesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31767A254B90DE00C877E3 /* FavoritesTests.swift */; };
 		CF317686254B90DE00C877E3 /* MuuuvieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF317685254B90DE00C877E3 /* MuuuvieUITests.swift */; };
 		CF368837254D9C77002A1374 /* MuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF368836254D9C77002A1374 /* MuCardView.swift */; };
 		CF36883D254D9D72002A1374 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CF36883C254D9D72002A1374 /* Nuke */; };
@@ -40,9 +44,14 @@
 		CF36889E254DE1BA002A1374 /* MovieCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36889D254DE1BA002A1374 /* MovieCategoryEnum.swift */; };
 		CF368916254E4844002A1374 /* FullScreenLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF368915254E4844002A1374 /* FullScreenLoadingView.swift */; };
 		CF368921254E50EF002A1374 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF368920254E50EF002A1374 /* ImageView.swift */; };
-		CF8B90C2255088C0008D957D /* View+UINavigationBarAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8B90C1255088C0008D957D /* View+UINavigationBarAppearence.swift */; };
 		CF3F3CE12557763800D74D7A /* ReviewListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F3CE02557763800D74D7A /* ReviewListItem.swift */; };
-		CF3F3CE62557766A00D74D7A /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F3CE52557766A00D74D7A /* ReviewModel.swift */; };
+		CF3F3CE62557766A00D74D7A /* MovieReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3F3CE52557766A00D74D7A /* MovieReviewModel.swift */; };
+		CF4E25F2255A09B4002AB59F /* Favoritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E25F1255A09B4002AB59F /* Favoritable.swift */; };
+		CF7066BC25586AD600559C1F /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7066BB25586AD600559C1F /* Favorites.swift */; };
+		CF7066C725586CAF00559C1F /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7066C625586CAF00559C1F /* FavoriteModel.swift */; };
+		CF7066F225588D5200559C1F /* FavoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7066F125588D5200559C1F /* FavoritesListView.swift */; };
+		CF7066F725588D6B00559C1F /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7066F625588D6B00559C1F /* FavoritesListViewModel.swift */; };
+		CF8B90C2255088C0008D957D /* View+UINavigationBarAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8B90C1255088C0008D957D /* View+UINavigationBarAppearence.swift */; };
 		CF9FD343254CD19A0040E2CF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3176A4254B91E500C877E3 /* Api.swift */; };
 		CF9FD348254CD1EA0040E2CF /* ApiSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD347254CD1EA0040E2CF /* ApiSupport.swift */; };
 		CF9FD351254CDB4E0040E2CF /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD350254CDB4E0040E2CF /* MovieDetailView.swift */; };
@@ -51,7 +60,9 @@
 		CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD39B254CF58C0040E2CF /* ViewModelWithRequest.swift */; };
 		CF9FD3BE254CFBA90040E2CF /* Color+Pallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD3BD254CFBA90040E2CF /* Color+Pallete.swift */; };
 		CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDE95A0254CCCEA005C0E19 /* Enpoint.swift */; };
+		CFF7EB81256AB27D0094BD86 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF7EB80256AB27D0094BD86 /* UserDefaultsMock.swift */; };
 		CFF82AA0255376BE00F0BC3D /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */; };
+		D7473602C2AA2009F11A0A5C /* Pods_Muuuvie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6FA914FAF1E010A0C552C27 /* Pods_Muuuvie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +83,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06F722921E0CD1B48728AEB9 /* Pods_Muuuvie_MuuuvieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Muuuvie_MuuuvieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E6EB67695C7009DE82C872B /* Pods-Muuuvie-MuuuvieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muuuvie-MuuuvieUITests.debug.xcconfig"; path = "Target Support Files/Pods-Muuuvie-MuuuvieUITests/Pods-Muuuvie-MuuuvieUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		17765910DF7073E0002EF6FB /* Pods-Muuuvie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muuuvie.release.xcconfig"; path = "Target Support Files/Pods-Muuuvie/Pods-Muuuvie.release.xcconfig"; sourceTree = "<group>"; };
+		685FD96E31F3D4475B9BA076 /* Pods-Muuuvie-MuuuvieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muuuvie-MuuuvieUITests.release.xcconfig"; path = "Target Support Files/Pods-Muuuvie-MuuuvieUITests/Pods-Muuuvie-MuuuvieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonThemeEnum.swift; sourceTree = "<group>"; };
 		A7006B89254DFEF500E1342F /* ArtistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailView.swift; sourceTree = "<group>"; };
 		A7006B91254DFF0500E1342F /* ArtistDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +101,11 @@
 		A70E959925571B1A00152D85 /* TVCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCategoryModel.swift; sourceTree = "<group>"; };
 		A70E959E25571BE500152D85 /* TVCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCategoryEnum.swift; sourceTree = "<group>"; };
 		A7492C09254DE574009E9BCD /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
+		ADAE4CF1411D8BBBEC90350B /* Pods-MuuuvieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuuuvieTests.release.xcconfig"; path = "Target Support Files/Pods-MuuuvieTests/Pods-MuuuvieTests.release.xcconfig"; sourceTree = "<group>"; };
+		BDF25F0BF0C65EF40268DB7C /* Pods-Muuuvie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muuuvie.debug.xcconfig"; path = "Target Support Files/Pods-Muuuvie/Pods-Muuuvie.debug.xcconfig"; sourceTree = "<group>"; };
+		CAED904961FC03EDF2A09EB7 /* Pods-MuuuvieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuuuvieTests.debug.xcconfig"; path = "Target Support Files/Pods-MuuuvieTests/Pods-MuuuvieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF09A84325577E8A005C1FC2 /* MovieReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewsView.swift; sourceTree = "<group>"; };
+		CF09A84825577EB5005C1FC2 /* MovieReviewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewsViewModel.swift; sourceTree = "<group>"; };
 		CF30A454255218BF00D0BEA2 /* Double+TwoDecimalPlacesFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+TwoDecimalPlacesFormater.swift"; sourceTree = "<group>"; };
 		CF317665254B90DC00C877E3 /* Muuuvie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muuuvie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF317668254B90DC00C877E3 /* MuuuvieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuuuvieApp.swift; sourceTree = "<group>"; };
@@ -94,7 +114,7 @@
 		CF31766F254B90DE00C877E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF317671254B90DE00C877E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF317676254B90DE00C877E3 /* MuuuvieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuuuvieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF31767A254B90DE00C877E3 /* MuuuvieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuuuvieTests.swift; sourceTree = "<group>"; };
+		CF31767A254B90DE00C877E3 /* FavoritesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTests.swift; sourceTree = "<group>"; };
 		CF31767C254B90DE00C877E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF317681254B90DE00C877E3 /* MuuuvieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuuuvieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF317685254B90DE00C877E3 /* MuuuvieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuuuvieUITests.swift; sourceTree = "<group>"; };
@@ -110,9 +130,14 @@
 		CF36889D254DE1BA002A1374 /* MovieCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCategoryEnum.swift; sourceTree = "<group>"; };
 		CF368915254E4844002A1374 /* FullScreenLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoadingView.swift; sourceTree = "<group>"; };
 		CF368920254E50EF002A1374 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
-		CF8B90C1255088C0008D957D /* View+UINavigationBarAppearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+UINavigationBarAppearence.swift"; sourceTree = "<group>"; };
 		CF3F3CE02557763800D74D7A /* ReviewListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListItem.swift; sourceTree = "<group>"; };
-		CF3F3CE52557766A00D74D7A /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		CF3F3CE52557766A00D74D7A /* MovieReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewModel.swift; sourceTree = "<group>"; };
+		CF4E25F1255A09B4002AB59F /* Favoritable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favoritable.swift; sourceTree = "<group>"; };
+		CF7066BB25586AD600559C1F /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		CF7066C625586CAF00559C1F /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		CF7066F125588D5200559C1F /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
+		CF7066F625588D6B00559C1F /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
+		CF8B90C1255088C0008D957D /* View+UINavigationBarAppearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+UINavigationBarAppearence.swift"; sourceTree = "<group>"; };
 		CF9FD347254CD1EA0040E2CF /* ApiSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSupport.swift; sourceTree = "<group>"; };
 		CF9FD350254CDB4E0040E2CF /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		CF9FD355254CDB690040E2CF /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
@@ -120,7 +145,10 @@
 		CF9FD39B254CF58C0040E2CF /* ViewModelWithRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelWithRequest.swift; sourceTree = "<group>"; };
 		CF9FD3BD254CFBA90040E2CF /* Color+Pallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Pallete.swift"; sourceTree = "<group>"; };
 		CFDE95A0254CCCEA005C0E19 /* Enpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enpoint.swift; sourceTree = "<group>"; };
+		CFF7EB80256AB27D0094BD86 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
 		CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
+		D15D1B0DDE00D29226DFE857 /* Pods_MuuuvieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuuuvieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6FA914FAF1E010A0C552C27 /* Pods_Muuuvie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Muuuvie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +158,7 @@
 			files = (
 				CF36883D254D9D72002A1374 /* Nuke in Frameworks */,
 				CF368843254D9D95002A1374 /* FetchImage in Frameworks */,
+				D7473602C2AA2009F11A0A5C /* Pods_Muuuvie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C62AA9882FB4168C372AA2D /* Pods_MuuuvieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,12 +174,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3136279964A4B0A09E09D9A9 /* Pods_Muuuvie_MuuuvieUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		419AD1F2C304F8BF5CE9FC89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDF25F0BF0C65EF40268DB7C /* Pods-Muuuvie.debug.xcconfig */,
+				17765910DF7073E0002EF6FB /* Pods-Muuuvie.release.xcconfig */,
+				0E6EB67695C7009DE82C872B /* Pods-Muuuvie-MuuuvieUITests.debug.xcconfig */,
+				685FD96E31F3D4475B9BA076 /* Pods-Muuuvie-MuuuvieUITests.release.xcconfig */,
+				CAED904961FC03EDF2A09EB7 /* Pods-MuuuvieTests.debug.xcconfig */,
+				ADAE4CF1411D8BBBEC90350B /* Pods-MuuuvieTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4E6D3CD9A3937C53AE55BBD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6FA914FAF1E010A0C552C27 /* Pods_Muuuvie.framework */,
+				06F722921E0CD1B48728AEB9 /* Pods_Muuuvie_MuuuvieUITests.framework */,
+				D15D1B0DDE00D29226DFE857 /* Pods_MuuuvieTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A7006B88254DFEDE00E1342F /* ArtistDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +222,15 @@
 			path = TVCategoriesList;
 			sourceTree = "<group>";
 		};
+		CF09A84225577DBE005C1FC2 /* MovieReviews */ = {
+			isa = PBXGroup;
+			children = (
+				CF09A84325577E8A005C1FC2 /* MovieReviewsView.swift */,
+				CF09A84825577EB5005C1FC2 /* MovieReviewsViewModel.swift */,
+			);
+			path = MovieReviews;
+			sourceTree = "<group>";
+		};
 		CF31765C254B90DC00C877E3 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +238,8 @@
 				CF317679254B90DE00C877E3 /* MuuuvieTests */,
 				CF317684254B90DE00C877E3 /* MuuuvieUITests */,
 				CF317666254B90DC00C877E3 /* Products */,
+				419AD1F2C304F8BF5CE9FC89 /* Pods */,
+				4E6D3CD9A3937C53AE55BBD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,7 +283,8 @@
 		CF317679254B90DE00C877E3 /* MuuuvieTests */ = {
 			isa = PBXGroup;
 			children = (
-				CF31767A254B90DE00C877E3 /* MuuuvieTests.swift */,
+				CFF7EB7F256AB26C0094BD86 /* Mocks */,
+				CF31767A254B90DE00C877E3 /* FavoritesTests.swift */,
 				CF31767C254B90DE00C877E3 /* Info.plist */,
 			);
 			path = MuuuvieTests;
@@ -247,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				A70E9581255717EC00152D85 /* TVCategoriesList */,
+				CF7066BA25586AC300559C1F /* Favorites */,
+				CF09A84225577DBE005C1FC2 /* MovieReviews */,
 				A7006B88254DFEDE00E1342F /* ArtistDetail */,
 				CF368879254DD169002A1374 /* MoviesCategoriesList */,
 				CF9FD34F254CDADF0040E2CF /* MovieDetail */,
@@ -301,6 +369,16 @@
 			path = MoviesCategoriesList;
 			sourceTree = "<group>";
 		};
+		CF7066BA25586AC300559C1F /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				CF7066BB25586AD600559C1F /* Favorites.swift */,
+				CF7066F125588D5200559C1F /* FavoritesListView.swift */,
+				CF7066F625588D6B00559C1F /* FavoritesListViewModel.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		CF9FD34F254CDADF0040E2CF /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,7 +398,8 @@
 				A70E959425571A7400152D85 /* TVModel.swift */,
 				A70E959925571B1A00152D85 /* TVCategoryModel.swift */,
 				CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */,
-				CF3F3CE52557766A00D74D7A /* ReviewModel.swift */,
+				CF3F3CE52557766A00D74D7A /* MovieReviewModel.swift */,
+				CF7066C625586CAF00559C1F /* FavoriteModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,9 +407,18 @@
 		CF9FD39A254CF5580040E2CF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				CF4E25F1255A09B4002AB59F /* Favoritable.swift */,
 				CF9FD39B254CF58C0040E2CF /* ViewModelWithRequest.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CFF7EB7F256AB26C0094BD86 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CFF7EB80256AB27D0094BD86 /* UserDefaultsMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +428,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF31768A254B90DE00C877E3 /* Build configuration list for PBXNativeTarget "Muuuvie" */;
 			buildPhases = (
+				C2E272218D5155959F4B9935 /* [CP] Check Pods Manifest.lock */,
 				CF317661254B90DC00C877E3 /* Sources */,
 				CF317662254B90DC00C877E3 /* Frameworks */,
 				CF317663254B90DC00C877E3 /* Resources */,
@@ -361,9 +450,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF31768D254B90DE00C877E3 /* Build configuration list for PBXNativeTarget "MuuuvieTests" */;
 			buildPhases = (
+				36BE11E7A00036DD79A8A549 /* [CP] Check Pods Manifest.lock */,
 				CF317672254B90DE00C877E3 /* Sources */,
 				CF317673254B90DE00C877E3 /* Frameworks */,
 				CF317674254B90DE00C877E3 /* Resources */,
+				3C42360F28135D3409FE233F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,6 +470,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF317690254B90DE00C877E3 /* Build configuration list for PBXNativeTarget "MuuuvieUITests" */;
 			buildPhases = (
+				515B15726456AB67E991CF5B /* [CP] Check Pods Manifest.lock */,
 				CF31767D254B90DE00C877E3 /* Sources */,
 				CF31767E254B90DE00C877E3 /* Frameworks */,
 				CF31767F254B90DE00C877E3 /* Resources */,
@@ -465,6 +557,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		36BE11E7A00036DD79A8A549 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuuuvieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C42360F28135D3409FE233F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuuuvieTests/Pods-MuuuvieTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuuuvieTests/Pods-MuuuvieTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuuuvieTests/Pods-MuuuvieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		515B15726456AB67E991CF5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Muuuvie-MuuuvieUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2E272218D5155959F4B9935 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Muuuvie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF317661254B90DC00C877E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -472,6 +650,7 @@
 			files = (
 				CF368921254E50EF002A1374 /* ImageView.swift in Sources */,
 				CF31766B254B90DC00C877E3 /* ContentView.swift in Sources */,
+				CF7066F725588D6B00559C1F /* FavoritesListViewModel.swift in Sources */,
 				CF368880254DD194002A1374 /* MovieCategoryListViewModel.swift in Sources */,
 				A70E959525571A7400152D85 /* TVModel.swift in Sources */,
 				CF36887B254DD183002A1374 /* MovieCategoryListView.swift in Sources */,
@@ -479,6 +658,7 @@
 				CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */,
 				A70E959025571A0A00152D85 /* TVCategoryView.swift in Sources */,
 				CF3F3CE62557766A00D74D7A /* ReviewModel.swift in Sources */,
+				CF3F3CE62557766A00D74D7A /* MovieReviewModel.swift in Sources */,
 				CF3F3CE12557763800D74D7A /* ReviewListItem.swift in Sources */,
 				CF36888A254DD3AF002A1374 /* MoviesCategoryView.swift in Sources */,
 				CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */,
@@ -489,15 +669,19 @@
 				A7006BAD254F3CB600E1342F /* Image+Icons.swift in Sources */,
 				CF9FD343254CD19A0040E2CF /* Api.swift in Sources */,
 				A7006BCB255065C800E1342F /* Decoder+Date.swift in Sources */,
+				CF7066F225588D5200559C1F /* FavoritesListView.swift in Sources */,
 				CF9FD356254CDB690040E2CF /* MovieDetailViewModel.swift in Sources */,
 				CF9FD348254CD1EA0040E2CF /* ApiSupport.swift in Sources */,
 				A7006B9C254E0C9F00E1342F /* Date+Formatter.swift in Sources */,
+				CF09A84925577EB5005C1FC2 /* MovieReviewsViewModel.swift in Sources */,
 				A7006B92254DFF0500E1342F /* ArtistDetailViewModel.swift in Sources */,
 				CF36889E254DE1BA002A1374 /* MovieCategoryEnum.swift in Sources */,
+				CF7066C725586CAF00559C1F /* FavoriteModel.swift in Sources */,
 				A7006B8A254DFEF500E1342F /* ArtistDetailView.swift in Sources */,
 				A70E959A25571B1A00152D85 /* TVCategoryModel.swift in Sources */,
 				CF36884C254DC019002A1374 /* MovieModel.swift in Sources */,
 				A70E958B2557182300152D85 /* TVCategoriesListViewModel.swift in Sources */,
+				CF09A84425577E8A005C1FC2 /* MovieReviewsView.swift in Sources */,
 				A7006B97254DFFDE00E1342F /* ArtistDetailModel.swift in Sources */,
 				CFF82AA0255376BE00F0BC3D /* ArtistModel.swift in Sources */,
 				CF368885254DD24C002A1374 /* MovieCategoryModel.swift in Sources */,
@@ -508,7 +692,9 @@
 				A7492C0A254DE574009E9BCD /* IconButtonView.swift in Sources */,
 				A70E95832557181300152D85 /* TVCategoriesListView.swift in Sources */,
 				CF368837254D9C77002A1374 /* MuCardView.swift in Sources */,
+				CF4E25F2255A09B4002AB59F /* Favoritable.swift in Sources */,
 				CF368916254E4844002A1374 /* FullScreenLoadingView.swift in Sources */,
+				CF7066BC25586AD600559C1F /* Favorites.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +702,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF31767B254B90DE00C877E3 /* MuuuvieTests.swift in Sources */,
+				CFF7EB81256AB27D0094BD86 /* UserDefaultsMock.swift in Sources */,
+				CF31767B254B90DE00C877E3 /* FavoritesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +849,7 @@
 		};
 		CF31768B254B90DE00C877E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDF25F0BF0C65EF40268DB7C /* Pods-Muuuvie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -684,6 +872,7 @@
 		};
 		CF31768C254B90DE00C877E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17765910DF7073E0002EF6FB /* Pods-Muuuvie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -706,6 +895,7 @@
 		};
 		CF31768E254B90DE00C877E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAED904961FC03EDF2A09EB7 /* Pods-MuuuvieTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -728,6 +918,7 @@
 		};
 		CF31768F254B90DE00C877E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADAE4CF1411D8BBBEC90350B /* Pods-MuuuvieTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -750,6 +941,7 @@
 		};
 		CF317691254B90DE00C877E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E6EB67695C7009DE82C872B /* Pods-Muuuvie-MuuuvieUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -770,6 +962,7 @@
 		};
 		CF317692254B90DE00C877E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 685FD96E31F3D4475B9BA076 /* Pods-Muuuvie-MuuuvieUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

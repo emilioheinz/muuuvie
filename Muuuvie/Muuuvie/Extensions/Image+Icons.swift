@@ -32,4 +32,6 @@ extension Image {
     static var reviews: Image { Image(systemName: "ellipses.bubble") }
     
     static var like: Image { Image(systemName: "hand.thumbsup") }
+
+    static var close: Image { Image(systemName: "xmark") }
 }

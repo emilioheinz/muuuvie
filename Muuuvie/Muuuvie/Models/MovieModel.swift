@@ -9,16 +9,16 @@ import Foundation
 
 struct MovieModel: Decodable, Identifiable {
     let id: Int
-    let title: String
-    let posterImagePath: String?
-
+    let name: String
+    let imagePath: String?
+    
     enum CodingKeys: String, CodingKey {
         case id
-        case title
-        case posterImagePath = "poster_path"
+        case name = "title"
+        case imagePath = "poster_path"
     }
     
     static var mocked: MovieModel {
-        MovieModel(id: 724989, title: "Hard Kill And Hard Something else", posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg")
+        MovieModel(id: 724989, name: "Hard Kill And Hard Something else", imagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg")
     }
 }

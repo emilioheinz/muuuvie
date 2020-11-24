@@ -32,28 +32,28 @@ struct MovieCategoryModel: Identifiable {
           movies: [
             MovieModel(
                 id: 724989,
-                title: "Hard Kill And Hard Something else",
-                posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
+                name: "Hard Kill And Hard Something else",
+                imagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
             ),
             MovieModel(
                 id: 724989,
-                title: "Hard Kill And Hard Something else",
-                posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
+                name: "Hard Kill And Hard Something else",
+                imagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
             ),
             MovieModel(
                 id: 724989,
-                title: "Hard Kill And Hard Something else",
-                posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
+                name: "Hard Kill And Hard Something else",
+                imagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
             ),
             MovieModel(
                 id: 724989,
-                title: "Hard Kill And Hard Something else",
-                posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
+                name: "Hard Kill And Hard Something else",
+                imagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
             ),
-            MovieModel (
+            MovieModel(
                 id: 724989,
-                title: "Hard Kill And Hard Something else",
-                posterImagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
+                name: "Hard Kill And Hard Something else",
+                imagePath: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"
             ),
         ])
     }

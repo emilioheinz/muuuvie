@@ -22,10 +22,17 @@ struct MuuuvieApp: App {
                         Image.houseFill
                         Text("MOVIES")
                     }
+                    
                 TVCategoriesListView()
                     .tabItem {
                         Image.tvFill
                         Text("TV")
+                    }
+                
+                FavoritesListView()
+                    .tabItem {
+                        Image.favoriteIconFill
+                        Text("FAVORITES")
                     }
             }
             .accentColor(.mainOrange)
