@@ -16,6 +16,12 @@
 		A7006B9C254E0C9F00E1342F /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B9B254E0C9F00E1342F /* Date+Formatter.swift */; };
 		A7006BAD254F3CB600E1342F /* Image+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006BAC254F3CB600E1342F /* Image+Icons.swift */; };
 		A7006BCB255065C800E1342F /* Decoder+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006BCA255065C800E1342F /* Decoder+Date.swift */; };
+		A70E95832557181300152D85 /* TVCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E95822557181300152D85 /* TVCategoriesListView.swift */; };
+		A70E958B2557182300152D85 /* TVCategoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E958A2557182300152D85 /* TVCategoriesListViewModel.swift */; };
+		A70E959025571A0A00152D85 /* TVCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E958F25571A0A00152D85 /* TVCategoryView.swift */; };
+		A70E959525571A7400152D85 /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E959425571A7400152D85 /* TVModel.swift */; };
+		A70E959A25571B1A00152D85 /* TVCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E959925571B1A00152D85 /* TVCategoryModel.swift */; };
+		A70E959F25571BE500152D85 /* TVCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E959E25571BE500152D85 /* TVCategoryEnum.swift */; };
 		A7492C0A254DE574009E9BCD /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7492C09254DE574009E9BCD /* IconButtonView.swift */; };
 		CF09A84425577E8A005C1FC2 /* MovieReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A84325577E8A005C1FC2 /* MovieReviewsView.swift */; };
 		CF09A84925577EB5005C1FC2 /* MovieReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A84825577EB5005C1FC2 /* MovieReviewsViewModel.swift */; };
@@ -88,6 +94,12 @@
 		A7006B9B254E0C9F00E1342F /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
 		A7006BAC254F3CB600E1342F /* Image+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Icons.swift"; sourceTree = "<group>"; };
 		A7006BCA255065C800E1342F /* Decoder+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decoder+Date.swift"; sourceTree = "<group>"; };
+		A70E95822557181300152D85 /* TVCategoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCategoriesListView.swift; sourceTree = "<group>"; };
+		A70E958A2557182300152D85 /* TVCategoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCategoriesListViewModel.swift; sourceTree = "<group>"; };
+		A70E958F25571A0A00152D85 /* TVCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCategoryView.swift; sourceTree = "<group>"; };
+		A70E959425571A7400152D85 /* TVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModel.swift; sourceTree = "<group>"; };
+		A70E959925571B1A00152D85 /* TVCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCategoryModel.swift; sourceTree = "<group>"; };
+		A70E959E25571BE500152D85 /* TVCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCategoryEnum.swift; sourceTree = "<group>"; };
 		A7492C09254DE574009E9BCD /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
 		ADAE4CF1411D8BBBEC90350B /* Pods-MuuuvieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuuuvieTests.release.xcconfig"; path = "Target Support Files/Pods-MuuuvieTests/Pods-MuuuvieTests.release.xcconfig"; sourceTree = "<group>"; };
 		BDF25F0BF0C65EF40268DB7C /* Pods-Muuuvie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muuuvie.debug.xcconfig"; path = "Target Support Files/Pods-Muuuvie/Pods-Muuuvie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +213,15 @@
 			path = ArtistDetail;
 			sourceTree = "<group>";
 		};
+		A70E9581255717EC00152D85 /* TVCategoriesList */ = {
+			isa = PBXGroup;
+			children = (
+				A70E95822557181300152D85 /* TVCategoriesListView.swift */,
+				A70E958A2557182300152D85 /* TVCategoriesListViewModel.swift */,
+			);
+			path = TVCategoriesList;
+			sourceTree = "<group>";
+		};
 		CF09A84225577DBE005C1FC2 /* MovieReviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +312,7 @@
 		CF317697254B914100C877E3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A70E9581255717EC00152D85 /* TVCategoriesList */,
 				CF7066BA25586AC300559C1F /* Favorites */,
 				CF09A84225577DBE005C1FC2 /* MovieReviews */,
 				A7006B88254DFEDE00E1342F /* ArtistDetail */,
@@ -321,6 +343,7 @@
 				CF368889254DD3AF002A1374 /* MoviesCategoryView.swift */,
 				CF368915254E4844002A1374 /* FullScreenLoadingView.swift */,
 				CF368920254E50EF002A1374 /* ImageView.swift */,
+				A70E958F25571A0A00152D85 /* TVCategoryView.swift */,
 				CF3F3CE02557763800D74D7A /* ReviewListItem.swift */,
 			);
 			path = Components;
@@ -331,6 +354,7 @@
 			children = (
 				CF368866254DC79A002A1374 /* MuCardTypeEnum.swift */,
 				CF36889D254DE1BA002A1374 /* MovieCategoryEnum.swift */,
+				A70E959E25571BE500152D85 /* TVCategoryEnum.swift */,
 				A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */,
 			);
 			path = Enums;
@@ -371,6 +395,8 @@
 				CF36884B254DC019002A1374 /* MovieModel.swift */,
 				CF368884254DD24C002A1374 /* MovieCategoryModel.swift */,
 				A7006B96254DFFDE00E1342F /* ArtistDetailModel.swift */,
+				A70E959425571A7400152D85 /* TVModel.swift */,
+				A70E959925571B1A00152D85 /* TVCategoryModel.swift */,
 				CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */,
 				CF3F3CE52557766A00D74D7A /* MovieReviewModel.swift */,
 				CF7066C625586CAF00559C1F /* FavoriteModel.swift */,
@@ -626,14 +652,18 @@
 				CF31766B254B90DC00C877E3 /* ContentView.swift in Sources */,
 				CF7066F725588D6B00559C1F /* FavoritesListViewModel.swift in Sources */,
 				CF368880254DD194002A1374 /* MovieCategoryListViewModel.swift in Sources */,
+				A70E959525571A7400152D85 /* TVModel.swift in Sources */,
 				CF36887B254DD183002A1374 /* MovieCategoryListView.swift in Sources */,
 				CF8B90C2255088C0008D957D /* View+UINavigationBarAppearence.swift in Sources */,
 				CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */,
+				A70E959025571A0A00152D85 /* TVCategoryView.swift in Sources */,
+				CF3F3CE62557766A00D74D7A /* ReviewModel.swift in Sources */,
 				CF3F3CE62557766A00D74D7A /* MovieReviewModel.swift in Sources */,
 				CF3F3CE12557763800D74D7A /* ReviewListItem.swift in Sources */,
 				CF36888A254DD3AF002A1374 /* MoviesCategoryView.swift in Sources */,
 				CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */,
 				CF9FD35C254CDBA00040E2CF /* MovieDetailModel.swift in Sources */,
+				A70E959F25571BE500152D85 /* TVCategoryEnum.swift in Sources */,
 				CF368867254DC79A002A1374 /* MuCardTypeEnum.swift in Sources */,
 				CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */,
 				A7006BAD254F3CB600E1342F /* Image+Icons.swift in Sources */,
@@ -648,7 +678,9 @@
 				CF36889E254DE1BA002A1374 /* MovieCategoryEnum.swift in Sources */,
 				CF7066C725586CAF00559C1F /* FavoriteModel.swift in Sources */,
 				A7006B8A254DFEF500E1342F /* ArtistDetailView.swift in Sources */,
+				A70E959A25571B1A00152D85 /* TVCategoryModel.swift in Sources */,
 				CF36884C254DC019002A1374 /* MovieModel.swift in Sources */,
+				A70E958B2557182300152D85 /* TVCategoriesListViewModel.swift in Sources */,
 				CF09A84425577E8A005C1FC2 /* MovieReviewsView.swift in Sources */,
 				A7006B97254DFFDE00E1342F /* ArtistDetailModel.swift in Sources */,
 				CFF82AA0255376BE00F0BC3D /* ArtistModel.swift in Sources */,
@@ -658,6 +690,7 @@
 				CF30A455255218BF00D0BEA2 /* Double+TwoDecimalPlacesFormater.swift in Sources */,
 				CF9FD351254CDB4E0040E2CF /* MovieDetailView.swift in Sources */,
 				A7492C0A254DE574009E9BCD /* IconButtonView.swift in Sources */,
+				A70E95832557181300152D85 /* TVCategoriesListView.swift in Sources */,
 				CF368837254D9C77002A1374 /* MuCardView.swift in Sources */,
 				CF4E25F2255A09B4002AB59F /* Favoritable.swift in Sources */,
 				CF368916254E4844002A1374 /* FullScreenLoadingView.swift in Sources */,

@@ -27,6 +27,8 @@ extension Image {
 
     static var houseFill: Image { Image(systemName: "house.fill") }
     
+    static var tvFill: Image { Image(systemName: "tv.fill") }
+    
     static var reviews: Image { Image(systemName: "ellipses.bubble") }
     
     static var like: Image { Image(systemName: "hand.thumbsup") }
