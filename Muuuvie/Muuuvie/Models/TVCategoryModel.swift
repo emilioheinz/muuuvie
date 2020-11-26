@@ -30,10 +30,10 @@ struct TVCategoryModel: Identifiable {
         TVCategoryModel(
           categoryType: .popular,
             tvShows: [
-                TVModel(id: 604, name: "Teen Titans", posterImagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
-                TVModel(id: 604, name: "Teen Titans", posterImagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
-                TVModel(id: 604, name: "Teen Titans", posterImagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
-                TVModel(id: 604, name: "Teen Titans", posterImagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
+                TVModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
+                TVModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
+                TVModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
+                TVModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
         ])
     }
 }

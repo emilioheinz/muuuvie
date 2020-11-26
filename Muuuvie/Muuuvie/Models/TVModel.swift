@@ -7,18 +7,19 @@
 
 import Foundation
 
-struct TVModel: Decodable, Identifiable {
+struct TVModel: Decodable, Identifiable, Watchable {
+
     let id: Int
     let name: String
-    let posterImagePath: String?
+    let imagePath: String?
 
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case posterImagePath = "poster_path"
+        case imagePath = "poster_path"
     }
     
     static var mocked: TVModel {
-        TVModel(id: 604, name: "Teen Titans", posterImagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg")
+        TVModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg")
     }
 }
