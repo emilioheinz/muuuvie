@@ -34,4 +34,6 @@ extension Image {
     static var like: Image { Image(systemName: "hand.thumbsup") }
 
     static var close: Image { Image(systemName: "xmark") }
+    
+    static var sadFace: Image { Image("sad-face") }
 }

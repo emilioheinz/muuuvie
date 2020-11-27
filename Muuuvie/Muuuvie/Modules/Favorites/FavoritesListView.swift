@@ -15,20 +15,35 @@ struct FavoritesListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                FilterButtons(viewModel: viewModel)
+                FilterButtons(
+                    selectedFilter: $viewModel.selectedFilter,
+                    changeSelectedFilter: { newFilter in
+                        viewModel.changeSelectedFilter(newFilter: newFilter)
+                    }
+                )
                 ScrollView {
                     Spacer().frame(height: 30)
-                    LazyVGrid(columns: twoColumnGrid) {
-                        if viewModel.selectedFilter == .movie {
-                            ForEach(viewModel.favoritedMovies, id: \.self) { movie in
-                                NavigationLink(destination: MovieDetailView(movieId: movie.id).onDisappear { viewModel.getFavorittedItems()
-                                }) {
-                                    MuCardView(imagePath: movie.imagePath ?? "", title: movie.name)
+                    if viewModel.selectedFilter == .movie {
+                        if viewModel.favoritedMovies.count == 0 {
+                            NoData()
+                        } else {
+                            LazyVGrid(columns: twoColumnGrid) {
+                                ForEach(viewModel.favoritedMovies, id: \.self) { movie in
+                                    NavigationLink(destination: MovieDetailView(movieId: movie.id).onDisappear { viewModel.getFavorittedItems()
+                                    }) {
+                                        MuCardView(imagePath: movie.imagePath ?? "", title: movie.name)
+                                    }
                                 }
                             }
-                        } else if viewModel.selectedFilter == .artist {
-                            ForEach(viewModel.favoritedArtists, id: \.self) { artist in
-                                ArtistCard(viewModel: viewModel, artist: artist)
+                        }
+                    } else if viewModel.selectedFilter == .artist {
+                        if viewModel.favoritedArtists.count == 0 {
+                            NoData()
+                        } else {
+                            LazyVGrid(columns: twoColumnGrid) {
+                                ForEach(viewModel.favoritedArtists, id: \.self) { artist in
+                                    ArtistCard(viewModel: viewModel, artist: artist)
+                                }
                             }
                         }
                     }
@@ -36,10 +51,9 @@ struct FavoritesListView: View {
                 }
                 .navigationBarTitle("Favorites", displayMode: .large)
             }
-            .onAppear {
-                self.configureNavigationBarAppearence()
-                viewModel.getFavorittedItems()
-            }
+        }.onAppear {
+            self.configureNavigationBarAppearence()
+            viewModel.getFavorittedItems()
         }
     }
 }
@@ -52,32 +66,42 @@ struct FavoritesListView_Previews: PreviewProvider {
 
 
 struct FilterButtons: View {
-    @ObservedObject var viewModel: FavoritesListViewModel
+    @Binding var selectedFilter: FavoritableType
+    let changeSelectedFilter: (_ newFilter: FavoritableType) -> Void
     
     var body: some View {
         HStack(alignment: .bottom) {
             Spacer().frame(width: 25)
-            FilterButton(viewModel: viewModel, type: .movie)
+            FilterButton(
+                changeSelectedFilter: changeSelectedFilter,
+                selectedFilter: $selectedFilter,
+                type: .movie
+            )
             Spacer().frame(width: 25)
-            FilterButton(viewModel: viewModel, type: .artist)
+            FilterButton(
+                changeSelectedFilter: changeSelectedFilter,
+                selectedFilter: $selectedFilter,
+                type: .artist
+            )
             Spacer()
         }.frame(height: 50)
     }
 }
 
 struct FilterButton: View {
-    @ObservedObject var viewModel: FavoritesListViewModel
+    let changeSelectedFilter: (_ newFilter: FavoritableType) -> Void
+    @Binding var selectedFilter: FavoritableType
     let type: FavoritableType
     
     var body: some View {
         Button(action: {
-            viewModel.changeSelectedFilter(newFilter: type)
+            changeSelectedFilter(type)
         }) {
             VStack {
                 Text(type.userFriendlyLabel)
                 Rectangle()
                     .frame(width: 65, height: 4)
-                    .foregroundColor(viewModel.selectedFilter == type ? .mainOrange : .clear)
+                    .foregroundColor(selectedFilter == type ? .mainOrange : .clear)
             }
         }.accentColor(.black)
     }
