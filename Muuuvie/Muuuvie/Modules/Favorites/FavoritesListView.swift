@@ -54,7 +54,7 @@ struct FavoritesListView: View {
         }.onAppear {
             self.configureNavigationBarAppearence()
             viewModel.getFavorittedItems()
-        }
+        }.accentColor(.black)
     }
 }
 
