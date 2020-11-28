@@ -12,12 +12,18 @@ class FavoritesListViewModel: ObservableObject {
     @Published var favoritedArtists: [FavoriteModel] = []
     @Published var selectedFilter: FavoritableType = .movie
     
+    let favoritesInstance: Favorites
+    
+    init(favoritesInstance: Favorites) {
+        self.favoritesInstance = favoritesInstance
+    }
+    
     func getFavorittedItems() {        
-        favoritedMovies = Favorites.instance.items.filter { item in
+        favoritedMovies = favoritesInstance.items.filter { item in
             item.getType() == .movie
         }
         
-        favoritedArtists = Favorites.instance.items.filter { item in
+        favoritedArtists = favoritesInstance.items.filter { item in
             item.getType() == .artist
         }
     }

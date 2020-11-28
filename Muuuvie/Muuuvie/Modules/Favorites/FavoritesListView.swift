@@ -10,7 +10,7 @@ import SwiftUI
 struct FavoritesListView: View {
     private var twoColumnGrid = [GridItem(.flexible(), alignment: .top), GridItem(.flexible(), alignment: .top)]
     
-    @ObservedObject var viewModel = FavoritesListViewModel()
+    @ObservedObject var viewModel = FavoritesListViewModel(favoritesInstance: Favorites.instance)
     
     var body: some View {
         NavigationView {
