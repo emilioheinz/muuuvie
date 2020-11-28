@@ -30,9 +30,7 @@ struct MovieReviewsView: View {
             if let reviews = viewModel.reviews {
                 if reviews.isEmpty {
                     Spacer()
-                    Text("Opsss, não foi possível encontrar nenhum review para este filme!")
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth: 280)
+                    NoData()
                 } else {
                     List {
                         ForEach(reviews) { review in

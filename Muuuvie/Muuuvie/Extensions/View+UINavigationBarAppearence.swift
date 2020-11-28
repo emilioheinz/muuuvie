@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension View {
-    func configureNavigationBarAppearence(isTranslucent: Bool = false) {
+    func configureNavigationBarAppearence() {
         UINavigationBar.appearance().largeTitleTextAttributes = [
             .foregroundColor: UIColor.black
         ]
