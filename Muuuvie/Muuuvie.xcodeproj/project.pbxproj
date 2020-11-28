@@ -61,6 +61,7 @@
 		CFADB774257069F600A92471 /* Watchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADB773257069F600A92471 /* Watchable.swift */; };
 		CFADB77925706A6400A92471 /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADB77825706A6400A92471 /* TVModel.swift */; };
 		CFADB78625706BB700A92471 /* NoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADB78525706BB700A92471 /* NoData.swift */; };
+		CFADB78B2570A20E00A92471 /* FavoritesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADB78A2570A20E00A92471 /* FavoritesListViewModelTests.swift */; };
 		CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDE95A0254CCCEA005C0E19 /* Enpoint.swift */; };
 		CFF7EB81256AB27D0094BD86 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF7EB80256AB27D0094BD86 /* UserDefaultsMock.swift */; };
 		CFF82AA0255376BE00F0BC3D /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */; };
@@ -148,6 +149,7 @@
 		CFADB773257069F600A92471 /* Watchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchable.swift; sourceTree = "<group>"; };
 		CFADB77825706A6400A92471 /* TVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModel.swift; sourceTree = "<group>"; };
 		CFADB78525706BB700A92471 /* NoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoData.swift; sourceTree = "<group>"; };
+		CFADB78A2570A20E00A92471 /* FavoritesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModelTests.swift; sourceTree = "<group>"; };
 		CFDE95A0254CCCEA005C0E19 /* Enpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enpoint.swift; sourceTree = "<group>"; };
 		CFF7EB80256AB27D0094BD86 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
 		CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				CFF7EB7F256AB26C0094BD86 /* Mocks */,
 				CF31767A254B90DE00C877E3 /* FavoritesTests.swift */,
 				CF31767C254B90DE00C877E3 /* Info.plist */,
+				CFADB78A2570A20E00A92471 /* FavoritesListViewModelTests.swift */,
 			);
 			path = MuuuvieTests;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFADB78B2570A20E00A92471 /* FavoritesListViewModelTests.swift in Sources */,
 				CFF7EB81256AB27D0094BD86 /* UserDefaultsMock.swift in Sources */,
 				CF31767B254B90DE00C877E3 /* FavoritesTests.swift in Sources */,
 			);
