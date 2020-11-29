@@ -52,7 +52,7 @@
 		CF3FA1272574438800A66F5C /* RatingStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3FA1262574438800A66F5C /* RatingStarsView.swift */; };
 		CF3FA130257445BA00A66F5C /* FullCastListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3FA12F257445BA00A66F5C /* FullCastListView.swift */; };
 		CF3FA1582574497200A66F5C /* WatchableMainInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3FA1572574497200A66F5C /* WatchableMainInfoView.swift */; };
-		CF3FA16825744B3200A66F5C /* ActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3FA16725744B3200A66F5C /* ActionButtons.swift */; };
+		CF3FA16825744B3200A66F5C /* ActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3FA16725744B3200A66F5C /* ActionButtonsView.swift */; };
 		CF4E25F2255A09B4002AB59F /* Favoritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4E25F1255A09B4002AB59F /* Favoritable.swift */; };
 		CF7066BC25586AD600559C1F /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7066BB25586AD600559C1F /* Favorites.swift */; };
 		CF7066C725586CAF00559C1F /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7066C625586CAF00559C1F /* FavoriteModel.swift */; };
@@ -71,6 +71,7 @@
 		CFADB78625706BB700A92471 /* NoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADB78525706BB700A92471 /* NoData.swift */; };
 		CFADB78B2570A20E00A92471 /* FavoritesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADB78A2570A20E00A92471 /* FavoritesListViewModelTests.swift */; };
 		CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDE95A0254CCCEA005C0E19 /* Enpoint.swift */; };
+		CFF2844B25745A81008B7389 /* FavoritableTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2844A25745A81008B7389 /* FavoritableTypeEnum.swift */; };
 		CFF7EB81256AB27D0094BD86 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF7EB80256AB27D0094BD86 /* UserDefaultsMock.swift */; };
 		CFF82AA0255376BE00F0BC3D /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */; };
 		D7473602C2AA2009F11A0A5C /* Pods_Muuuvie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6FA914FAF1E010A0C552C27 /* Pods_Muuuvie.framework */; };
@@ -149,7 +150,7 @@
 		CF3FA1262574438800A66F5C /* RatingStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarsView.swift; sourceTree = "<group>"; };
 		CF3FA12F257445BA00A66F5C /* FullCastListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCastListView.swift; sourceTree = "<group>"; };
 		CF3FA1572574497200A66F5C /* WatchableMainInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchableMainInfoView.swift; sourceTree = "<group>"; };
-		CF3FA16725744B3200A66F5C /* ActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtons.swift; sourceTree = "<group>"; };
+		CF3FA16725744B3200A66F5C /* ActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonsView.swift; sourceTree = "<group>"; };
 		CF4E25F1255A09B4002AB59F /* Favoritable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favoritable.swift; sourceTree = "<group>"; };
 		CF7066BB25586AD600559C1F /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		CF7066C625586CAF00559C1F /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 		CFADB78525706BB700A92471 /* NoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoData.swift; sourceTree = "<group>"; };
 		CFADB78A2570A20E00A92471 /* FavoritesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModelTests.swift; sourceTree = "<group>"; };
 		CFDE95A0254CCCEA005C0E19 /* Enpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enpoint.swift; sourceTree = "<group>"; };
+		CFF2844A25745A81008B7389 /* FavoritableTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritableTypeEnum.swift; sourceTree = "<group>"; };
 		CFF7EB80256AB27D0094BD86 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
 		CFF82A9F255376BD00F0BC3D /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
 		D15D1B0DDE00D29226DFE857 /* Pods_MuuuvieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuuuvieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -382,6 +384,7 @@
 				CF36889D254DE1BA002A1374 /* MovieCategoryEnum.swift */,
 				A70E959E25571BE500152D85 /* TVCategoryEnum.swift */,
 				A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */,
+				CFF2844A25745A81008B7389 /* FavoritableTypeEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -410,7 +413,7 @@
 				CF3FA1262574438800A66F5C /* RatingStarsView.swift */,
 				CF3FA12F257445BA00A66F5C /* FullCastListView.swift */,
 				CF3FA1572574497200A66F5C /* WatchableMainInfoView.swift */,
-				CF3FA16725744B3200A66F5C /* ActionButtons.swift */,
+				CF3FA16725744B3200A66F5C /* ActionButtonsView.swift */,
 			);
 			path = WatchableDetail;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				CF368880254DD194002A1374 /* MovieCategoryListViewModel.swift in Sources */,
 				CF36887B254DD183002A1374 /* MovieCategoryListView.swift in Sources */,
 				CF3FA1582574497200A66F5C /* WatchableMainInfoView.swift in Sources */,
+				CFF2844B25745A81008B7389 /* FavoritableTypeEnum.swift in Sources */,
 				CF8B90C2255088C0008D957D /* View+UINavigationBarAppearence.swift in Sources */,
 				CF3FA09525740F9400A66F5C /* TVShowDetailViewModel.swift in Sources */,
 				CFDE95A1254CCCEA005C0E19 /* Enpoint.swift in Sources */,
@@ -732,7 +736,7 @@
 				CF36889E254DE1BA002A1374 /* MovieCategoryEnum.swift in Sources */,
 				CF7066C725586CAF00559C1F /* FavoriteModel.swift in Sources */,
 				A7006B8A254DFEF500E1342F /* ArtistDetailView.swift in Sources */,
-				CF3FA16825744B3200A66F5C /* ActionButtons.swift in Sources */,
+				CF3FA16825744B3200A66F5C /* ActionButtonsView.swift in Sources */,
 				CF3FA130257445BA00A66F5C /* FullCastListView.swift in Sources */,
 				A70E959A25571B1A00152D85 /* TVCategoryModel.swift in Sources */,
 				CF36884C254DC019002A1374 /* MovieModel.swift in Sources */,

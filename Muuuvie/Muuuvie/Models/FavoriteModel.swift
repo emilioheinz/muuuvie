@@ -11,7 +11,7 @@ struct FavoriteModel: Codable, Favoritable, Hashable, Equatable {
     let id: Int
     let name: String
     let imagePath: String?
-    let type: FavoritableType
+    let type: FavoritableTypeEnum
     
     static func == (lhs: FavoriteModel, rhs: FavoriteModel) -> Bool {
         lhs.id == rhs.id && lhs.getType() == rhs.getType()
@@ -24,7 +24,7 @@ struct FavoriteModel: Codable, Favoritable, Hashable, Equatable {
         self.type = item.getType()
     }
     
-    func getType() -> FavoritableType {
+    func getType() -> FavoritableTypeEnum {
         self.type
     }
 }

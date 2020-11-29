@@ -24,7 +24,7 @@ struct MovieDetailModel: Decodable, WatchableDetail {
         case imagePath = "backdrop_path"
     }
     
-    func getType() -> FavoritableType {
+    func getType() -> FavoritableTypeEnum {
         .movie
     }
     

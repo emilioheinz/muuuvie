@@ -24,7 +24,7 @@ struct ArtistDetailModel: Decodable, Identifiable, Favoritable {
         case imagePath = "profile_path"
     }
     
-    func getType() -> FavoritableType {
+    func getType() -> FavoritableTypeEnum {
         .artist
     }
     

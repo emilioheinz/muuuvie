@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ActionButtons: View {
+struct ActionButtonsView: View {
     
     @State private var areReviewsPresented: Bool = false
     
@@ -38,7 +38,7 @@ struct ActionButtons: View {
 
 struct ActionButtons_Previews: PreviewProvider {
     static var previews: some View {
-        ActionButtons(watchableId: 1232, isFavorited: true) {
+        ActionButtonsView(watchableId: 1232, isFavorited: true) {
             print("Preview")
         }
     }

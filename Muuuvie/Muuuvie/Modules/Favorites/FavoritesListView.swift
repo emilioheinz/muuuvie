@@ -46,6 +46,19 @@ struct FavoritesListView: View {
                                 }
                             }
                         }
+                    } else if viewModel.selectedFilter == .tvShow {
+                        if viewModel.favoritedTVShows.count == 0 {
+                            NoData()
+                        } else {
+                            LazyVGrid(columns: twoColumnGrid) {
+                                ForEach(viewModel.favoritedTVShows, id: \.self) { tvShow in
+                                    NavigationLink(destination: TVShowDetailView(tvShowId: tvShow.id).onDisappear { viewModel.getFavorittedItems()
+                                    }) {
+                                        MuCardView(imagePath: tvShow.imagePath ?? "", title: tvShow.name)
+                                    }
+                                }
+                            }
+                        }
                     }
                     Spacer().frame(height: 30)
                 }
@@ -66,32 +79,28 @@ struct FavoritesListView_Previews: PreviewProvider {
 
 
 struct FilterButtons: View {
-    @Binding var selectedFilter: FavoritableType
-    let changeSelectedFilter: (_ newFilter: FavoritableType) -> Void
+    @Binding var selectedFilter: FavoritableTypeEnum
+    let changeSelectedFilter: (_ newFilter: FavoritableTypeEnum) -> Void
     
     var body: some View {
         HStack(alignment: .bottom) {
             Spacer().frame(width: 25)
-            FilterButton(
-                changeSelectedFilter: changeSelectedFilter,
-                selectedFilter: $selectedFilter,
-                type: .movie
-            )
-            Spacer().frame(width: 25)
-            FilterButton(
-                changeSelectedFilter: changeSelectedFilter,
-                selectedFilter: $selectedFilter,
-                type: .artist
-            )
+            ForEach(FavoritableTypeEnum.allCases, id: \.self) { currentCase in
+                FilterButton(
+                    changeSelectedFilter: changeSelectedFilter,
+                    selectedFilter: $selectedFilter,
+                    type: currentCase
+                )
+            }
             Spacer()
         }.frame(height: 50)
     }
 }
 
 struct FilterButton: View {
-    let changeSelectedFilter: (_ newFilter: FavoritableType) -> Void
-    @Binding var selectedFilter: FavoritableType
-    let type: FavoritableType
+    let changeSelectedFilter: (_ newFilter: FavoritableTypeEnum) -> Void
+    @Binding var selectedFilter: FavoritableTypeEnum
+    let type: FavoritableTypeEnum
     
     var body: some View {
         Button(action: {

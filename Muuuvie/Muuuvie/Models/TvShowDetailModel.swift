@@ -15,8 +15,8 @@ struct TVShowDetailModel: Decodable, WatchableDetail {
     let status: String
     let voteAvarage: Double
     
-    func getType() -> FavoritableType {
-        .movie
+    func getType() -> FavoritableTypeEnum {
+        .tvShow
     }
 
     enum CodingKeys: String, CodingKey {

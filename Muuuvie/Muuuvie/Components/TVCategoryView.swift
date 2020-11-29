@@ -30,7 +30,9 @@ struct TVCategoryView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top) {
                     ForEach(category.tvShows) { tvShow in
-                        MuCardView(imagePath: tvShow.imagePath ?? "", title: tvShow.name)
+                        NavigationLink(destination: TVShowDetailView(tvShowId: tvShow.id)) {
+                            MuCardView(imagePath: tvShow.imagePath ?? "", title: tvShow.name)
+                        }
                     }
                 }
             }
