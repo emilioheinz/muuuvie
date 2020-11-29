@@ -8,7 +8,7 @@
 import Foundation
 
 struct TVCategoryApiReturnModel: Decodable {
-    let tvShows: [TVModel]
+    let tvShows: [TVShowModel]
     
     enum CodingKeys: String, CodingKey {
         case tvShows = "results"
@@ -18,9 +18,9 @@ struct TVCategoryApiReturnModel: Decodable {
 struct TVCategoryModel: Identifiable {
     let id: Int
     let categoryType: TVCategoryEnum
-    let tvShows: [TVModel]
+    let tvShows: [TVShowModel]
     
-    init(categoryType: TVCategoryEnum, tvShows: [TVModel]) {
+    init(categoryType: TVCategoryEnum, tvShows: [TVShowModel]) {
         self.id = Int.random(in: 1...100)
         self.categoryType = categoryType
         self.tvShows = tvShows
@@ -30,10 +30,10 @@ struct TVCategoryModel: Identifiable {
         TVCategoryModel(
           categoryType: .popular,
             tvShows: [
-                TVModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
-                TVModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
-                TVModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
-                TVModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
+                TVShowModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
+                TVShowModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
+                TVShowModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
+                TVShowModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg"),
         ])
     }
 }

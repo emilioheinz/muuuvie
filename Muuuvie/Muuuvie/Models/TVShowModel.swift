@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TVModel: Decodable, Identifiable, Watchable {
+struct TVShowModel: Decodable, Identifiable, Watchable {
 
     let id: Int
     let name: String
@@ -19,7 +19,7 @@ struct TVModel: Decodable, Identifiable, Watchable {
         case imagePath = "poster_path"
     }
     
-    static var mocked: TVModel {
-        TVModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg")
+    static var mocked: TVShowModel {
+        TVShowModel(id: 604, name: "Teen Titans", imagePath: "/hHwEptckXUwZM7XO2lxZ8w8upuU.jpg")
     }
 }
