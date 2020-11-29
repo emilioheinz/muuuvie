@@ -25,9 +25,8 @@ struct TVShowDetailView: View {
                 if let artists = viewModel.artists {
                     FullCastListView(artists: artists)
                 }
-//
                 Spacer().frame(height: 20)
-                ActionButtonsView(watchableId: show.id, isFavorited: viewModel.isFavorited) {
+                ActionButtonsView(watchableId: show.id, isFavorited: viewModel.isFavorited, shouldShowCommentsButton: false) {
                     viewModel.toggleFavorite()
                 }
                 Spacer().frame(height: 35)

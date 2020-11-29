@@ -27,7 +27,7 @@ struct MovieDetailView: View {
                 }
                 
                 Spacer().frame(height: 20)
-                ActionButtonsView(watchableId: movie.id, isFavorited: viewModel.isFavorited) {
+                ActionButtonsView(watchableId: movie.id, isFavorited: viewModel.isFavorited, shouldShowCommentsButton: true) {
                     viewModel.toggleFavorite()
                 }
                 Spacer().frame(height: 35)

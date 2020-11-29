@@ -92,7 +92,7 @@ struct FilterButtons: View {
                     type: currentCase
                 )
             }
-            Spacer()
+            Spacer().frame(width: 25)
         }.frame(height: 50)
     }
 }
@@ -109,7 +109,7 @@ struct FilterButton: View {
             VStack {
                 Text(type.userFriendlyLabel)
                 Rectangle()
-                    .frame(width: 65, height: 4)
+                    .frame(maxWidth: .infinity, maxHeight: 4)
                     .foregroundColor(selectedFilter == type ? .mainOrange : .clear)
             }
         }.accentColor(.black)

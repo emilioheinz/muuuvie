@@ -10,9 +10,10 @@ import SwiftUI
 struct ActionButtonsView: View {
     
     @State private var areReviewsPresented: Bool = false
-    
+
     let watchableId: Int
     let isFavorited: Bool
+    let shouldShowCommentsButton: Bool
     let onFavoritePress: () -> Void
     
     var body: some View {
@@ -25,12 +26,14 @@ struct ActionButtonsView: View {
             }
             .frame(maxWidth: .infinity)
             
-            IconButtonView(theme: .secondary, image: .reviews) {
-                areReviewsPresented = true
-            }
-            .frame(maxWidth: .infinity)
-            .sheet(isPresented: $areReviewsPresented) {
-                MovieReviewsView(movieId: watchableId, isPresented: $areReviewsPresented)
+            if shouldShowCommentsButton {
+                IconButtonView(theme: .secondary, image: .reviews) {
+                    areReviewsPresented = true
+                }
+                .frame(maxWidth: .infinity)
+                .sheet(isPresented: $areReviewsPresented) {
+                    MovieReviewsView(movieId: watchableId, isPresented: $areReviewsPresented)
+                }
             }
         }
     }
@@ -38,7 +41,7 @@ struct ActionButtonsView: View {
 
 struct ActionButtons_Previews: PreviewProvider {
     static var previews: some View {
-        ActionButtonsView(watchableId: 1232, isFavorited: true) {
+        ActionButtonsView(watchableId: 1232, isFavorited: true, shouldShowCommentsButton: true) {
             print("Preview")
         }
     }
