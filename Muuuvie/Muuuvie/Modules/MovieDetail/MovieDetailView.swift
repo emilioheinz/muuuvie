@@ -36,7 +36,9 @@ struct MovieDetailView: View {
                     }
                     
                     Spacer().frame(height: 20)
-                    BottomActionButtons(viewModel: viewModel)
+                    BottomActionButtons(movieId: movie.id, isFavorited: viewModel.isFavorited) {
+                        viewModel.toggleFavorite()
+                    }
                     Spacer().frame(height: 35)
                 }
             } else {
@@ -169,35 +171,28 @@ struct FullCastList: View {
 struct BottomActionButtons: View {
     
     @State private var areReviewsPresented: Bool = false
-    @State private var isMovieFavorited: Bool = false
     
-    @ObservedObject var viewModel: MovieDetailViewModel
-    
-    init(viewModel: MovieDetailViewModel) {
-        self.viewModel = viewModel
-    }
+    let movieId: Int
+    let isFavorited: Bool
+    let onFavoritePress: () -> Void
     
     var body: some View {
-        if let movie = viewModel.movie {
-            HStack() {
-                IconButtonView(theme: .secondary, image: .like) {}
-                    .frame(maxWidth: .infinity)
-                
-                IconButtonView(theme: viewModel.isFavorited ? .primary : .secondary, image: .favoriteIcon) {
-                    viewModel.toggleFavorite()
-                }
+        HStack() {
+            IconButtonView(theme: .secondary, image: .like) {}
                 .frame(maxWidth: .infinity)
-                
-                IconButtonView(theme: .secondary, image: .reviews) {
-                    areReviewsPresented = true
-                }
-                .frame(maxWidth: .infinity)
-                .sheet(isPresented: $areReviewsPresented) {
-                    MovieReviewsView(movieId: movie.id, isPresented: $areReviewsPresented)
-                }
+            
+            IconButtonView(theme: isFavorited ? .primary : .secondary, image: .favoriteIcon) {
+                onFavoritePress()
             }
-        } else {
-            EmptyView()
+            .frame(maxWidth: .infinity)
+            
+            IconButtonView(theme: .secondary, image: .reviews) {
+                areReviewsPresented = true
+            }
+            .frame(maxWidth: .infinity)
+            .sheet(isPresented: $areReviewsPresented) {
+                MovieReviewsView(movieId: movieId, isPresented: $areReviewsPresented)
+            }
         }
     }
 }
