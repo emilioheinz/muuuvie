@@ -22,8 +22,8 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
         Api.instance.request(with: .movieDetail(id: id)) { [weak self] (result: Result<MovieDetailModel, APIError>) in
             switch result {
             case .success(let movie):
-                Api.instance.request(with: .movieCast(id: id)) { [weak self] (result2: Result<CastApiReturnModel, APIError>) in
-                    switch result2 {
+                Api.instance.request(with: .movieCast(id: id)) { [weak self] (resultCast: Result<CastApiReturnModel, APIError>) in
+                    switch resultCast {
                     case .success(let castResp):
                         DispatchQueue.main.async {
                             self?.movie = movie

@@ -22,8 +22,8 @@ class TVShowDetailViewModel: ObservableObject, ViewModelWithRequest {
         Api.instance.request(with: .tvShowDetail(id: id)) { [weak self] (result: Result<TVShowDetailModel, APIError>) in
             switch result {
             case .success(let show):
-                Api.instance.request(with: .tvShowCast(id: id)) { [weak self] (result2: Result<CastApiReturnModel, APIError>) in
-                    switch result2 {
+                Api.instance.request(with: .tvShowCast(id: id)) { [weak self] (resultCast: Result<CastApiReturnModel, APIError>) in
+                    switch resultCast {
                     case .success(let castResp):
                         DispatchQueue.main.async {
                             self?.show = show
