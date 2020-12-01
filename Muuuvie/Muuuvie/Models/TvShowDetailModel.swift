@@ -1,13 +1,13 @@
 //
-//  Movie.swift
+//  TvShowDetail.swift
 //  Muuuvie
 //
-//  Created by Emilio Heinzmann on 30/10/20.
+//  Created by Emilio Heinzmann on 29/11/20.
 //
 
 import Foundation
 
-struct MovieDetailModel: Decodable, WatchableDetail {
+struct TVShowDetailModel: Decodable, WatchableDetail {
     let id: Int
     let name: String
     let imagePath: String?
@@ -15,21 +15,21 @@ struct MovieDetailModel: Decodable, WatchableDetail {
     let status: String
     let voteAvarage: Double
     
+    func getType() -> FavoritableTypeEnum {
+        .tvShow
+    }
+
     enum CodingKeys: String, CodingKey {
         case id
-        case name = "title"
+        case name
         case overview
         case status
         case voteAvarage = "vote_average"
         case imagePath = "backdrop_path"
     }
     
-    func getType() -> FavoritableTypeEnum {
-        .movie
-    }
-    
-    static var mocked: MovieDetailModel {
-        MovieDetailModel(
+    static var mocked: TVShowDetailModel {
+        TVShowDetailModel(
             id: 724989,
             name: "Hard Kill",
             imagePath: "/86L8wqGMDbwURPni2t7FQ0nDjsH.jpg",
@@ -39,4 +39,3 @@ struct MovieDetailModel: Decodable, WatchableDetail {
         )
     }
 }
-

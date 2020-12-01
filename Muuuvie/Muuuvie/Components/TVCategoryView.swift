@@ -13,7 +13,7 @@ struct TVCategoryView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Spacer().frame(width: 10)
+                Spacer().frame(width: 5)
                 Text(category.categoryType.title)
                     .font(.title3)
                     .foregroundColor(.grayText)
@@ -30,7 +30,9 @@ struct TVCategoryView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top) {
                     ForEach(category.tvShows) { tvShow in
-                        MuCardView(imagePath: tvShow.imagePath ?? "", title: tvShow.name)
+                        NavigationLink(destination: TVShowDetailView(tvShowId: tvShow.id)) {
+                            MuCardView(imagePath: tvShow.imagePath ?? "", title: tvShow.name)
+                        }
                     }
                 }
             }

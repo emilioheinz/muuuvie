@@ -1,15 +1,15 @@
 //
-//  MovieDetailViewModel.swift
+//  TVShowDetailViewModel.swift
 //  Muuuvie
 //
-//  Created by Emilio Heinzmann on 30/10/20.
+//  Created by Emilio Heinzmann on 29/11/20.
 //
 
 import Foundation
 
-class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
+class TVShowDetailViewModel: ObservableObject, ViewModelWithRequest {
 
-    @Published var movie: MovieDetailModel?
+    @Published var show: TVShowDetailModel?
     @Published var artists: [ArtistModel]?
     @Published var isLoading: Bool = false
     @Published var hasError: Bool = false
@@ -19,17 +19,17 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
 
     func fetchMovie(id: Int) {
         self.isLoading = true
-        Api.instance.request(with: .movieDetail(id: id)) { [weak self] (result: Result<MovieDetailModel, APIError>) in
+        Api.instance.request(with: .tvShowDetail(id: id)) { [weak self] (result: Result<TVShowDetailModel, APIError>) in
             switch result {
-            case .success(let movie):
-                Api.instance.request(with: .movieCast(id: id)) { [weak self] (resultCast: Result<CastApiReturnModel, APIError>) in
+            case .success(let show):
+                Api.instance.request(with: .tvShowCast(id: id)) { [weak self] (resultCast: Result<CastApiReturnModel, APIError>) in
                     switch resultCast {
                     case .success(let castResp):
                         DispatchQueue.main.async {
-                            self?.movie = movie
+                            self?.show = show
                             self?.artists = castResp.cast
                             self?.isLoading = false
-                            self?.isFavorited = Favorites.instance.isInFavoritesList(item: movie)
+                            self?.isFavorited = Favorites.instance.isInFavoritesList(item: show)
                         }
                     case .failure(let error):
                         DispatchQueue.main.async {
@@ -39,7 +39,6 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
                         }
                     }
                 }
-                
             case .failure(let error):
                 DispatchQueue.main.async {
                     self?.hasError = true
@@ -51,7 +50,7 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
     }
     
     func toggleFavorite() {
-        self.isFavorited = Favorites.instance.toggle(item: movie!)
+        self.isFavorited = Favorites.instance.toggle(item: show!)
     }
 
 }

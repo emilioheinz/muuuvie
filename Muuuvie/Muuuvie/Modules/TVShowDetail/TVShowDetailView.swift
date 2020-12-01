@@ -1,33 +1,32 @@
 //
-//  MovieDetailView.swift
+//  TVShowDetail.swift
 //  Muuuvie
 //
-//  Created by Emilio Heinzmann on 30/10/20.
+//  Created by Emilio Heinzmann on 29/11/20.
 //
 
 import SwiftUI
 
-struct MovieDetailView: View {
-    let movieId: Int
+struct TVShowDetailView: View {
+    let tvShowId: Int
     
-    @ObservedObject var viewModel = MovieDetailViewModel()
+    @ObservedObject var viewModel = TVShowDetailViewModel()
     
-    init(movieId: Int) {
-        self.movieId = movieId
+    init(tvShowId: Int) {
+        self.tvShowId = tvShowId
         self.configureNavigationBarAppearence()
     }
     
     var body: some View {
         ScrollView {
-            if let movie = viewModel.movie {
-                WatchableMainInfoView(watchable: movie)
+            if let show = viewModel.show {
+                WatchableMainInfoView(watchable: show)
                 
                 if let artists = viewModel.artists {
                     FullCastListView(artists: artists)
                 }
-                
                 Spacer().frame(height: 20)
-                ActionButtonsView(watchableId: movie.id, isFavorited: viewModel.isFavorited, shouldShowCommentsButton: true) {
+                ActionButtonsView(watchableId: show.id, isFavorited: viewModel.isFavorited, shouldShowCommentsButton: false) {
                     viewModel.toggleFavorite()
                 }
                 Spacer().frame(height: 35)
@@ -41,7 +40,7 @@ struct MovieDetailView: View {
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .onAppear {
-            viewModel.fetchMovie(id: movieId)
+            viewModel.fetchMovie(id: tvShowId)
         }
         .alert(isPresented: $viewModel.hasError) {
             Alert(title: Text(viewModel.message))
@@ -52,8 +51,8 @@ struct MovieDetailView: View {
     }
 }
 
-struct MovieDetailView_Previews: PreviewProvider {
+struct TVShowDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(movieId: 550)
+        TVShowDetailView(tvShowId: 182)
     }
 }
