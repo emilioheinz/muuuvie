@@ -21,6 +21,7 @@
 		A70E959025571A0A00152D85 /* TVCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E958F25571A0A00152D85 /* TVCategoryView.swift */; };
 		A70E959A25571B1A00152D85 /* TVCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E959925571B1A00152D85 /* TVCategoryModel.swift */; };
 		A70E959F25571BE500152D85 /* TVCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E959E25571BE500152D85 /* TVCategoryEnum.swift */; };
+		A73E0A6725771E8D00D3B305 /* MovieCategoryListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E0A6625771E8D00D3B305 /* MovieCategoryListViewModelTest.swift */; };
 		A7492C0A254DE574009E9BCD /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7492C09254DE574009E9BCD /* IconButtonView.swift */; };
 		CF09A84425577E8A005C1FC2 /* MovieReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A84325577E8A005C1FC2 /* MovieReviewsView.swift */; };
 		CF09A84925577EB5005C1FC2 /* MovieReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A84825577EB5005C1FC2 /* MovieReviewsViewModel.swift */; };
@@ -111,6 +112,7 @@
 		A70E958F25571A0A00152D85 /* TVCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCategoryView.swift; sourceTree = "<group>"; };
 		A70E959925571B1A00152D85 /* TVCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCategoryModel.swift; sourceTree = "<group>"; };
 		A70E959E25571BE500152D85 /* TVCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCategoryEnum.swift; sourceTree = "<group>"; };
+		A73E0A6625771E8D00D3B305 /* MovieCategoryListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCategoryListViewModelTest.swift; sourceTree = "<group>"; };
 		A7492C09254DE574009E9BCD /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
 		ADAE4CF1411D8BBBEC90350B /* Pods-MuuuvieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuuuvieTests.release.xcconfig"; path = "Target Support Files/Pods-MuuuvieTests/Pods-MuuuvieTests.release.xcconfig"; sourceTree = "<group>"; };
 		BDF25F0BF0C65EF40268DB7C /* Pods-Muuuvie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muuuvie.debug.xcconfig"; path = "Target Support Files/Pods-Muuuvie/Pods-Muuuvie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				CF31767A254B90DE00C877E3 /* FavoritesTests.swift */,
 				CF31767C254B90DE00C877E3 /* Info.plist */,
 				CFADB78A2570A20E00A92471 /* FavoritesListViewModelTests.swift */,
+				A73E0A6625771E8D00D3B305 /* MovieCategoryListViewModelTest.swift */,
 			);
 			path = MuuuvieTests;
 			sourceTree = "<group>";
@@ -544,7 +547,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					CF317664254B90DC00C877E3 = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -714,7 +717,6 @@
 				CF3F3CE62557766A00D74D7A /* MovieReviewModel.swift in Sources */,
 				CF3FA105257418E800A66F5C /* WatchableDetail.swift in Sources */,
 				CF3FA11A2574198B00A66F5C /* TvShowDetailModel.swift in Sources */,
-				CF3F3CE62557766A00D74D7A /* MovieReviewModel.swift in Sources */,
 				CF3F3CE12557763800D74D7A /* ReviewListItem.swift in Sources */,
 				CF36888A254DD3AF002A1374 /* MovieCategoryView.swift in Sources */,
 				CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */,
@@ -766,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFADB78B2570A20E00A92471 /* FavoritesListViewModelTests.swift in Sources */,
+				A73E0A6725771E8D00D3B305 /* MovieCategoryListViewModelTest.swift in Sources */,
 				CFF7EB81256AB27D0094BD86 /* UserDefaultsMock.swift in Sources */,
 				CF31767B254B90DE00C877E3 /* FavoritesTests.swift in Sources */,
 			);
