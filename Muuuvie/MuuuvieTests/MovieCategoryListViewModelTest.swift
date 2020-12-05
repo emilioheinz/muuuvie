@@ -49,6 +49,12 @@ class MovieCategoryListViewModelTest: QuickSpec {
 
                     expect(viewModel.categoriesWithErrorResponse).toEventually(equal(0))
                 }
+                
+                it("it should stop loading") {
+                    viewModel.fetchMovieCategoryList()
+
+                    expect(viewModel.isLoading).toEventually(equal(false))
+                }
             }
             
         }
