@@ -18,6 +18,7 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
 
 
     func fetchMovie(id: Int) {
+        print(id)
         self.isLoading = true
         Api.instance.request(with: .movieDetail(id: id)) { [weak self] (result: Result<MovieDetailModel, APIError>) in
             switch result {
