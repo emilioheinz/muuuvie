@@ -28,7 +28,7 @@ struct MovieDetailView: View {
                         
                         GradientOverImage()
                         
-                        MovieInfo(movie: movie)
+                        MovieInfo(movie: movie, videos: viewModel.videos ?? [])
                     }
                     
                     if let artists = viewModel.artists {
@@ -85,8 +85,39 @@ struct RatingStars: View {
     }
 }
 
+struct VideoButton: View {
+    let movieVideos: [MovieVideoModel]
+    var videoURL: URL?
+    
+    init(movieVideos: [MovieVideoModel]) {
+        self.movieVideos = movieVideos
+        self.videoURL = getYoutubeVideo()
+    }
+    
+    func openVideoWebView() -> Void {
+        print(getYoutubeVideo() ?? "não foi dessa vez")
+    }
+    
+    func getYoutubeVideo() -> URL? {
+        let videoIndex = movieVideos.firstIndex() { movieVideo in
+            movieVideo.site == "YouTube"
+        }
+        
+        if let index = videoIndex {
+            return movieVideos[index].getVideoURL()
+        }
+        
+        return nil
+    }
+        
+    var body: some View {
+        IconButtonView(theme: .primary, image: .playIcon, action: openVideoWebView)
+    }
+}
+
 struct MovieInfo: View {
     let movie: MovieDetailModel
+    let videos: [MovieVideoModel]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -94,11 +125,16 @@ struct MovieInfo: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color.white)
-            Text("Status: \(movie.status)" )
-                .font(.subheadline)
-                .fontWeight(.light)
-                .foregroundColor(Color.white)
-            RatingStars(voteAvarage: movie.voteAvarage)
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Status: \(movie.status)" )
+                        .font(.subheadline)
+                        .fontWeight(.light)
+                        .foregroundColor(Color.white)
+                    RatingStars(voteAvarage: movie.voteAvarage)
+                }
+                VideoButton(movieVideos: videos)
+            }
             Text(movie.overview)
                 .font(.title3)
                 .fontWeight(.regular)

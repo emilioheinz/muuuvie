@@ -13,6 +13,7 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
     @Published var artists: [ArtistModel]?
     @Published var isLoading: Bool
     @Published var hasError: Bool
+    @Published var videos: [MovieVideoModel]?
     var message: String
     
     init() {
@@ -40,6 +41,17 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
                             self?.isLoading = false
                             self?.message = error.message
                         }
+                    }
+                }
+                
+                Api.instance.request(with: .movieVideos(id: id)) { [weak self] (result3: Result<VideosReturnModel, APIError>) in
+                    switch result3 {
+                    case .success(let videos):
+                        DispatchQueue.main.async {
+                            self?.videos = videos.videos
+                        }
+                    case .failure(let error):
+                        print(error)
                     }
                 }
                 
