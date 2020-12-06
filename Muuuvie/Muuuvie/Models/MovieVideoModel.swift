@@ -19,9 +19,7 @@ struct MovieVideoModel: Decodable {
     let site: String?
     let key: String?
     
-    func getVideoURL() -> URL {
-        let videoURL = "https://www.youtube.com/watch?v=\(self.key ?? "")"
-
-        return URL(string: videoURL)!
+    func getVideoURL() -> String {
+        return "https://www.youtube.com/watch?v=\(self.key ?? "")"
     }
 }

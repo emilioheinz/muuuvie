@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7030B7052558C237000F48C4 /* MovieVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7030B7042558C237000F48C4 /* MovieVideoModel.swift */; };
+		70CEAA70257D88180071CC57 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CEAA6F257D88180071CC57 /* WebViewModel.swift */; };
+		70CEAA79257D8D8C0071CC57 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CEAA78257D8D8C0071CC57 /* WebView.swift */; };
 		A7006B7E254DEF9600E1342F /* IconButtonThemeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */; };
 		A7006B8A254DFEF500E1342F /* ArtistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B89254DFEF500E1342F /* ArtistDetailView.swift */; };
 		A7006B92254DFF0500E1342F /* ArtistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7006B91254DFF0500E1342F /* ArtistDetailViewModel.swift */; };
@@ -68,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		7030B7042558C237000F48C4 /* MovieVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideoModel.swift; sourceTree = "<group>"; };
+		70CEAA6F257D88180071CC57 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		70CEAA78257D8D8C0071CC57 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A7006B7D254DEF9600E1342F /* IconButtonThemeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonThemeEnum.swift; sourceTree = "<group>"; };
 		A7006B89254DFEF500E1342F /* ArtistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailView.swift; sourceTree = "<group>"; };
 		A7006B91254DFF0500E1342F /* ArtistDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewModel.swift; sourceTree = "<group>"; };
@@ -140,6 +144,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70CEAA74257D8D660071CC57 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				70CEAA6F257D88180071CC57 /* WebViewModel.swift */,
+				70CEAA78257D8D8C0071CC57 /* WebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		A7006B88254DFEDE00E1342F /* ArtistDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +240,7 @@
 		CF317697254B914100C877E3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				70CEAA74257D8D660071CC57 /* WebView */,
 				A7006B88254DFEDE00E1342F /* ArtistDetail */,
 				CF368879254DD169002A1374 /* MoviesCategoriesList */,
 				CF9FD34F254CDADF0040E2CF /* MovieDetail */,
@@ -459,6 +473,7 @@
 				CF36888A254DD3AF002A1374 /* MoviesCategoryView.swift in Sources */,
 				CF9FD39C254CF58C0040E2CF /* ViewModelWithRequest.swift in Sources */,
 				CF9FD35C254CDBA00040E2CF /* MovieDetailModel.swift in Sources */,
+				70CEAA70257D88180071CC57 /* WebViewModel.swift in Sources */,
 				CF368867254DC79A002A1374 /* MuCardTypeEnum.swift in Sources */,
 				CF317669254B90DC00C877E3 /* MuuuvieApp.swift in Sources */,
 				A7006BAD254F3CB600E1342F /* Image+Icons.swift in Sources */,
@@ -479,6 +494,7 @@
 				CF30A455255218BF00D0BEA2 /* Double+TwoDecimalPlacesFormater.swift in Sources */,
 				CF9FD351254CDB4E0040E2CF /* MovieDetailView.swift in Sources */,
 				A7492C0A254DE574009E9BCD /* IconButtonView.swift in Sources */,
+				70CEAA79257D8D8C0071CC57 /* WebView.swift in Sources */,
 				CF368837254D9C77002A1374 /* MuCardView.swift in Sources */,
 				CF368916254E4844002A1374 /* FullScreenLoadingView.swift in Sources */,
 			);

@@ -86,19 +86,20 @@ struct RatingStars: View {
 }
 
 struct VideoButton: View {
+    @State private var shouldShowYoutube: Bool = false
     let movieVideos: [MovieVideoModel]
-    var videoURL: URL?
+    var videoURL: String? = ""
     
     init(movieVideos: [MovieVideoModel]) {
         self.movieVideos = movieVideos
         self.videoURL = getYoutubeVideo()
     }
     
-    func openVideoWebView() -> Void {
-        print(getYoutubeVideo() ?? "não foi dessa vez")
+    func openVideoWebView() -> Void {        
+        shouldShowYoutube = true
     }
     
-    func getYoutubeVideo() -> URL? {
+    func getYoutubeVideo() -> String? {
         let videoIndex = movieVideos.firstIndex() { movieVideo in
             movieVideo.site == "YouTube"
         }
@@ -112,6 +113,9 @@ struct VideoButton: View {
         
     var body: some View {
         IconButtonView(theme: .primary, image: .playIcon, action: openVideoWebView)
+            .sheet(isPresented: $shouldShowYoutube) {
+                WebView(url: self.videoURL ?? "", isPresented: $shouldShowYoutube)
+            }
     }
 }
 
@@ -133,6 +137,7 @@ struct MovieInfo: View {
                         .foregroundColor(Color.white)
                     RatingStars(voteAvarage: movie.voteAvarage)
                 }
+                Spacer()
                 VideoButton(movieVideos: videos)
             }
             Text(movie.overview)
