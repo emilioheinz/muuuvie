@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WatchableMainInfoView: View {
     let watchable: WatchableDetail
+    let movieVideos: [MovieVideoModel]?
     
     var body: some View {
         VStack() {
@@ -23,11 +24,19 @@ struct WatchableMainInfoView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
-                    Text("Status: \(watchable .status)" )
-                        .font(.subheadline)
-                        .fontWeight(.light)
-                        .foregroundColor(Color.white)
-                    RatingStarsView(voteAvarage: watchable.voteAvarage)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Status: \(watchable .status)" )
+                                .font(.subheadline)
+                                .fontWeight(.light)
+                                .foregroundColor(Color.white)
+                            RatingStarsView(voteAvarage: watchable.voteAvarage)
+                        }
+                        if let videos = movieVideos {
+                            Spacer()
+                            VideoButtonView(movieVideos: videos)
+                        }
+                    }
                     Text(watchable.overview)
                         .font(.title3)
                         .fontWeight(.regular)
@@ -56,6 +65,6 @@ struct GradientOverImage: View {
 
 struct WatchableMainInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        WatchableMainInfoView(watchable: MovieDetailModel.mocked)
+        WatchableMainInfoView(watchable: MovieDetailModel.mocked, movieVideos: [.mocked])
     }
 }

@@ -11,6 +11,7 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
 
     @Published var movie: MovieDetailModel?
     @Published var artists: [ArtistModel]?
+    @Published var videos: [MovieVideoModel]?
     @Published var isLoading: Bool = false
     @Published var hasError: Bool = false
     @Published var isFavorited: Bool = false
@@ -40,6 +41,16 @@ class MovieDetailViewModel: ObservableObject, ViewModelWithRequest {
                     }
                 }
                 
+                Api.instance.request(with: .movieVideos(id: id)) { [weak self] (resultVideos: Result<VideosReturnModel, APIError>) in
+                    switch resultVideos {
+                    case .success(let videos):
+                        DispatchQueue.main.async {
+                            self?.videos = videos.videos
+                        }
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
             case .failure(let error):
                 DispatchQueue.main.async {
                     self?.hasError = true
