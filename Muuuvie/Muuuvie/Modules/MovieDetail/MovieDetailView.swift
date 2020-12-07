@@ -88,15 +88,21 @@ struct RatingStars: View {
 struct VideoButton: View {
     @State private var shouldShowYoutube: Bool = false
     let movieVideos: [MovieVideoModel]
-    var videoURL: String? = ""
+    var videoURL: String?
     
     init(movieVideos: [MovieVideoModel]) {
         self.movieVideos = movieVideos
         self.videoURL = getYoutubeVideo()
     }
     
-    func openVideoWebView() -> Void {        
-        shouldShowYoutube = true
+    func isVideoUnavailable() -> Bool {
+        return videoURL == nil
+    }
+    
+    func openVideoWebView() -> Void {
+        if videoURL != nil {
+            shouldShowYoutube = true
+        }
     }
     
     func getYoutubeVideo() -> String? {
@@ -112,10 +118,11 @@ struct VideoButton: View {
     }
         
     var body: some View {
-        IconButtonView(theme: .primary, image: .playIcon, action: openVideoWebView)
+        IconButtonView(theme: isVideoUnavailable() ? .secondary : .primary, image: .playIcon, action: openVideoWebView)
             .sheet(isPresented: $shouldShowYoutube) {
                 WebView(url: self.videoURL ?? "", isPresented: $shouldShowYoutube)
             }
+            .disabled(self.isVideoUnavailable())
     }
 }
 

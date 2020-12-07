@@ -18,9 +18,7 @@ struct WebView: View {
     }
     
     var body: some View {
-        HStack(alignment: .top) {
-            WebViewModel(url: self.url ?? "")
-        }
+        WebViewModel(url: self.url ?? "")
     }
 }
 
