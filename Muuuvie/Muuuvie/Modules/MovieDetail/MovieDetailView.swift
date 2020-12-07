@@ -20,7 +20,7 @@ struct MovieDetailView: View {
     var body: some View {
         ScrollView {
             if let movie = viewModel.movie {
-                WatchableMainInfoView(watchable: movie)
+                WatchableMainInfoView(watchable: movie, movieVideos: viewModel.videos)
                 
                 if let artists = viewModel.artists {
                     FullCastListView(artists: artists)
