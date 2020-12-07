@@ -33,6 +33,7 @@ struct WatchableMainInfoView: View {
                             RatingStarsView(voteAvarage: watchable.voteAvarage)
                         }
                         if let videos = movieVideos {
+                            Spacer()
                             VideoButtonView(movieVideos: videos)
                         }
                     }

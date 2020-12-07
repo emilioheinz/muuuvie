@@ -18,7 +18,6 @@ struct VideoButtonView: View {
     }
 
     func openVideoWebView() -> Void {
-        print(self.movieVideos)
         if videoURL != nil {
             shouldShowYoutube = true
         }
@@ -37,10 +36,12 @@ struct VideoButtonView: View {
     }
 
     var body: some View {
-        IconButtonView(theme: .primary, image: .playIcon, action: openVideoWebView)
-            .sheet(isPresented: $shouldShowYoutube) {
-                WebView(url: self.videoURL ?? "", isPresented: $shouldShowYoutube)
-            }
+        if self.videoURL != nil {
+            IconButtonView(theme: .primary, image: .playIcon, action: openVideoWebView)
+                .sheet(isPresented: $shouldShowYoutube) {
+                    WebView(url: self.videoURL ?? "", isPresented: $shouldShowYoutube)
+                }
+        }
     }
 }
 
